@@ -1,0 +1,680 @@
+﻿<h2 class="title_small title_main_page_margin">Номенклатура</h2>
+
+<!---------------------------------------------------- NOMENCLATURE MAIN - MENU BAR ------------------------------------------------------->
+<div class="row">
+
+    <div class="container col-md-12 menu_no_padding">
+        <div class="col-md-10">
+
+            <div class="pull-left button_right_margin" data-toggle="modal" data-target="#myNomenclatureCreateModal">
+                <button type="button" class="btn btn-default my_button_style bold">
+                    <span class="fa fa-plus-circle"></span>
+                    Створити
+                </button>
+            </div>
+
+            <div class="pull-left button_right_margin">
+                <button type="button" class="btn btn-default my_button_style my_square_button">
+                    <span class="fa fa-files-o"></span>
+                </button>
+            </div>
+
+            <div class="pull-left button_right_margin">
+                <button type="button" class="btn btn-default my_button_style my_square_button">
+                    <span class="fa fa-clone"></span>
+                </button>
+            </div>
+
+            <div class="pull-left button_right_margin">
+                <button type="button" class="btn btn-default my_button_style my_square_button">
+                    <span class="fa fa-pencil"></span>
+                </button>
+            </div>
+
+            <div class="pull-left button_right_margin">
+                <button type="button" class="btn btn-default my_button_style my_square_button">
+                    <span class="fa fa-times"></span>
+                </button>
+            </div>
+
+            <div class="pull-left button_right_margin" data-toggle="modal" data-target="#myNomenclatureFindModal">
+                <button type="button" class="btn btn-default my_button_style">
+                    <span class="fa fa-search"></span>
+                    Знайти
+                </button>
+            </div>
+
+            <div class="pull-left button_right_margin">
+                <button type="button" class="btn btn-default my_button_style my_square_button">
+                    <span class="fa fa-search-minus"></span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- DropDown ALL Actions -->
+
+        <div class="col-md-2">
+            @* DropDown Menu All *@
+
+            <div class="pull-right button_left_margin">
+                <button type="button" class="btn btn-default my_button_style my_square_button">
+                    <span class="fa fa-question"></span>
+                </button>
+            </div>
+
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
+                    Всі дії
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu my_dropdown_styles" role="menu">
+                    <li>
+                        <a href="#"><span class="fa fa-plus-circle"></span>Створити</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-files-o"></span>Створити групу</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-clone"></span>Скопіювати</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-pencil"></span>Змінити</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-times"></span>Відмітити для вилучення / Зняти позначку</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-refresh"></span>Оновити</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-eye"></span><span class="pull-right fa fa-chevron-right"></span>Режим перегляду</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-clipboard"></span>Перемістити до групи</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-arrow-down"></span>Перейти на рівень нижче</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-arrow-up"></span>Перейти на рівень вище</a>
+                    </li>
+                    <li>
+                        <a href="#" class="empty_icon"><span class="pull-right"></span>Знайти: Найменування - Матеріали</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-search"></span>Знайти...</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-search-minus"></span>Відмінити пошук</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-cog"></span>Настроїти список...</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-upload"></span>Вивести список...</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-sliders"></span>Змінити форму...</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-search"></span>Довідка</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div><!-- DropDown ALL Actions end-->
+
+    </div> <!--Container MENU Buttons End-->
+
+</div> <!--Row MENU Buttons End-->
+<!---------------------------------------------------- NOMENCLATURE MAIN - MENU BAR END ------------------------------------------------------->
+<!-------------------------------------------------------------- TABLE NOMENCLATURE ----------------------------------------------------------->
+
+<div class="row my_table_style">
+    <div class="table-responsive col-md-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="code_column">Код</th>
+                    <th>Найменування</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!------------------------------------------------------------- TABLE NOMENCLATURE - END ---------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------- NOMENCLATURE (CREATE) - POPUP --------------------------------------------------------->
+@* Modal View *@
+<div id="myNomenclatureCreateModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title title_small">Номенклатура: Номенклатура (створення)</h2>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <div class="row">
+                    <!-------------------------------------- NOMENCLATURE (CREATE) POPUP - MENU BAR ----------------------------------------------->
+                    <div class="container col-md-12 menu_no_padding">
+                        <div class="col-md-10">
+                            <div class="pull-left button_right_margin">
+                                <button type="button" class="btn btn-default my_button_style bold">Записати та закрити</button>
+                            </div>
+
+                            <div class="pull-left">
+                                <button type="button" class="btn btn-default my_button_style my_square_button" title="Записати">
+                                    <span class="fa fa-floppy-o"></span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- DropDown ALL Actions -->
+
+                        <div class="col-md-2">
+
+                            <div class="pull-right button_left_margin">
+                                <button type="button" class="btn btn-default my_button_style my_square_button" title="Довідка">
+                                    <span class="fa fa-question"></span>
+                                </button>
+                            </div>
+
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
+                                    Всі дії
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu my_dropdown_styles" role="menu">
+                                    <li>
+                                        <a href="#"><span class="fa fa-check-square-o"></span>Записати та закрити</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-floppy-o"></span>Записати</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-book"></span>Перечитати</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-clone"></span>Cкопіювати</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-times"></span>Відмінити для вилучення / Зняти позначку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-location-arrow"></span>Показати у списку</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-sliders"></span>Змінити форму...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="fa fa-search"></span>Довідка</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div><!-- DropDown ALL Actions end-->
+
+                    </div> <!--Containner MENU Buttons End-->
+
+                </div> <!--Row MENU Buttons End-->
+                <!----------------------------------------- NOMENCLATURE (CREATE) POPUP - MENU BAR end ------------------------------------------>
+                <!------------------------------------------- NOMENCLATURE (CREATE) POPUP - FORM ------------------------------------------------>
+
+                <div class="row my_popup_form">
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="my_input_style col-md-12">
+                                <label class="control-label">Група номенклатури:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <span class="fa fa-ellipsis-h my_input_icon"></span>
+                                        </button>
+                                        <button class="btn btn-default" type="button">
+                                            <span class="fa fa-search my_input_icon"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="my_input_style col-md-12">
+                                <label class="control-label">Коротка назва:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="my_input_style col-md-12">
+                                <label class="control-label">Повна назва:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group my_last_margin-bottom">
+                            <div class="my_input_style col-md-6">
+                                <label class="control-label">Артикул:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div id="tabs" class="form-group">
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#nomenclature_main_tab">Основні</a></li>
+                                    <li><a href="#nomenclature_units">Одиниця виміру</a></li>
+                                </ul>
+
+                                <div id="nomenclature_main_tab">
+                                    <!-- Tab 1 -->
+
+                                    <div class="row">
+
+                                        <div class="my_fieldset_sm col-md-12">
+                                                <div class="form-group">
+                                                    <div class="my_input_style my_input_style_header">
+                                                        <h4 class="control-label text-left zero-margin-top">Ознака обліку</h4>
+                                                    </div>
+                                                    <div class="my_input_style col-md-1">
+                                                        <label class="control-label">Послуга:</label>
+                                                        <input type="checkbox" class="form-control" />
+                                                    </div>
+
+                                                    <div class="my_input_style col-md-2">
+                                                        <label class="control-label">Транспортна послуга:</label>
+                                                        <input type="checkbox" class="form-control" />
+                                                    </div>
+
+                                                    <div class="my_input_style col-md-2">
+                                                        <label class="control-label">Бланк суворої звітності:</label>
+                                                        <input type="checkbox" class="form-control" />
+                                                    </div>
+
+                                                    <div class="my_input_style col-md-3">
+                                                        <label class="control-label">Враховується по номінальній вартості:</label>
+                                                        <input type="checkbox" class="form-control" />
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="my_fieldset_sm col-md-12">
+                                            <div class="form-group">
+                                                <div class="my_input_style my_input_style_header">
+                                                    <h4 class="control-label text-left">Інше</h4>
+                                                </div>
+                                                <div class="my_input_style col-md-8">
+                                                    <label class="control-label">Номенклатурна група:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-ellipsis-h my_input_icon"></span>
+                                                            </button>
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-search my_input_icon"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my_input_style col-md-4">
+                                                    <label class="control-label">Базова одиниця виміру:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-ellipsis-h my_input_icon"></span>
+                                                            </button>
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-search my_input_icon"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="my_fieldset_sm col-md-12">
+                                            <div class="form-group">
+                                                <div class="my_input_style my_input_style_header">
+                                                    <h4 class="control-label text-left">Облік ПДВ:</h4>
+                                                </div>
+                                                <div class="my_input_style col-md-6">
+                                                    <label class="control-label">Ставка ПДВ:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-ellipsis-h my_input_icon"></span>
+                                                            </button>
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-search my_input_icon"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my_input_style col-md-6">
+                                                    <label class="control-label">Льгота з ПДВ:</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="my_input_style col-md-12">
+                                                    <label class="control-label">Код для ПН (по умовч.):</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-ellipsis-h my_input_icon"></span>
+                                                            </button>
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-search my_input_icon"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="my_input_style col-md-12">
+                                                    <label class="control-label">Вимірюється тільки в сумовому виразі:</label>
+                                                    <input type="checkbox" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="my_input_style col-md-6">
+                                                    <label class="control-label">Текст для друку у колонці кількість податкової накладної:</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="my_input_style col-md-12">
+                                                    <label class="control-label">Стаття витрат:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-ellipsis-h my_input_icon"></span>
+                                                            </button>
+                                                            <button class="btn btn-default" type="button">
+                                                                <span class="fa fa-search my_input_icon"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div> <!-- row end -->
+
+                                </div> <!-- Tab 1 end -->
+
+                                <div id="nomenclature_units">
+                                    <!-- Tab 2 -->
+
+                                    <div class="row col-md-12">
+                                        <!-- Buttons Tab 2 -->
+                                        <div class="col-md-10">
+                                            <!-- Table buttons -->
+                                            <div class="pull-left button_right_margin">
+                                                <button type="button" class="btn btn-default my_button_style">
+                                                    <span class="fa fa-plus-circle"></span>
+                                                    Додати
+                                                </button>
+                                            </div>
+                                            <div class="pull-left button_right_margin">
+                                                <button type="button" class="btn btn-default my_button_style my_square_button" title="Скопіювати">
+                                                    <span class="fa fa-clone"></span>
+                                                </button>
+                                            </div>
+                                            <div class="pull-left button_right_margin">
+                                                <button type="button" class="btn btn-default my_button_style my_square_button">
+                                                    <span class="fa fa-times"></span>
+                                                </button>
+                                            </div>
+                                            <div class="pull-left button_right_margin">
+                                                <button type="button" class="btn btn-default my_button_style my_square_button">
+                                                    <span class="fa fa-arrow-up"></span>
+                                                </button>
+                                            </div>
+                                            <div class="pull-left button_right_margin">
+                                                <button type="button" class="btn btn-default my_button_style my_square_button">
+                                                    <span class="fa fa-arrow-down"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- DropDown ALL Actions -->
+
+                                        <div class="col-md-2">
+
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
+                                                    Всі дії
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu my_dropdown_styles" role="menu">
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-plus-circle"></span>Створити</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-clone"></span>Скопіювати</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-pencil"></span>Змінити</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-times"></span>Відмітити для вилучення / Зняти позначку</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-refresh"></span>Оновити</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-exchange"></span>Встановити період...</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-arrow-circle-down"></span>Провести</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-arrow-circle-left"></span>Відмінити проведення</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="empty_icon"><span class="pull-right"></span>Знайти: Дата - 14.08.2018</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-search"></span>Знайти...</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-search-minus"></span>Відмінити пошук</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-cog"></span>Настроїти список...</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-upload"></span>Вивести список...</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-headphones"></span>Підбір</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="empty_icon"><span class="pull-right fa fa-chevron-right"></span>Друк</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-sliders"></span>Змінити форму...</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="fa fa-search"></span>Довідка</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div><!-- DropDown ALL Actions end-->
+                                    </div> <!-- Buttons Tab 2 end -->
+
+                                    <div class="row">
+                                        <!-- Table Tab 2 -->
+                                        <div class="my_table_popup table-responsive col-md-12">
+                                            <table class="table table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="code_column">N</th>
+                                                        <th>Одиниця виміру</th>
+                                                        <th class="code_column">Коефіцієнт</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- Table Tab 2 end -->
+
+                                </div> <!-- Tab 2 end -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="my_input_style commentary col-md-12">
+                                <label class="control-label">Коментар:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- Row End -->
+                <!--------------------------------------- NOMENCLATURE (CREATE) POPUP - FORM - END ----------------------------------------------->
+
+            </div> <!-- Modal Body End -->
+            <div class="modal-footer">
+                <div class="pull-right button_right_margin" data-dismiss="modal">
+                    <button type="button" class="btn btn-default my_button_style bold outer_modal_footer_button">
+                        Закрити
+                    </button>
+                </div>
+
+            </div>
+        </div> <!-- Modal Content End -->
+    </div> <!-- Modal Dialog End-->
+</div>
+
+<!---------------------------------------------------- NOMENCLATURE (CREATE) POPUP - END ---------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------- NOMENCLATURE (FIND) - POPUP ----------------------------------------------------------->
+
+<div id="myNomenclatureFindModal" class="modal fade" role="dialog">
+    <div class="modal-dialog my_modal_sm">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title title_small">Знайти</h2>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <!------------------------------------------- NOMENCLATURE (FIND) POPUP - FORM ------------------------------------------------>
+
+                <div id="my_find_form" class="row my_popup_form">
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="my_input_style col-lg-12 col-md-12 col-sm-12">
+                                <label for="sel1">Де шукати</label>
+                                <select class="my_input_style form-control my_select_style" id="sel1">
+                                    <option>Найменування</option>
+                                    <option>Some text</option>
+                                    <option>Some text</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="my_input_style col-lg-12 col-md-12 col-sm-12">
+                                <label class="control-label">Що шукати</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="my_input_style col-lg-12 col-md-12 my_radio_buttons">
+                                <label class="my_radio_label control-label">Як шукати:</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" class="my_radio_class">За початком рядка</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" class="my_radio_class">За частинкою рядка</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" class="my_radio_class">За точним збігом</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="my_input_style col-lg-12 col-md-12">
+                                <label class="control-label">Поточна група:</label>
+                                <span class="my_selected_text_style">Коренева група</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group my_input_style col-lg-12 col-md-12">
+                            <div class="my_input_style zero_padding_left col-lg-4 col-md-6">
+                                <label class="control-label my_checkbox_label-align">Шукати тільки у поточній групі:</label>
+                                <input type="checkbox" class="form-control" />
+                            </div>
+                            <div class="my_input_style zero_padding_left col-lg-4 col-md-6">
+                                <label class="control-label my_checkbox_label-align">Виключити підрядковані групи:</label>
+                                <input type="checkbox" class="form-control" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div> <!-- Airports Popup Form Row End -->
+                <!--------------------------------------- NOMENCLATURE (FIND) POPUP - FORM - END ------------------------------------------------>
+
+            </div> <!-- Modal Body End -->
+            <div class="modal-footer">
+                <div class="pull-right button_left_margin">
+                    <button type="button" class="btn btn-default my_button_style my_square_button outer_modal_footer_button" title="Довідка">
+                        <span class="fa fa-question"></span>
+                    </button>
+                </div>
+                <div class="pull-right button_right_margin" data-dismiss="modal">
+                    <button type="button" class="btn btn-default my_button_style">
+                        Закрити
+                    </button>
+                </div>
+
+                <div class="pull-right button_right_margin">
+                    <button type="button" class="btn btn-default my_button_style bold">
+                        <span class="fa fa-search-minus"></span>
+                        Знайти
+                    </button>
+                </div>
+
+            </div>
+        </div> <!-- Modal Content End -->
+    </div> <!-- Modal Dialog End-->
+</div>
+
+<!---------------------------------------------------- NOMENCLATURE (FIND) POPUP - END --------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->

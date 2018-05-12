@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main window</title>
+    <link href="../../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Style for main page -->
+    <link href="../../Content/css/main.css" rel="stylesheet" />
+
+    <link href="~/Content/css/invoice.css" rel="stylesheet" />
+    <link href="~/Content/css/invoicePopup.css" rel="stylesheet" />
+    @* Malihu *@
+    <link href="~/Content/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    @* JQuery *@
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="../../Content/js/aviaTicketInvoice.js"></script>
+   
+    @* END JQuery *@
+    <script>
+        function createTabsInAvia(data) {
+            alert('hello');
+
+            //$('#tabs').tabs();
+            //$('#tabs1').tabs();
+
+
+            // Call function to test AJAX Avia Invoice
+            ajaxInvoiceTest();
+        }
+    </script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar_wrapper" class="navbar navbar-inverse">
+            <!-- Sidebar Header -->
+            <div class="sidebar_header">
+                <a href="#">
+                    <img src="~/Content/img/logo_small.png" alt="logo" class="sidebar_header_logo" />
+                </a>
+            </div>
+            <!-- Sidebar Links -->
+            <div class="nav sidebar-nav">
+                <ul class="sidebar_items_collection">
+                    <li class="sidebar_items">
+                        <div class="col-md-8">
+                            <a class="sidebar_item_title" href="#">
+                                Робочий стіл
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="sibebar_icons">
+                                <i class="fa fa-home fa-lg"></i>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="sidebar_items">
+                        <div class="col-md-8">
+                            <div class="container my_dropdown_container">
+                                <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                                    <span class="caret pull-right"></span>Авіаквитки
+                                </a>
+                                <ul class="dropdown-menu submenu_items_collection list-unstyled">
+                                    <li class="submenu_items">
+                                        <div class="col-md-12">
+                                            @Ajax.ActionLink("Групові замовлення", "GroupOrder", new { controller = "GroupOrders", area = "AviaTickets" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-12">
+                                            @Ajax.ActionLink("Накладна авіаційних квитків", "Invoice", new { controller = "Invoice", area = "AviaTickets" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="sibebar_icons">
+                                <i class="fa fa-plane fa-lg"></i>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="sidebar_items">
+                        <div class="col-md-8">
+                            <a class="sidebar_item_title" href="#">
+                                Залізничні квитки
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="sibebar_icons">
+                                <i class="fa fa-train fa-lg"></i>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="sidebar_items">
+                        <div class="col-md-8">
+                            <a class="sidebar_item_title" href="#">
+                                Страхування
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="sibebar_icons">
+                                <i class="fa fa-shield fa-lg"></i>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="sidebar_items">
+                        <div class="col-md-8">
+                            <a class="sidebar_item_title" href="#">
+                                Туризм
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="sibebar_icons">
+                                <i class="fa fa-globe fa-lg"></i>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="sidebar_items">
+                        <div class="col-md-8">
+                            <div class="container my_dropdown_container">
+                                <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                                    <span class="caret pull-right"></span>Довідники
+                                </a>
+                                <ul id="directories_dropdown" class="dropdown-menu submenu_items_collection list-unstyled">
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Авіакомпанії", "Index", new { controller = "AviaCompany", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "test" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Аеропорти", "Index", new { controller = "Airports", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Види сервісів", "Index", new { controller = "Services", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Договори контрагентів", "Index", new { controller = "Contracts", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Контрагенти", "Index", new { controller = "Counterparties", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Куратори", "Index", new { controller = "Curators", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Населені пункти", "Index", new { controller = "Settlements", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Номенклатура", "Index", new { controller = "Nomenclature", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Обмін валют", "Index", new { controller = "CurrencyExchange", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow" })
+                                        </div>
+                                    </li>
+                                    <li class="submenu_items">
+                                        <div class="col-md-9">
+                                            @Ajax.ActionLink("Фізичні особи контрагентів", "Index", new { controller = "PhysicalPerson", area = "ReferencesAvia" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="sibebar_icons">
+                                <i class="fa fa-info-circle fa-lg"></i>
+                            </span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav> <!-- Sidebar menu end -->
+        <!-- Page Content -->
+        <div class="page_content_wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="page_header col-md-12">
+                        <a href="#">
+                            <img src="~/Content/img/logo_small.png" alt="logo" class="sidebar_header_logo" />
+                        </a>
+                    </div>
+                </div>
+                <!-- Main content -->
+                <div class="page_items_wrapper col-md-12">
+                    <div id="mainWindow">
+                        Content
+                    </div>
+                </div>
+            </div><!-- /.page-content-wrapper -->
+        </div> <!-- /.wrapper -->
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.mCustomScrollbar.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $('#directories_dropdown').mCustomScrollbar();
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="AviaTicketXMLParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviaTicketXMLParser"
+        mc:Ignorable="d"
+        Title="Парсер Авіа Квитків" Height="281.213" Width="475.434">
+    <Grid Height="252" VerticalAlignment="Top" Margin="0,0,0,-2">
+        <Button Content="Обрати" HorizontalAlignment="Left" Margin="333,40,0,0" VerticalAlignment="Top" Width="114" Height="23" Click="ChooseTicketFolder"/>
+        <Button Content="Старт" HorizontalAlignment="Left" Margin="333,68,0,0" VerticalAlignment="Top" Width="114" Height="23" Click="StartMonitoring" />
+
+        <Button Content="Обрати квиток" HorizontalAlignment="Left" Margin="333,123,0,0" VerticalAlignment="Top" Width="115" Height="23" Click="ChooseTicket" />
+        <Button Content="Записати в БД" HorizontalAlignment="Left" Margin="333,151,0,0" VerticalAlignment="Top" Width="115" Height="23" Click="Button_Click_2"/>
+
+        <Button Content="Закрити програму" HorizontalAlignment="Left" Margin="333,208,0,0" VerticalAlignment="Top" Width="114" Height="23" Click="Button_Click"/>
+
+        <Label Content="Статус: очікування" Name="status" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="306"/>
+        <Label Content="Оберіть квиток для окремого збереження" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="306"/>
+        <Label Content="Оберіть теку з авіаквитками" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="365"/>
+
+        <TextBox Name="ticketFolderPath" HorizontalAlignment="Left" Height="35" Margin="10,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="306" IsReadOnly="True" />
+        <TextBox Name="ticketPath" HorizontalAlignment="Left" Height="37" Margin="10,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="306" IsReadOnly="True" />
+        <Button Content="Зупинити програму" HorizontalAlignment="Left" Margin="202,208,0,0" VerticalAlignment="Top" Width="114" Height="23" Click="Button_Click_1"/>
+        <Label Name="oneTicketTextBox" Content="" HorizontalAlignment="Left" Margin="11,159,0,0" VerticalAlignment="Top" Width="306"/>
+
+    </Grid>
+</Window>

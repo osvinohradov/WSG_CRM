@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSG.API", "WSG.UI\WSG.API.csproj", "{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSG.DAL", "WSG.DAL\WSG.DAL.csproj", "{54705054-132F-4DCB-AFD4-1869A6FF936D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSG.BLL", "WSG.BAL\WSG.BLL.csproj", "{C3286E5D-668F-4AF0-AC94-4499F17EE6DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{018C61E5-1CB3-48C2-A680-27853E81FF96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviaTicketParserFromMail", "Services\AviaTicketParserFromMail\AviaTicketParserFromMail.csproj", "{ACEC0755-B5C9-4360-B256-E994746A9CD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviaTicketXMLParser", "Services\AviaTicketXMLParser\AviaTicketXMLParser\AviaTicketXMLParser.csproj", "{A4AE9E69-092D-447D-92B2-2DB395638F9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviaTicketXMLParser.BLL", "Services\AviaTicketXMLParser\BLL\AviaTicketXMLParser.BLL.csproj", "{6523E76D-5AF4-4868-A36B-A716C1F93333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainTicketsParser", "Services\TrainTicketsParser\TrainTicketsParser\TrainTicketsParser.csproj", "{85050175-956D-49EC-8411-F33FE9767745}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WSG.WEB.UI(1)", "WSG.WEB.UI\", "{CECE892A-F491-497C-81AA-6B63B19D3EE1}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_36831"
+		Debug.AspNetCompiler.PhysicalPath = "WSG.WEB.UI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_36831\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_36831"
+		Release.AspNetCompiler.PhysicalPath = "WSG.WEB.UI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_36831\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "36831"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3286E5D-668F-4AF0-AC94-4499F17EE6DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3286E5D-668F-4AF0-AC94-4499F17EE6DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3286E5D-668F-4AF0-AC94-4499F17EE6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3286E5D-668F-4AF0-AC94-4499F17EE6DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEC0755-B5C9-4360-B256-E994746A9CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEC0755-B5C9-4360-B256-E994746A9CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEC0755-B5C9-4360-B256-E994746A9CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEC0755-B5C9-4360-B256-E994746A9CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4AE9E69-092D-447D-92B2-2DB395638F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4AE9E69-092D-447D-92B2-2DB395638F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4AE9E69-092D-447D-92B2-2DB395638F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4AE9E69-092D-447D-92B2-2DB395638F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6523E76D-5AF4-4868-A36B-A716C1F93333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6523E76D-5AF4-4868-A36B-A716C1F93333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6523E76D-5AF4-4868-A36B-A716C1F93333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6523E76D-5AF4-4868-A36B-A716C1F93333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85050175-956D-49EC-8411-F33FE9767745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85050175-956D-49EC-8411-F33FE9767745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85050175-956D-49EC-8411-F33FE9767745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85050175-956D-49EC-8411-F33FE9767745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACEC0755-B5C9-4360-B256-E994746A9CD7} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
+		{A4AE9E69-092D-447D-92B2-2DB395638F9B} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
+		{6523E76D-5AF4-4868-A36B-A716C1F93333} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
+		{85050175-956D-49EC-8411-F33FE9767745} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33CB79E5-AA2D-4C66-8BB7-16415DD91017}
+	EndGlobalSection
+EndGlobal
