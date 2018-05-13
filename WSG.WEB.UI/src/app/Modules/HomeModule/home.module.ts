@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './components/home/home.component';
+import { AviaModule } from '../AviaModule/avia.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    AviaModule
   ],
   exports: [
     HomeComponent
