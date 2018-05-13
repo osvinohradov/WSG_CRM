@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { InvoiceComponent } from './components/invoice/invoice.component';
+import { GroupInvoiceComponent } from './components/groupInvoice/groupInvoice.component';
 
 @NgModule({
   declarations: [
-    InvoiceComponent
+    InvoiceComponent,
+    GroupInvoiceComponent
   ],
   imports: [
     FormsModule,
     CommonModule
   ],
   exports: [
-    InvoiceComponent
+    InvoiceComponent,
+    GroupInvoiceComponent
   ],
   providers: [],
   bootstrap: []

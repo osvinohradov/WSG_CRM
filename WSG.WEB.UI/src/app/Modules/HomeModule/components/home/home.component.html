@@ -34,7 +34,7 @@
                 </li>
                 <li class="submenu_items">
                   <div class="col-md-12">
-                    <a href="#" routerLink="./heroes" routerLinkActive="active">Накладна авіаційних квитків</a>
+                    <a href="#">Накладна авіаційних квитків</a>
                     <!-- @Ajax.ActionLink("Накладна авіаційних квитків", "Invoice", new { controller = "Invoice", area = "AviaTickets" }, new AjaxOptions() { UpdateTargetId = "mainWindow", OnSuccess = "createTabsInAvia" })-->
                   </div>
                 </li>
@@ -176,9 +176,8 @@
       </div>
 
       <div class="page_items_wrapper col-md-12">
-        <router-outlet id="mainWindow">
-          <avia-invoice></avia-invoice>
-        </router-outlet>
+        <!-- <avia-invoice></avia-invoice> -->
+        <avia-group-invoice></avia-group-invoice>
       </div>
 
     </div>
