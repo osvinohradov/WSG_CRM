@@ -58,13 +58,20 @@
     <Compile Include="Models\Avia\AviaInvoice.cs" />
     <Compile Include="Models\Avia\AviaInvoiceFlight.cs" />
     <Compile Include="Models\Avia\AviaInvoiceTicket.cs" />
+    <Compile Include="Models\Reference\Airport.cs" />
+    <Compile Include="Models\Reference\AviaCompany.cs" />
+    <Compile Include="Models\Reference\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Avia\AviaInvoiceFlightRepository.cs" />
     <Compile Include="Repositories\Avia\AviaInvoiceRepository.cs" />
     <Compile Include="Repositories\Avia\AviaInvoiceTicketRepository.cs" />
     <Compile Include="Repositories\Avia\EFUnitOfWork.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Insurance\" />
+    <Folder Include="Models\Tourism\" />
+    <Folder Include="Models\Train\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
