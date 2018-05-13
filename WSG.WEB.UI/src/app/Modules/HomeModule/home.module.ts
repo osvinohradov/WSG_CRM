@@ -13,13 +13,9 @@ import { AviaModule } from '../AviaModule/avia.module';
   imports: [
     FormsModule,
     CommonModule,
-<<<<<<< Updated upstream
-    AviaModule
-=======
     RouterModule.forRoot([
       { path: '', component: HomeComponent }
     ])
->>>>>>> Stashed changes
   ],
   exports: [
     HomeComponent
