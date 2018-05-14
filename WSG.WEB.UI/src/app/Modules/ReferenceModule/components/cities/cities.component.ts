@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'avia-group-invoice',
-  templateUrl: './groupInvoice.component.html',
+  selector: 'reference-cities',
+  templateUrl: './cities.component.html',
   // styleUrls: ['./groupInvoice.component.css', './../../styles/invoicePopup.css', './../../styles/invoice.css']
-  styleUrls: ['./groupInvoice.component.css']
+  styleUrls: ['./cities.component.css']
 })
-export class GroupInvoiceComponent implements OnInit {
+export class CitiesComponent implements OnInit {
 
   constructor() { }
 
