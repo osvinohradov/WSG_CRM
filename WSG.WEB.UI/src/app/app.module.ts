@@ -1,17 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AviaModule } from './Modules/AviaModule/avia.module';
+import { TrainModule } from './Modules/TrainModule/train.module';
+import { InsuranceModule } from './Modules/InsuranceModule/insurance.module';
+import { TourismModule } from './Modules/TourismModule/tourism.module';
+import { ReferenceModule } from './Modules/ReferenceModule/reference.module';
 
-import { HomeModule } from './Modules/HomeModule/home.module';
+const routes : Routes = []
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent        
   ],
   imports: [
     BrowserModule,
-    HomeModule
+    AviaModule,
+    TrainModule,
+    InsuranceModule,
+    TourismModule,
+    ReferenceModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

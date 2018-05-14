@@ -1,22 +1,25 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { InvoiceComponent } from './components/invoice/invoice.component';
-import { GroupInvoiceComponent } from './components/groupInvoice/groupInvoice.component';
+import { AviaInvoiceComponent } from './components/invoice/invoice.component';
+import { AviaGroupInvoiceComponent } from './components/groupInvoice/groupInvoice.component';
+import { AviaRoutingModule } from './avia-routing.module';
 
 @NgModule({
   declarations: [
-    InvoiceComponent,
-    GroupInvoiceComponent
+    AviaInvoiceComponent,
+    AviaGroupInvoiceComponent    
   ],
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    AviaRoutingModule
   ],
   exports: [
-    InvoiceComponent,
-    GroupInvoiceComponent
+    AviaInvoiceComponent,
+    AviaGroupInvoiceComponent,
+    AviaRoutingModule
   ],
   providers: [],
   bootstrap: []

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css', './../../styles/invoicePopup.css', './../../styles/invoice.css']
 })
-export class InvoiceComponent implements OnInit {
+export class AviaInvoiceComponent implements OnInit {
 
   public aviaDescription:string = 'aviaDescription';
 
