@@ -344,20 +344,17 @@
           <form class="form-horizontal" role="form">
             <div class="form-group">
               <div class="my_input_style col-lg-2 col-md-4 col-sm-6">
-                <label class="control-label">Номер:</label>
-                <input type="text" class="form-control " />
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Номер" value="">
+                </mat-form-field>
               </div>
 
               <div class="my_input_style col-lg-2 col-md-2 col-sm-6">
-                <label class="control-label">Дата:</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" id="date" placeholder="Введіть дату" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                      <span class="fa fa-calendar my_input_icon"></span>
-                    </button>
-                  </span>
-                </div>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Введіть дату">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
               </div>
 
               <div class="my_input_style col-lg-7 col-md-4 col-sm-6">
@@ -626,179 +623,175 @@
               </div>
             </div>
 
-            <!--------------------------------------------- TABS -------------------------------------------->
-            <div id="tabs" class="form-group">
 
-              <ul>
-                <li><a href="#document_content">Зміст документу</a></li>
-                <li><a href="#total_amount">Загальний рахунок</a></li>
-                <li><a href="#bills">Сплати</a></li>
-              </ul>
-              <div id="document_content">
-                <div class="form-group">
-                  <div class="my_input_style col-md-12">
-                    <label class="control-label">Зміст:</label>
-                    <input type="text" class="form-control " />
+            <!-- Angular Material Tabs -->
+            <mat-tab-group>
+              <mat-tab label="Зміст документу">
+                <div id="document_content">
+                  <div class="form-group">
+                    <div class="my_input_style col-md-12">
+                      <label class="control-label">Зміст:</label>
+                      <input type="text" class="form-control " />
+                    </div>
                   </div>
-                </div>
 
-                <div class="form-group">
-                  <div class="my_input_style col-md-12">
-                    <label class="control-label">Коментар:</label>
-                    <input type="text" class="form-control" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="my_input_style col-md-4">
-                    <label class="control-label">Відповідальний:</label>
-                    <div class="input-group">
+                  <div class="form-group">
+                    <div class="my_input_style col-md-12">
+                      <label class="control-label">Коментар:</label>
                       <input type="text" class="form-control" />
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                          <span class="fa fa-ellipsis-h my_input_icon"></span>
-                        </button>
-                        <button class="btn btn-default" type="button">
-                          <span class="fa fa-search my_input_icon"></span>
-                        </button>
-                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="my_input_style col-md-4">
+                      <label class="control-label">Відповідальний:</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" />
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">
+                            <span class="fa fa-ellipsis-h my_input_icon"></span>
+                          </button>
+                          <button class="btn btn-default" type="button">
+                            <span class="fa fa-search my_input_icon"></span>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="my_input_style col-md-4">
+                      <label class="control-label">Агент:</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" />
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">
+                            <span class="fa fa-ellipsis-h my_input_icon"></span>
+                          </button>
+                          <button class="btn btn-default" type="button">
+                            <span class="fa fa-search my_input_icon"></span>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="my_input_style col-md-4">
+                      <label class="control-label">Куратор:</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" />
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">
+                            <span class="fa fa-ellipsis-h my_input_icon"></span>
+                          </button>
+                          <button class="btn btn-default" type="button">
+                            <span class="fa fa-search my_input_icon"></span>
+                          </button>
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="my_input_style col-md-4">
-                    <label class="control-label">Агент:</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" />
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                          <span class="fa fa-ellipsis-h my_input_icon"></span>
-                        </button>
-                        <button class="btn btn-default" type="button">
-                          <span class="fa fa-search my_input_icon"></span>
-                        </button>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="my_input_style col-md-4">
-                    <label class="control-label">Куратор:</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" />
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                          <span class="fa fa-ellipsis-h my_input_icon"></span>
-                        </button>
-                        <button class="btn btn-default" type="button">
-                          <span class="fa fa-search my_input_icon"></span>
-                        </button>
-                      </span>
+                  <div class="form-group">
+                    <div class="my_input_style col-md-2">
+                      <label class="control-label">Без реалізації:</label>
+                      <input type="checkbox" class="form-control" />
                     </div>
                   </div>
                 </div>
+              </mat-tab>
 
-                <div class="form-group">
-                  <div class="my_input_style col-md-2">
-                    <label class="control-label">Без реалізації:</label>
-                    <input type="checkbox" class="form-control" />
-                  </div>
-                </div>
-              </div>
-
-              <div id="total_amount">
-                <!-- Tab 2 -->
-                <div class="form-group my_input_style">
-                  <div class="my_input_style col-lg-3 col-md-3 col-sm-6">
-                    <label class="control-label">Загальний рахунок:</label>
-                    <input type="checkbox" class="form-control" />
-                  </div>
-                </div>
-                <div class="form-group my_input_style">
-                  <label for="comment">Зміст для загального рахунку та акта:</label>
-                  <textarea class="form-control" rows="7" id="comment"></textarea>
-                </div>
-
-              </div>
-
-              <div id="bills">
-                <!-- Tab 3 -->
-
-                <div class="row col-md-12">
-                  <!-- Buttons Tab 3 -->
-                  <div class="col-md-10">
-                    <!-- Table buttons -->
-                    <div class="pull-left button_right_margin" data-toggle="modal" data-target="#myFindBills">
-                      <button type="button" class="btn btn-default my_button_style bold">
-                        <span class="fa fa-search"></span>
-                        Знайти
-                      </button>
-                    </div>
-
-                    <div class="pull-left button_right_margin">
-                      <button type="button" class="btn btn-default my_button_style my_square_button" title="Відмінити пошук">
-                        <span class="fa fa-search-minus"></span>
-                      </button>
+              <mat-tab label="Загальний рахунок">
+                <div id="total_amount">
+                  <!-- Tab 2 -->
+                  <div class="form-group my_input_style">
+                    <div class="my_input_style col-lg-3 col-md-3 col-sm-6">
+                      <label class="control-label">Загальний рахунок:</label>
+                      <input type="checkbox" class="form-control" />
                     </div>
                   </div>
+                  <div class="form-group my_input_style">
+                    <label for="comment">Зміст для загального рахунку та акта:</label>
+                    <textarea class="form-control" rows="7" id="comment"></textarea>
+                  </div>
+                </div>
+              </mat-tab>
 
-                  <!-- DropDown ALL Actions -->
+              <mat-tab label="Сплати">
+                <div id="bills">
+                  <!-- Tab 3 -->
+                  <div class="row col-md-12">
+                    <!-- Buttons Tab 3 -->
+                    <div class="col-md-10">
+                      <!-- Table buttons -->
+                      <div class="pull-left button_right_margin" data-toggle="modal" data-target="#myFindBills">
+                        <button type="button" class="btn btn-default my_button_style bold">
+                          <span class="fa fa-search"></span>
+                          Знайти
+                        </button>
+                      </div>
 
-                  <div class="col-md-2">
-
-                    <div class="btn-group pull-right">
-                      <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
-                        Всі дії
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu my_dropdown_styles large_list" role="menu">
-                        <li>
-                          <a href="#" class="empty_icon">Знайти: Зараз немає поточного значення для пошуку</a>
-                        </li>
-                        <li>
-                          <a href="#"><span class="fa fa-search"></span>Знайти...</a>
-                        </li>
-                        <li>
-                          <a href="#"><span class="fa fa-search-minus"></span>Відмінити пошук</a>
-                        </li>
-                        <li>
-                          <a href="#"><span class="fa fa-cog"></span>Настроїти список...</a>
-                        </li>
-                        <li>
-                          <a href="#"><span class="fa fa-upload"></span>Вивести список...</a>
-                        </li>
-                        <li>
-                          <a href="#"><span class="fa fa-refresh"></span>Оновити</a>
-                        </li>
-                      </ul>
+                      <div class="pull-left button_right_margin">
+                        <button type="button" class="btn btn-default my_button_style my_square_button" title="Відмінити пошук">
+                          <span class="fa fa-search-minus"></span>
+                        </button>
+                      </div>
                     </div>
 
-                  </div><!-- DropDown ALL Actions end-->
-                </div> <!-- Buttons Tab 3 end -->
+                    <!-- DropDown ALL Actions -->
 
-                <div class="row">
-                  <!-- Table Tab 3 -->
-                  <div class="my_table_popup table-responsive col-md-12">
-                    <table class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th>Контрагент</th>
-                          <th>Документ сплати</th>
-                          <th class="code_column">Сума</th>
-                          <th>Валюта</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div> <!-- Table Tab 3 end -->
+                    <div class="col-md-2">
 
-              </div> <!-- СПЛАТИ end -->
-            </div>
+                      <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
+                          Всі дії
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu my_dropdown_styles large_list" role="menu">
+                          <li>
+                            <a href="#" class="empty_icon">Знайти: Зараз немає поточного значення для пошуку</a>
+                          </li>
+                          <li>
+                            <a href="#"><span class="fa fa-search"></span>Знайти...</a>
+                          </li>
+                          <li>
+                            <a href="#"><span class="fa fa-search-minus"></span>Відмінити пошук</a>
+                          </li>
+                          <li>
+                            <a href="#"><span class="fa fa-cog"></span>Настроїти список...</a>
+                          </li>
+                          <li>
+                            <a href="#"><span class="fa fa-upload"></span>Вивести список...</a>
+                          </li>
+                          <li>
+                            <a href="#"><span class="fa fa-refresh"></span>Оновити</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><!-- DropDown ALL Actions end-->
+                  </div> <!-- Buttons Tab 3 end -->
+                  <div class="row">
+                    <!-- Table Tab 3 -->
+                    <div class="my_table_popup table-responsive col-md-12">
+                      <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th>Контрагент</th>
+                            <th>Документ сплати</th>
+                            <th class="code_column">Сума</th>
+                            <th>Валюта</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div> <!-- Table Tab 3 end -->
+                </div> <!-- СПЛАТИ end -->
+              </mat-tab>
+            </mat-tab-group>
           </form>
         </div> <!-- Invoice Popup Row End -->
         <!--------------------------------------- GROUP ORDER (CREATE) POPUP - FORM - END ------------------------------------------------>
