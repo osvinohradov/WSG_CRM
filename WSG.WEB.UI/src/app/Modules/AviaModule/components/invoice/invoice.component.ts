@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'avia-invoice',
   templateUrl: './invoice.component.html',
-  styleUrls: ['./invoice.component.css', './../../styles/invoicePopup.css', './../../styles/invoice.css']
+  styleUrls: ['./invoice.component.css']
 })
 export class AviaInvoiceComponent implements OnInit {
 

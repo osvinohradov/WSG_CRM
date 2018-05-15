@@ -1,2 +1,22 @@
-﻿body {
+/* INDIVIDUAL COUNTERPARTIES (COUNTERPARTIES CREATE POPUP) POPUP */
+
+
+#indiviual_counterparties_passport_list .col-md-10, #indiviual_counterparties_passport_list .col-md-2, #indiviual_counterparties_passport_list .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
+
+#indiviual_counterparties_personal_info .input-group-btn span.my_input_icon, #indiviual_counterparties_passport_list .input-group-btn span.my_input_icon, #indiviual_counterparties_contact_info .input-group-btn span.my_input_icon {
+    font-size: 11px;
+    bottom: 0;
+}
+
+
+#myIndividualCounterpartiesCreateModal .my_fieldset{
+    margin-bottom: 10px;
+}
+
+#myIndividualCounterpartiesCreateModal h3.title_small_2{
+    margin-top: 0px;
+} /* INDIVIDUAL COUNTERPARTIES (COUNTERPARTIES CREATE POPUP) POPUP end */
+

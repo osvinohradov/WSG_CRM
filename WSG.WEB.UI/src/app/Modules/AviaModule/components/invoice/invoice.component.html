@@ -3,7 +3,7 @@
 
 <div class="row">
     <!-------------------------------------------------- INVOICE MAIN - MENU BAR ------------------------------------------------------>
-    <div class="container col-md-12 menu_no_padding">
+    <div class="container col-md-12">
         <div class="col-md-10">
             <div class="pull-left button_right_margin" data-toggle="modal" data-target="#myInvoiceModal">
                 <button type="button" class="btn btn-default my_button_style bold" id="createNewInvoice">
@@ -239,8 +239,9 @@
                     <!-- @{ 
                                 string aviaDescription = $"Авiа квток №{@item.TicketNumber} для {@item.FullName} за маршрутом Дата город вылета(время вылета) - город прилета(время прилета)";
                             } -->
-                    <td title="Авiа квиток № {{item.TicketNumber}} для {{ item.FullName }} за маршрутом Дата город вылета(время вылета) - город прилета(время прилета)"> 
-                        Авiа квиток № {{item.TicketNumber}} для {{ item.FullName }} за маршрутом Дата город вылета(время вылета) - город прилета(время прилета)
+                    <td title="Авiа квиток № {{item.TicketNumber}} для {{ item.FullName }} за маршрутом Дата город вылета(время вылета) - город прилета(время прилета)">
+                        Авiа квиток № {{item.TicketNumber}} для {{ item.FullName }} за маршрутом Дата город вылета(время вылета) - город прилета(время
+                        прилета)
                     </td>
                     <td>{{ item.Provider }}</td>
                     <td>{{ item.ProviderTax }}</td>
@@ -270,6 +271,201 @@
 
 <div id="myInvoiceModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Друк документів керований</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <button class="my-button-row">
+                        <span class="fa fa-print" aria-hidden="true"></span>
+                        Друк
+                    </button>
+                    <form action="" class="form-inline numberCopies" role="form">
+                        <div class="form-group">
+                            <label for="numberCopies">Копії:</label>
+                            <input type="number" name="numberCopies" id="numberCopies" class="form-control" value="1">
+                        </div>
+                    </form>
+                    <button class="my-button-row">
+                        <span class="fa fa-envelope-o my_icon_with_text" aria-hidden="true"></span>
+                        Відправити поштою
+                    </button>
+                    <button class="my-button-row">
+                        <div class="double-icons">
+                            <span class="fa fa-file-text-o" aria-hidden="true"></span>
+                            <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                    <button class="my-button-row">
+                        <div class="double-icons">
+                            <span class="fa fa-file-text-o" aria-hidden="true"></span>
+                            <span class="fa fa-cog" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                </div>
+                <div id="printArea">
+                    <header class="row">
+                        <h4>
+                            АКТ здачі-прійняття робіт (надання послуг) №
+                            <span id="act_number">18000010341</span> від
+                            <div id="act_date">12 квітня 2018р.</div>
+                        </h4>
+                    </header>
+                    <section id="act_body" class="row">
+                        <div class="row">
+                            <p class="p-indent">
+                                Ми, що ніжче підписалися, представники Замовника
+                                <span id="act_customer_name">фізична особа</span>, з одного боку, і представнік Виконавця Товариство з обмеженою відповідальністю
+                                <span id="act_llc_name">
+                                    <q>вордлсервіс груп</q>
+                                </span> Генеральний директор Ігор Дзуєнко, з іншого боку, склали цей акт про те, що на підставі наведених
+                                документів:
+                            </p>
+                            <p>
+                                Договір:
+                                <span id="act_contract_type">основний</span> по рахунках
+                            </p>
+                            <p>Виконавцем були виконані наступні роботи (надані такі послуги):</p>
+                            <table>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Найменування робіт, послуг</th>
+                                    <th>Кіл-сть</th>
+                                    <th>Од.</th>
+                                    <th>Ціна з ПДВ</th>
+                                    <th>Сума з ПДВ</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        Авіаційний квиток №
+                                        <span class="aviaticket_number">566-2405641722</span> для
+                                        <span class="act_client_name">сайфуліна гульнара</span> за маршрутом: виліт із
+                                        <span id="city_first_depature">київ</span>
+                                        <span id="date_first_depature">26.04.2018</span>, приліт
+                                        <span id="city_first_arrival">берлін</span>
+                                        <span id="date_first_arrival">26.04.2018</span>, виліт із
+                                        <span id="city_second_depature">берлін</span>
+                                        <span id="date_second_depature">28.04.2018</span>, приліт
+                                        <span id="city_second_arrival">київ</span>
+                                        <span id="date_second_arrival">28.04.2018</span>
+                                    </td>
+                                    <td>1</td>
+                                    <td>шт</td>
+                                    <td>11 299,00</td>
+                                    <td>11 299,00</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        Послуги агенції (сервісний збір) за оформлення авіаційного квитка (№
+                                        <span class="aviaticket_number">566-2405641722</span>) для (
+                                        <span class="act_client_name">сайфуліна гульнара</span>)
+                                    </td>
+                                    <td>1</td>
+                                    <td>грн</td>
+                                    <td>450,00</td>
+                                    <td>450,00</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div id="act_total_count" class="pull-right">
+                                <p>
+                                    Всього:
+                                    <span>11 749,00</span>
+                                </p>
+                                <p>
+                                    У тому числі ПДВ:
+                                    <span>75,00</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Загальна вартість робіт (послуг) без ПДВ складала
+                                <span>Одинадцять тисяч шістсот сідесят чотири гривені 00 копійок</span>, ПДВ
+                                <span>Сісдесят п'ять гривень 00 копійок</span>, загальна вартість робіт (послуг) з ПДВ
+                                <span>Одинадцять тисяч сімсот сорок дев'ять гривень 00 копійок</span>.
+                                <br />Замовник претензій по об'єму, якості та строкам виконання робіт (надання послуг) не має.
+                            </p>
+                            <p>
+                                Місце складання:
+                                <span id="act_signed_location">м.Київ</span>
+                            </p>
+                        </div>
+                    </section>
+                    <!-- Act Body End -->
+                    <!-- Signatures -->
+                    <section id="act_signatures">
+                        <div class="row">
+                            <table>
+                                <tr>
+                                    <th>
+                                        <p>Від виконавця*</p>
+                                    </th>
+                                    <th>
+                                        <p>Від замовника</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td id="act_signed_director_name">
+                                        Генеральний директор Ігор Дзуєнко
+                                        <p class="star_comments">* Відповідальний за здійснення господарської операції і правильність ії оформлення</p>
+                                    </td>
+                                    <td id="act_signed_client_name">
+                                        ФІЗИЧНА ОСОБА
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="act_signed_date">12.04.2018</span>
+                                    </td>
+                                    <td>
+                                        <span class="act_signed_date">12.04.2018</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Товариство з обмеженою відповідальністю
+                                        <br />"ВОРЛДСЕРВІС ГРУП",
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>код за ЄДРПОУ 32158383, тел.: 0445202727,</td>
+                                    <td>код за ДРФО 1111111</td>
+                                </tr>
+                                <tr>
+                                    <td>ІПН 321583826558,</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        р/р 26001402367063, у банку АТ "ОТП БАНК" в
+                                        <br /> м. Київ, МФО 300528,
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        юр. адреса: Україна, 01133, м.Київ, вул. Щорса,
+                                        <br /> буд. 32-А, н/п № 1-А
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Закрити</button>
+            </div>
+        </div>
+    </div>
 
         <!-- Modal content-->
         <div class="modal-content">
