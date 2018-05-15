@@ -1,1 +1,212 @@
-<app-main></app-main>
+<div class="wrapper">
+  <nav id="sidebar_wrapper" class="navbar navbar-inverse">
+    <div class="sidebar_header">
+      <a href="#">
+        <img src="../../assets/img/logo_small.png" alt="logo" class="sidebar_header_logo" />
+      </a>
+    </div>
+    <div class="nav sidebar-nav">
+      <ul class="sidebar_items_collection">
+        <li class="sidebar_items">
+          <div class="col-md-8">
+            <a class="sidebar_item_title" href="#">
+              Робочий стіл
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <span class="sibebar_icons">
+              <i class="fa fa-home fa-lg"></i>
+            </span>
+          </div>
+        </li>
+        <li class="sidebar_items">
+          <div class="col-md-8">
+            <div class="container my_dropdown_container">
+              <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                <span class="caret pull-right"></span>Авіаквитки
+              </a>
+              <ul class="dropdown-menu submenu_items_collection list-unstyled">
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/avia/groupinvoice" routerLinkActive="active">Групові замовлення</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/avia/invoice" routerLinkActive="active">Накладна авіаційних квитків</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span class="sibebar_icons">
+              <i class="fa fa-plane fa-lg"></i>
+            </span>
+          </div>
+        </li>
+        <li class="sidebar_items">
+          <div class="col-md-8">
+            <div class="container my_dropdown_container">
+              <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                <span class="caret pull-right"></span>Залізничні квитки
+              </a>
+              <ul class="dropdown-menu submenu_items_collection list-unstyled">
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/train/groupinvoice" routerLinkActive="active">Групові замовлення</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/train/invoice" routerLinkActive="active">Накладна залізничних квитків</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span class="sibebar_icons">
+              <i class="fa fa-train fa-lg"></i>
+            </span>
+          </div>
+        </li>
+        <li class="sidebar_items">
+          <div class="col-md-8">
+            <div class="container my_dropdown_container">
+              <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                <span class="caret pull-right"></span>Страхування
+              </a>
+              <ul class="dropdown-menu submenu_items_collection list-unstyled">
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/insurance/groupinvoice" routerLinkActive="active">Групові замовлення</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/insurance/invoice" routerLinkActive="active">Накладні страхування</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span class="sibebar_icons">
+              <i class="fa fa-shield fa-lg"></i>
+            </span>
+          </div>
+        </li>
+        <li class="sidebar_items">
+          <div class="col-md-8">
+
+            <div class="container my_dropdown_container">
+              <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                <span class="caret pull-right"></span>Туризм
+              </a>
+              <ul class="dropdown-menu submenu_items_collection list-unstyled">
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/tourism/groupinvoice" routerLinkActive="active">Групові замовлення</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-12">
+                    <a routerLink="/tourism/invoice" routerLinkActive="active">Накладні туризм</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span class="sibebar_icons">
+              <i class="fa fa-globe fa-lg"></i>
+            </span>
+          </div>
+        </li>
+        <li class="sidebar_items">
+          <div class="col-md-8">
+            <div class="container my_dropdown_container">
+              <a class="sidebar_item_title dropdown-toggle" href="#" data-toggle="dropdown">
+                <span class="caret pull-right"></span>Довідники
+              </a>
+              <ul id="directories_dropdown" class="dropdown-menu submenu_items_collection list-unstyled">
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/airline" routerLinkActive="active">Авіакомпанії</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/airport" routerLinkActive="active">Аеропорти</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/service" routerLinkActive="active">Види сервісів</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/counterparties-contracts" routerLinkActive="active">Договори контрагентiв</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/counterparty" routerLinkActive="active">Контрагенти</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/curator" routerLinkActive="active">Куратори</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/city" routerLinkActive="active">Населені пункти</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/nomenclature" routerLinkActive="active">Номенклатура</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/currency-exchange" routerLinkActive="active">Обмін валют</a>
+                  </div>
+                </li>
+                <li class="submenu_items">
+                  <div class="col-md-9">
+                    <a routerLink="/reference/individual-counterparties" routerLinkActive="active">Фізичні особи контрагентів</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span class="sibebar_icons">
+              <i class="fa fa-info-circle fa-lg"></i>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page_content_wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="page_header col-md-12">
+          <a href="#">
+            <img src="../../assets/img/logo_small.png" alt="logo" class="sidebar_header_logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="page_items_wrapper col-md-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
