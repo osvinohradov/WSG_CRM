@@ -42,6 +42,33 @@ export class AviaInvoiceComponent implements OnInit {
     }
   ]
 
+  public flights: Array<Object> = [
+    {
+      FlightNumber: '1',
+      ArrivalPlace : '2',
+      DeliveryPlace: '1',
+      ServiceKind: '0',
+      ArrivalDate: '0',
+      DeliveryDate: '0'
+    },
+    {
+      FlightNumber: '1',
+      ArrivalPlace : '2',
+      DeliveryPlace: '1',
+      ServiceKind: '0',
+      ArrivalDate: '0',
+      DeliveryDate: '0'
+    },
+    {
+      FlightNumber: '1',
+      ArrivalPlace : '2',
+      DeliveryPlace: '1',
+      ServiceKind: '0',
+      ArrivalDate: '0',
+      DeliveryDate: '0'
+    }
+  ]
+
 
 
   constructor() { }
