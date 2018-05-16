@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TrainTicketXmlModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TrainTicketXmlModelStoreContainer">
+    <EntitySet Name="Invoices" EntityType="TrainTicketXmlModel.Store.Invoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Travels" EntityType="TrainTicketXmlModel.Store.Travels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trips" EntityType="TrainTicketXmlModel.Store.Trips" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SoldSeats" EntityType="TrainTicketXmlModel.Store.SoldSeats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prices" EntityType="TrainTicketXmlModel.Store.Prices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CounterParts" EntityType="TrainTicketXmlModel.Store.CounterParts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Articles" EntityType="TrainTicketXmlModel.Store.Articles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="InvoiceTravel" Association="TrainTicketXmlModel.Store.InvoiceTravel">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="Travel" EntitySet="Travels" />
+    </AssociationSet>
+    <AssociationSet Name="TravelTrip" Association="TrainTicketXmlModel.Store.TravelTrip">
+      <End Role="Travel" EntitySet="Travels" />
+      <End Role="Trip" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="PriceSoldSeat" Association="TrainTicketXmlModel.Store.PriceSoldSeat">
+      <End Role="Price" EntitySet="Prices" />
+      <End Role="SoldSeat" EntitySet="SoldSeats" />
+    </AssociationSet>
+    <AssociationSet Name="PriceInvoice" Association="TrainTicketXmlModel.Store.PriceInvoice">
+      <End Role="Price" EntitySet="Prices" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="CounterPartInvoice" Association="TrainTicketXmlModel.Store.CounterPartInvoice">
+      <End Role="CounterPart" EntitySet="CounterParts" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="SoldSeatInvoice" Association="TrainTicketXmlModel.Store.SoldSeatInvoice">
+      <End Role="SoldSeat" EntitySet="SoldSeats" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="PriceArticle" Association="TrainTicketXmlModel.Store.PriceArticle">
+      <End Role="Price" EntitySet="Prices" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+    </Key>
+    <Property Name="InvoiceId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="OuterId" Type="int" Nullable="false" />
+    <Property Name="SalePointName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AspsCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AspsCode2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="IsElectronic" Type="bit" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="OwnerEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OwnerPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="BoardingPass" Type="int" Nullable="false" />
+    <Property Name="Price_PriceId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Travels">
+    <Key>
+      <PropertyRef Name="TravelId" />
+    </Key>
+    <Property Name="TravelId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GuidIdx" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransportType" Type="int" Nullable="true" />
+    <Property Name="DepartureDateTime" Type="datetime" Nullable="true" />
+    <Property Name="ArrivalDateTime" Type="datetime" Nullable="true" />
+    <Property Name="Duration" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Src_Idx" Type="bigint" Nullable="false" />
+    <Property Name="Src_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dst_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dst_Idx" Type="bigint" Nullable="false" />
+    <Property Name="Invoice_InvoiceId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trips">
+    <Key>
+      <PropertyRef Name="TripId" />
+    </Key>
+    <Property Name="TripId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Transporter" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nickame" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="State" Type="int" Nullable="false" />
+    <Property Name="El" Type="int" Nullable="false" />
+    <Property Name="BoardingPass" Type="int" Nullable="false" />
+    <Property Name="Src_Idx" Type="bigint" Nullable="false" />
+    <Property Name="Src_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dst_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dst_Idx" Type="bigint" Nullable="false" />
+    <Property Name="Travel_TravelId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SoldSeats">
+    <Key>
+      <PropertyRef Name="SoldSeatId" />
+    </Key>
+    <Property Name="SoldSeatId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CarId" Type="int" Nullable="false" />
+    <Property Name="TosId" Type="int" Nullable="false" />
+    <Property Name="Passenger_Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Passenger_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price_PriceId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Invoices_InvoiceId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prices">
+    <Key>
+      <PropertyRef Name="PriceId" />
+    </Key>
+    <Property Name="PriceId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Tax" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CounterParts">
+    <Key>
+      <PropertyRef Name="CounterPartId" />
+    </Key>
+    <Property Name="CounterPartId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Transporter_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Transporter_Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Insurer_Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Insurer_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Invoices_InvoiceId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Articles">
+    <Key>
+      <PropertyRef Name="ArticleId" />
+    </Key>
+    <Property Name="ArticleId" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PriceField" Type="float" Nullable="false" />
+    <Property Name="Price_PriceId" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <Association Name="InvoiceTravel">
+    <End Role="Invoice" Type="TrainTicketXmlModel.Store.Invoices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Travel" Type="TrainTicketXmlModel.Store.Travels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceId" />
+      </Principal>
+      <Dependent Role="Travel">
+        <PropertyRef Name="Invoice_InvoiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TravelTrip">
+    <End Role="Travel" Type="TrainTicketXmlModel.Store.Travels" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Trip" Type="TrainTicketXmlModel.Store.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Travel">
+        <PropertyRef Name="TravelId" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="Travel_TravelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PriceSoldSeat">
+    <End Role="Price" Type="TrainTicketXmlModel.Store.Prices" Multiplicity="1" />
+    <End Role="SoldSeat" Type="TrainTicketXmlModel.Store.SoldSeats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Price">
+        <PropertyRef Name="PriceId" />
+      </Principal>
+      <Dependent Role="SoldSeat">
+        <PropertyRef Name="Price_PriceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PriceInvoice">
+    <End Role="Price" Type="TrainTicketXmlModel.Store.Prices" Multiplicity="1" />
+    <End Role="Invoice" Type="TrainTicketXmlModel.Store.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Price">
+        <PropertyRef Name="PriceId" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="Price_PriceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CounterPartInvoice">
+    <End Role="CounterPart" Type="TrainTicketXmlModel.Store.CounterParts" Multiplicity="*" />
+    <End Role="Invoice" Type="TrainTicketXmlModel.Store.Invoices" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceId" />
+      </Principal>
+      <Dependent Role="CounterPart">
+        <PropertyRef Name="Invoices_InvoiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SoldSeatInvoice">
+    <End Role="SoldSeat" Type="TrainTicketXmlModel.Store.SoldSeats" Multiplicity="*" />
+    <End Role="Invoice" Type="TrainTicketXmlModel.Store.Invoices" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceId" />
+      </Principal>
+      <Dependent Role="SoldSeat">
+        <PropertyRef Name="Invoices_InvoiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PriceArticle">
+    <End Role="Price" Type="TrainTicketXmlModel.Store.Prices" Multiplicity="0..1" />
+    <End Role="Article" Type="TrainTicketXmlModel.Store.Articles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Price">
+        <PropertyRef Name="PriceId" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="Price_PriceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TrainTicketXmlModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TrainTicketXmlModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Invoices" EntityType="TrainTicketXmlModel.Invoice" />
+          <EntitySet Name="Travels" EntityType="TrainTicketXmlModel.Travel" />
+          <AssociationSet Name="InvoiceTravel" Association="TrainTicketXmlModel.InvoiceTravel">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="Travel" EntitySet="Travels" />
+          </AssociationSet>
+          <EntitySet Name="Trips" EntityType="TrainTicketXmlModel.Trip" />
+          <AssociationSet Name="TravelTrip" Association="TrainTicketXmlModel.TravelTrip">
+            <End Role="Travel" EntitySet="Travels" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <EntitySet Name="SoldSeats" EntityType="TrainTicketXmlModel.SoldSeat" />
+          <EntitySet Name="Prices" EntityType="TrainTicketXmlModel.Price" />
+          <AssociationSet Name="PriceSoldSeat" Association="TrainTicketXmlModel.PriceSoldSeat">
+            <End Role="Price" EntitySet="Prices" />
+            <End Role="SoldSeat" EntitySet="SoldSeats" />
+          </AssociationSet>
+          <AssociationSet Name="PriceInvoice" Association="TrainTicketXmlModel.PriceInvoice">
+            <End Role="Price" EntitySet="Prices" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <EntitySet Name="CounterParts" EntityType="TrainTicketXmlModel.CounterPart" />
+          <AssociationSet Name="CounterPartInvoice" Association="TrainTicketXmlModel.CounterPartInvoice">
+            <End Role="CounterPart" EntitySet="CounterParts" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="SoldSeatInvoice" Association="TrainTicketXmlModel.SoldSeatInvoice">
+            <End Role="SoldSeat" EntitySet="SoldSeats" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <EntitySet Name="Articles" EntityType="TrainTicketXmlModel.Article" />
+          <AssociationSet Name="PriceArticle" Association="TrainTicketXmlModel.PriceArticle">
+            <End Role="Price" EntitySet="Prices" />
+            <End Role="Article" EntitySet="Articles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="OuterId" Type="Int32" Nullable="false" />
+          <Property Name="SalePointName" Type="String" Nullable="false" />
+          <Property Name="AspsCode" Type="String" Nullable="false" />
+          <Property Name="AspsCode2" Type="String" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="IsElectronic" Type="Boolean" Nullable="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="OwnerEmail" Type="String" Nullable="false" />
+          <Property Name="OwnerPhone" Type="String" Nullable="false" />
+          <Property Name="OwnerId" Type="Int32" Nullable="false" />
+          <Property Name="BoardingPass" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Travels" Relationship="TrainTicketXmlModel.InvoiceTravel" FromRole="Invoice" ToRole="Travel" />
+          <NavigationProperty Name="Price" Relationship="TrainTicketXmlModel.PriceInvoice" FromRole="Invoice" ToRole="Price" />
+          <NavigationProperty Name="CounterPart" Relationship="TrainTicketXmlModel.CounterPartInvoice" FromRole="Invoice" ToRole="CounterPart" />
+          <NavigationProperty Name="SoldSeat" Relationship="TrainTicketXmlModel.SoldSeatInvoice" FromRole="Invoice" ToRole="SoldSeat" />
+        </EntityType>
+        <EntityType Name="Travel">
+          <Key>
+            <PropertyRef Name="TravelId" />
+          </Key>
+          <Property Name="TravelId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="GuidIdx" Type="Guid" Nullable="false" />
+          <Property Name="TransportType" Type="Int32" Nullable="true" />
+          <Property Name="DepartureDateTime" Type="DateTime" Nullable="true" />
+          <Property Name="ArrivalDateTime" Type="DateTime" Nullable="true" />
+          <Property Name="Duration" Type="String" Nullable="false" ConcurrencyMode="None" />
+          <NavigationProperty Name="Invoice" Relationship="TrainTicketXmlModel.InvoiceTravel" FromRole="Travel" ToRole="Invoice" />
+          <Property Name="Src" Type="TrainTicketXmlModel.Src" Nullable="false" />
+          <Property Name="Dst" Type="TrainTicketXmlModel.Dst" Nullable="false" />
+          <NavigationProperty Name="Trips" Relationship="TrainTicketXmlModel.TravelTrip" FromRole="Travel" ToRole="Trip" />
+        </EntityType>
+        <Association Name="InvoiceTravel">
+          <End Type="TrainTicketXmlModel.Invoice" Role="Invoice" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TrainTicketXmlModel.Travel" Role="Travel" Multiplicity="1" >
+          </End>
+        </Association>
+        <ComplexType Name="Src">
+          <Property Type="Int64" Name="Idx" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Dst">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int64" Name="Idx" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Trip">
+          <Key>
+            <PropertyRef Name="TripId" />
+          </Key>
+          <Property Name="TripId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Id" Type="String" Nullable="false" />
+          <Property Name="Transporter" Type="String" Nullable="false" />
+          <Property Name="Nickame" Type="String" Nullable="true" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="El" Type="Int32" Nullable="false" />
+          <Property Name="BoardingPass" Type="Int32" Nullable="false" />
+          <Property Name="Src" Type="TrainTicketXmlModel.Src" Nullable="false" />
+          <Property Name="Dst" Type="TrainTicketXmlModel.Dst" Nullable="false" />
+          <NavigationProperty Name="Travel" Relationship="TrainTicketXmlModel.TravelTrip" FromRole="Trip" ToRole="Travel" />
+        </EntityType>
+        <Association Name="TravelTrip">
+          <End Type="TrainTicketXmlModel.Travel" Role="Travel" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TrainTicketXmlModel.Trip" Role="Trip" Multiplicity="1" />
+        </Association>
+        <EntityType Name="SoldSeat">
+          <Key>
+            <PropertyRef Name="SoldSeatId" />
+          </Key>
+          <Property Name="SoldSeatId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CarId" Type="Int32" Nullable="false" />
+          <Property Name="TosId" Type="Int32" Nullable="false" />
+          <Property Name="Passenger" Type="TrainTicketXmlModel.Passenger" Nullable="false" />
+          <NavigationProperty Name="Price" Relationship="TrainTicketXmlModel.PriceSoldSeat" FromRole="SoldSeat" ToRole="Price" />
+          <NavigationProperty Name="Invoices" Relationship="TrainTicketXmlModel.SoldSeatInvoice" FromRole="SoldSeat" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="Price">
+          <Key>
+            <PropertyRef Name="PriceId" />
+          </Key>
+          <Property Name="PriceId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="Tax" Type="Double" Nullable="false" />
+          <NavigationProperty Name="SoldSeats" Relationship="TrainTicketXmlModel.PriceSoldSeat" FromRole="Price" ToRole="SoldSeat" />
+          <NavigationProperty Name="Invoices" Relationship="TrainTicketXmlModel.PriceInvoice" FromRole="Price" ToRole="Invoice" />
+          <NavigationProperty Name="Articles" Relationship="TrainTicketXmlModel.PriceArticle" FromRole="Price" ToRole="Article" />
+        </EntityType>
+        <ComplexType Name="Passenger">
+          <Property Type="String" Name="Surname" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+        </ComplexType>
+        <Association Name="PriceSoldSeat">
+          <End Type="TrainTicketXmlModel.Price" Role="Price" Multiplicity="1" />
+          <End Type="TrainTicketXmlModel.SoldSeat" Role="SoldSeat" Multiplicity="0..1" />
+        </Association>
+        <Association Name="PriceInvoice">
+          <End Type="TrainTicketXmlModel.Price" Role="Price" Multiplicity="1" />
+          <End Type="TrainTicketXmlModel.Invoice" Role="Invoice" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="CounterPart">
+          <Key>
+            <PropertyRef Name="CounterPartId" />
+          </Key>
+          <Property Name="CounterPartId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Transporter" Type="TrainTicketXmlModel.Transporter" Nullable="false" />
+          <Property Name="Insurer" Type="TrainTicketXmlModel.Insurer" Nullable="false" />
+          <NavigationProperty Name="Invoices" Relationship="TrainTicketXmlModel.CounterPartInvoice" FromRole="CounterPart" ToRole="Invoice" />
+        </EntityType>
+        <ComplexType Name="Transporter">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Text" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Insurer">
+          <Property Type="String" Name="Text" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+        </ComplexType>
+        <Association Name="CounterPartInvoice">
+          <End Type="TrainTicketXmlModel.CounterPart" Role="CounterPart" Multiplicity="1" />
+          <End Type="TrainTicketXmlModel.Invoice" Role="Invoice" Multiplicity="1" />
+        </Association>
+        <Association Name="SoldSeatInvoice">
+          <End Type="TrainTicketXmlModel.SoldSeat" Role="SoldSeat" Multiplicity="1" />
+          <End Type="TrainTicketXmlModel.Invoice" Role="Invoice" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="ArticleId" />
+          </Key>
+          <Property Name="ArticleId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="PriceField" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Price" Relationship="TrainTicketXmlModel.PriceArticle" FromRole="Article" ToRole="Price" />
+        </EntityType>
+        <Association Name="PriceArticle">
+          <End Type="TrainTicketXmlModel.Price" Role="Price" Multiplicity="0..1" />
+          <End Type="TrainTicketXmlModel.Article" Role="Article" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrainTicketXmlModelStoreContainer" CdmEntityContainer="TrainTicketXmlModelContainer">
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.Invoice)">
+        <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OuterId" ColumnName="OuterId" />
+          <ScalarProperty Name="SalePointName" ColumnName="SalePointName" />
+          <ScalarProperty Name="AspsCode" ColumnName="AspsCode" />
+          <ScalarProperty Name="AspsCode2" ColumnName="AspsCode2" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="IsElectronic" ColumnName="IsElectronic" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="OwnerEmail" ColumnName="OwnerEmail" />
+          <ScalarProperty Name="OwnerPhone" ColumnName="OwnerPhone" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="BoardingPass" ColumnName="BoardingPass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Travels">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.Travel)">
+        <MappingFragment StoreEntitySet="Travels">
+          <ScalarProperty Name="TravelId" ColumnName="TravelId" />
+          <ScalarProperty Name="GuidIdx" ColumnName="GuidIdx" />
+          <ScalarProperty Name="TransportType" ColumnName="TransportType" />
+          <ScalarProperty Name="DepartureDateTime" ColumnName="DepartureDateTime" />
+          <ScalarProperty Name="ArrivalDateTime" ColumnName="ArrivalDateTime" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ComplexProperty Name="Src" TypeName="TrainTicketXmlModel.Src">
+            <ScalarProperty Name="Idx" ColumnName="Src_Idx" />
+            <ScalarProperty Name="Name" ColumnName="Src_Name" />
+          </ComplexProperty>
+          <ComplexProperty Name="Dst" TypeName="TrainTicketXmlModel.Dst">
+            <ScalarProperty Name="Name" ColumnName="Dst_Name" />
+            <ScalarProperty Name="Idx" ColumnName="Dst_Idx" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trips">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.Trip)">
+        <MappingFragment StoreEntitySet="Trips">
+          <ScalarProperty Name="TripId" ColumnName="TripId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Transporter" ColumnName="Transporter" />
+          <ScalarProperty Name="Nickame" ColumnName="Nickame" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="El" ColumnName="El" />
+          <ScalarProperty Name="BoardingPass" ColumnName="BoardingPass" />
+          <ComplexProperty Name="Src" TypeName="TrainTicketXmlModel.Src">
+            <ScalarProperty Name="Idx" ColumnName="Src_Idx" />
+            <ScalarProperty Name="Name" ColumnName="Src_Name" />
+          </ComplexProperty>
+          <ComplexProperty Name="Dst" TypeName="TrainTicketXmlModel.Dst">
+            <ScalarProperty Name="Name" ColumnName="Dst_Name" />
+            <ScalarProperty Name="Idx" ColumnName="Dst_Idx" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoldSeats">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.SoldSeat)">
+        <MappingFragment StoreEntitySet="SoldSeats">
+          <ScalarProperty Name="SoldSeatId" ColumnName="SoldSeatId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+          <ScalarProperty Name="TosId" ColumnName="TosId" />
+          <ComplexProperty Name="Passenger" TypeName="TrainTicketXmlModel.Passenger">
+            <ScalarProperty Name="Surname" ColumnName="Passenger_Surname" />
+            <ScalarProperty Name="Name" ColumnName="Passenger_Name" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prices">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.Price)">
+        <MappingFragment StoreEntitySet="Prices">
+          <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CounterParts">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.CounterPart)">
+        <MappingFragment StoreEntitySet="CounterParts">
+          <ScalarProperty Name="CounterPartId" ColumnName="CounterPartId" />
+          <ComplexProperty Name="Transporter" TypeName="TrainTicketXmlModel.Transporter">
+            <ScalarProperty Name="Name" ColumnName="Transporter_Name" />
+            <ScalarProperty Name="Text" ColumnName="Transporter_Text" />
+          </ComplexProperty>
+          <ComplexProperty Name="Insurer" TypeName="TrainTicketXmlModel.Insurer">
+            <ScalarProperty Name="Text" ColumnName="Insurer_Text" />
+            <ScalarProperty Name="Name" ColumnName="Insurer_Name" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="IsTypeOf(TrainTicketXmlModel.Article)">
+        <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="ArticleId" ColumnName="ArticleId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PriceField" ColumnName="PriceField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="InvoiceTravel" TypeName="TrainTicketXmlModel.InvoiceTravel" StoreEntitySet="Travels">
+      <EndProperty Name="Invoice">
+        <ScalarProperty Name="InvoiceId" ColumnName="Invoice_InvoiceId" />
+      </EndProperty>
+      <EndProperty Name="Travel">
+        <ScalarProperty Name="TravelId" ColumnName="TravelId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TravelTrip" TypeName="TrainTicketXmlModel.TravelTrip" StoreEntitySet="Trips">
+      <EndProperty Name="Travel">
+        <ScalarProperty Name="TravelId" ColumnName="Travel_TravelId" />
+      </EndProperty>
+      <EndProperty Name="Trip">
+        <ScalarProperty Name="TripId" ColumnName="TripId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PriceSoldSeat" TypeName="TrainTicketXmlModel.PriceSoldSeat" StoreEntitySet="SoldSeats">
+      <EndProperty Name="Price">
+        <ScalarProperty Name="PriceId" ColumnName="Price_PriceId" />
+      </EndProperty>
+      <EndProperty Name="SoldSeat">
+        <ScalarProperty Name="SoldSeatId" ColumnName="SoldSeatId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PriceInvoice" TypeName="TrainTicketXmlModel.PriceInvoice" StoreEntitySet="Invoices">
+      <EndProperty Name="Price">
+        <ScalarProperty Name="PriceId" ColumnName="Price_PriceId" />
+      </EndProperty>
+      <EndProperty Name="Invoice">
+        <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CounterPartInvoice" TypeName="TrainTicketXmlModel.CounterPartInvoice" StoreEntitySet="CounterParts">
+      <EndProperty Name="Invoice">
+        <ScalarProperty Name="InvoiceId" ColumnName="Invoices_InvoiceId" />
+      </EndProperty>
+      <EndProperty Name="CounterPart">
+        <ScalarProperty Name="CounterPartId" ColumnName="CounterPartId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SoldSeatInvoice" TypeName="TrainTicketXmlModel.SoldSeatInvoice" StoreEntitySet="SoldSeats">
+      <EndProperty Name="Invoice">
+        <ScalarProperty Name="InvoiceId" ColumnName="Invoices_InvoiceId" />
+      </EndProperty>
+      <EndProperty Name="SoldSeat">
+        <ScalarProperty Name="SoldSeatId" ColumnName="SoldSeatId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PriceArticle" TypeName="TrainTicketXmlModel.PriceArticle" StoreEntitySet="Articles">
+      <EndProperty Name="Price">
+        <ScalarProperty Name="PriceId" ColumnName="Price_PriceId" />
+      </EndProperty>
+      <EndProperty Name="Article">
+        <ScalarProperty Name="ArticleId" ColumnName="ArticleId" />
+      </EndProperty>
+      <Condition ColumnName="Price_PriceId" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

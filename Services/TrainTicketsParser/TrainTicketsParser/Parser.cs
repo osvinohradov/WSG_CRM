@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using TrainTicketsParser.Entities;
+using TrainTicketsParser.Model;
 using TrainTicketsParser.Infrastructure;
 
 namespace TrainTicketsParser
@@ -10,6 +10,7 @@ namespace TrainTicketsParser
     public class Parser
     {
         private XmlDocument document = null;
+        private Invoice invoice = null;
 
         public void Load(string path)
         {
@@ -49,24 +50,26 @@ namespace TrainTicketsParser
 
         public Invoice Parse()
         {
-            Invoice invoice = new Invoice();
+            invoice = new Invoice();
+            invoice.InvoiceId = Guid.NewGuid();
             try
             {
-                invoice.Id = GetSingleValue("id");
-                invoice.OuterId = GetSingleValue("outer_id");
+                invoice.Id = Int64.Parse(GetSingleValue("id"));
+                invoice.OuterId = Int32.Parse(GetSingleValue("outer_id"));
                 invoice.SalePointName = GetSingleValue("sale_point_name");
                 invoice.AspsCode = GetSingleValue("asps_code");
                 invoice.AspsCode2 = GetSingleValue("asps_code_2");
                 invoice.State = Int32.Parse(GetSingleValue("state"));
-                invoice.IsElectronic = Int32.Parse(GetSingleValue("is_electronic"));
+                
+                invoice.IsElectronic = GetSingleValue("is_electronic") == "1" ? true : false;
                 invoice.CreationTime = DateTime.Parse(GetSingleValue("creation_time"));
                 invoice.OwnerEmail = GetSingleValue("owner_email");
                 invoice.OwnerPhone = GetSingleValue("owner_phone");
 
-                invoice.Travel = GetTravelObject();
-                invoice.SoldSeats = GetSoldSeat();
+                invoice.Travels = GetTravelObject();
+                invoice.SoldSeat = GetSoldSeat();
                 invoice.Price = GetPrice();
-                invoice.CounterParts = GetCounterPart();
+                invoice.CounterPart = GetCounterPart();
 
                 invoice.OwnerId = Int32.Parse(GetSingleValue("owner_id"));
                 invoice.BoardingPass = Int32.Parse(GetSingleValue("boarding_pass"));
@@ -76,16 +79,19 @@ namespace TrainTicketsParser
                 Console.WriteLine($"В процессе обработки XML документа произошла ошибка.");
                 ErrorReporter.WriteReportToFile(ex.Message);
             }
-            return null;
+            return invoice;
         }
 
         private string GetSingleValue(string name)
         {
             return this.document.GetElementsByTagName(name).Item(0).InnerText;
         }
+
         private Travel GetTravelObject()
         {
             Travel travel = new Travel();
+            travel.TravelId = Guid.NewGuid();
+            travel.Invoice = invoice;
             try
             {
                 XmlNode element = this.document.GetElementsByTagName("travel").Item(0);
@@ -115,7 +121,7 @@ namespace TrainTicketsParser
                                 foreach (XmlNode srcNodes in item.ChildNodes)
                                 {
                                     if (srcNodes.Name == "idx")
-                                        src.Idx = srcNodes.InnerText;
+                                        src.Idx = Int64.Parse(srcNodes.InnerText);
                                     else if (srcNodes.Name == "name")
                                         src.Name = srcNodes.InnerText;
                                 }
@@ -128,7 +134,7 @@ namespace TrainTicketsParser
                                 foreach (XmlNode dstNodes in item.ChildNodes)
                                 {
                                     if (dstNodes.Name == "idx")
-                                        dst.Idx = dstNodes.InnerText;
+                                        dst.Idx = Int64.Parse(dstNodes.InnerText);
                                     else if (dstNodes.Name == "name")
                                         dst.Name = dstNodes.InnerText;
                                 }
@@ -148,19 +154,20 @@ namespace TrainTicketsParser
                         case "trip":
                             {
                                 Trip trip = new Trip();
+                                trip.TripId = Guid.NewGuid();
                                 foreach (XmlNode tripNodes in item.ChildNodes)
                                 {
                                     if (tripNodes.Name == "id")
                                     {
-                                        trip.TripId = tripNodes.InnerText;
+                                        trip.Id = tripNodes.InnerText;
                                     }
                                     else if (tripNodes.Name == "src")
                                     {
                                         Src src = new Src();
-                                        foreach (XmlNode srcNodes in item.ChildNodes)
+                                        foreach (XmlNode srcNodes in tripNodes.ChildNodes)
                                         {
                                             if (srcNodes.Name == "idx")
-                                                src.Idx = srcNodes.InnerText;
+                                                src.Idx = Int64.Parse(srcNodes.InnerText);
                                             else if (srcNodes.Name == "name")
                                                 src.Name = srcNodes.InnerText;
                                         }
@@ -169,10 +176,10 @@ namespace TrainTicketsParser
                                     else if (tripNodes.Name == "dst")
                                     {
                                         Dst dst = new Dst();
-                                        foreach (XmlNode dstNodes in item.ChildNodes)
+                                        foreach (XmlNode dstNodes in tripNodes.ChildNodes)
                                         {
                                             if (dstNodes.Name == "idx")
-                                                dst.Idx = dstNodes.InnerText;
+                                                dst.Idx = Int64.Parse(dstNodes.InnerText);
                                             else if (dstNodes.Name == "name")
                                                 dst.Name = dstNodes.InnerText;
                                         }
@@ -195,7 +202,8 @@ namespace TrainTicketsParser
                                         trip.BoardingPass = Int32.Parse(tripNodes.InnerText);
                                     }
                                 }
-
+                                trip.Travel = travel;
+                                travel.Trips = trip;
                                 break;
                             }
                     }
@@ -203,6 +211,7 @@ namespace TrainTicketsParser
 
                 travel.ArrivalDateTime = DateTime.Parse(arrivalDate);
                 travel.DepartureDateTime = DateTime.Parse(departureDate);
+                travel.Invoice = invoice;
             }
             catch (Exception ex)
             {
@@ -215,6 +224,7 @@ namespace TrainTicketsParser
         private SoldSeat GetSoldSeat()
         {
             SoldSeat soldSeat = new SoldSeat();
+            soldSeat.SoldSeatId = Guid.NewGuid();
             XmlNode elements = this.document.GetElementsByTagName("sold_seats").Item(0);
             foreach (XmlNode element in elements)
             {
@@ -234,7 +244,7 @@ namespace TrainTicketsParser
                                         }
                                     case "surname":
                                         {
-                                            passenger.SurName = item.InnerText;
+                                            passenger.Surname = item.InnerText;
                                             break;
                                         }
                                 }
@@ -260,7 +270,8 @@ namespace TrainTicketsParser
                     case "price":
                         {
                             Price price = new Price();
-                            var articles = new List<Price.Article>();
+                            price.PriceId = Guid.NewGuid();
+                            var articles = new HashSet<Article>();
                             foreach (XmlNode item in element.ChildNodes)
                             {
                                 if (item.Name == "total")
@@ -273,7 +284,8 @@ namespace TrainTicketsParser
                                 }
                                 else if (item.Name == "articles")
                                 {
-                                    Price.Article article = new Price.Article();
+                                    Article article = new Article();
+                                    article.ArticleId = Guid.NewGuid();
                                     foreach (XmlNode art in item.ChildNodes)
                                     {
                                         if (art.Name == "code")
@@ -286,24 +298,29 @@ namespace TrainTicketsParser
                                         }
                                         else if (art.Name == "price")
                                         {
-                                            article.Price = Double.Parse(art.InnerText);
-                                        }
-                                        articles.Add(article);
+                                            article.PriceField = Double.Parse(art.InnerText);
+                                        }                                        
                                     }
+                                    article.Price = price;
+                                    articles.Add(article);
                                 }
                             }
-                            soldSeat.Price = price;
+                            price.Articles = articles;
+                            price.SoldSeats = soldSeat;
+                            soldSeat.Price = price;                            
                             break;
                         }
                 }
             }
+            soldSeat.Invoices = invoice;
             return soldSeat;
         }
 
         private Price GetPrice()
         {
             Price price = new Price();
-            var articles = new List<Price.Article>();
+            price.PriceId = Guid.NewGuid();
+            var articles = new HashSet<Article>();
             try
             {
                 XmlNode elements = this.document.GetElementsByTagName("price").Item(0);
@@ -319,7 +336,8 @@ namespace TrainTicketsParser
                     }
                     else if (element.Name == "articles")
                     {
-                        Price.Article article = new Price.Article();
+                        Article article = new Article();
+                        article.ArticleId = Guid.NewGuid();
                         foreach (XmlNode art in element.ChildNodes)
                         {
                             if (art.Name == "code")
@@ -333,23 +351,27 @@ namespace TrainTicketsParser
                             else if (art.Name == "price")
                             {
                                 article.PriceField = Double.Parse(art.InnerText);
-                            }
-                            articles.Add(article);
+                            }                            
                         }
+                        article.Price = price;
+                        articles.Add(article);
                     }
                 }
-                price.Articles = articles;
+                price.Articles = articles;                
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Произошла ошибка при парсинге элемента Price.");
                 throw ex;
             }
+            price.Invoices = invoice;
             return price;
         }
+
         private CounterPart GetCounterPart()
         {
             CounterPart counterPart = new CounterPart();
+            counterPart.CounterPartId = Guid.NewGuid();
             try
             {
                 XmlNode element = this.document.GetElementsByTagName("counterparts").Item(0);
@@ -379,13 +401,14 @@ namespace TrainTicketsParser
                         }
                         counterPart.Insurer = insurer;
                     }
-                }
+                }                
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Произошла ошибка при парсинге элемента CounterParts.");
                 throw ex;
             }
+            counterPart.Invoices = invoice;
             return counterPart;
         }
     }

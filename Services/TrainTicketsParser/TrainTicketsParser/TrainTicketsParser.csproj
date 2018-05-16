@@ -51,21 +51,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\CounterPart.cs" />
-    <Compile Include="Entities\Invoice.cs" />
-    <Compile Include="Entities\Price.cs" />
-    <Compile Include="Entities\SoldSeat.cs" />
-    <Compile Include="Entities\Travel.cs" />
     <Compile Include="Infrastructure\ErrorReporter.cs" />
-    <Compile Include="Model\TrainTicketModel.cs" />
+    <Compile Include="Model\Article.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CounterPart.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Dst.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Insurer.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Invoice.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Passenger.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Price.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SoldSeat.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Src.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainTicketXmlModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainTicketXmlModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainTicketXmlModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrainTicketXmlModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainTicketXmlModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Transporter.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Travel.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Trip.cs">
+      <DependentUpon>TrainTicketXmlModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Model\TrainTicketXmlModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TrainTicketXmlModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\TrainTicketXmlModel.edmx.diagram">
+      <DependentUpon>TrainTicketXmlModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\TrainTicketXmlModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TrainTicketXmlModel.Context.cs</LastGenOutput>
+      <DependentUpon>TrainTicketXmlModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\TrainTicketXmlModel.edmx.sql" />
+    <Content Include="Model\TrainTicketXmlModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TrainTicketXmlModel.cs</LastGenOutput>
+      <DependentUpon>TrainTicketXmlModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
