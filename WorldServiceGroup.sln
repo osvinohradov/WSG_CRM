@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviaTicketXMLParser.BLL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainTicketsParser", "Services\TrainTicketsParser\TrainTicketsParser\TrainTicketsParser.csproj", "{85050175-956D-49EC-8411-F33FE9767745}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WSG.WEB.UI(1)", "WSG.WEB.UI\", "{CECE892A-F491-497C-81AA-6B63B19D3EE1}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WSG.WEB.UI", "WSG.WEB.UI\", "{CECE892A-F491-497C-81AA-6B63B19D3EE1}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_36831"
@@ -38,6 +38,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WSG.WEB.UI(1)", "WSG.WEB.UI
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "36831"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserUI", "Services\ParserUI\ParserUI.csproj", "{90DB90F2-F5CF-44AA-831D-E7370A575B84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{CECE892A-F491-497C-81AA-6B63B19D3EE1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{90DB90F2-F5CF-44AA-831D-E7370A575B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DB90F2-F5CF-44AA-831D-E7370A575B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DB90F2-F5CF-44AA-831D-E7370A575B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DB90F2-F5CF-44AA-831D-E7370A575B84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{A4AE9E69-092D-447D-92B2-2DB395638F9B} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
 		{6523E76D-5AF4-4868-A36B-A716C1F93333} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
 		{85050175-956D-49EC-8411-F33FE9767745} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
+		{90DB90F2-F5CF-44AA-831D-E7370A575B84} = {018C61E5-1CB3-48C2-A680-27853E81FF96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33CB79E5-AA2D-4C66-8BB7-16415DD91017}

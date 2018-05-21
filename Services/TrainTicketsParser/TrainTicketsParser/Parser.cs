@@ -29,22 +29,22 @@ namespace TrainTicketsParser
             catch (FileNotFoundException ex)
             {
                 Console.WriteLine($"Возникла ошибка при открытии файла. Файл не найден.");
-                ErrorReporter.WriteReportToFile(ex.Message);
+                ErrorReporter.WriteReportToFile($"Возникла ошибка при открытии файла. Файл не найден.\n{ex.Message}");
             }
             catch (NullReferenceException ex)
             {
-                Console.WriteLine(ex.Message);
-                ErrorReporter.WriteReportToFile(ex.Message);
+                Console.WriteLine($"Ошибка открытия файла.");
+                ErrorReporter.WriteReportToFile($"Ошибка открытия файла.\n[{ex.Message}]");
             }
             catch (XmlException ex)
             {
-                Console.WriteLine($"При загрузке документа произошла ошибка.\n\r{ex.Message}");
-                ErrorReporter.WriteReportToFile(ex.Message);
+                Console.WriteLine($"При загрузке документа произошла ошибка.");
+                ErrorReporter.WriteReportToFile($"При загрузке документа произошла ошибка.\n{ex.Message}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Произошла непредвиденная ошибка.");
-                ErrorReporter.WriteReportToFile(ex.Message);
+                ErrorReporter.WriteReportToFile($"Произошла непредвиденная ошибка.\n{ex.Message}");
             }
         }
 
@@ -77,7 +77,7 @@ namespace TrainTicketsParser
             catch (Exception ex)
             {
                 Console.WriteLine($"В процессе обработки XML документа произошла ошибка.");
-                ErrorReporter.WriteReportToFile(ex.Message);
+                ErrorReporter.WriteReportToFile($"В процессе обработки XML документа произошла ошибка.\n{ex.Message}");
             }
             return invoice;
         }

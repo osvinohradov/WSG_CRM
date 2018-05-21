@@ -4,6 +4,7 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrainTicketsParser.Infrastructure;
 using TrainTicketsParser.Model;
 
 namespace TrainTicketsParser
@@ -24,22 +25,13 @@ namespace TrainTicketsParser
             try
             {
                 db.SaveChanges();
-                Console.WriteLine("Changes saved");
+                Console.WriteLine($"Бiлет з номером {invoice.Id} збережено.");
             }
             catch (DbEntityValidationException ex)
             {
-                foreach (DbEntityValidationResult validationError in ex.EntityValidationErrors)
-                {
-                    Console.WriteLine("Object: " + validationError.Entry.Entity.ToString());
-
-                        foreach (DbValidationError err in validationError.ValidationErrors)
-                    {
-                        Console.WriteLine(err.ErrorMessage + " ");
-                        }
-                }
+                Console.WriteLine($"");
+                ErrorReporter.WriteReportToFile($"");
             }
-
-
             Console.ReadKey();
         }
     }
