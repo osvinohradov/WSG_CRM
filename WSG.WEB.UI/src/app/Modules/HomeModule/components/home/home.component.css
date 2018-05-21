@@ -1,30 +1,6 @@
 
-
-body, ul {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #f5f5f5;
-  width: 100%;
-  height: 100vh;
-}
-
-.block {
-  display: block;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-/* ====================================== BOOTSTRAP CLASSES ======================================== */
-
-
-/* ====================================== BOOTSTRAP CLASSES -- END ================================= */
-
 /* SIDEBAR */
+
 #sidebar_wrapper {
   border-radius: 0px 4px 4px 0 !important;
   width: 320px;
@@ -123,10 +99,11 @@ span > i {
 
 #problem_icon {
   padding-left: 5px;
-}
+} /* SIDEBAR end */
+
+
 
 /* SUBMENU DROPDOWN */
-
 
 .submenu_items_collection {
   width: 100%;
@@ -192,9 +169,9 @@ span.caret.pull-right {
 
 div.container-fluid {
   padding: 0 !important;
-}
+} /* SUBMENU DROPDOWN end */
 
-/* ====================================== MAIN PAGE ======================================== */
+
 
 /* PAGE HEADER */
 
@@ -207,7 +184,9 @@ div.container-fluid {
 
 div.page_header {
   padding-left: 0;
-}
+} /* PAGE HEADER end */
+
+
 
 /* PAGE CONTENT */
 
@@ -217,14 +196,8 @@ div.page_header {
 
 div#mainWindow.container {
   margin: 0;
-}
+} /* PAGE CONTENT end */
 
-div.row {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-/* ====================================== MEDIA QUERIES ======================================== */
 
 
 

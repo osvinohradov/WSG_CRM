@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'avia-invoice',
   templateUrl: './invoice.component.html',
-  styleUrls: ['./invoice.component.css', './../../styles/invoicePopup.css', './../../styles/invoice.css']
+  styleUrls: ['./invoice.component.css']
 })
 export class AviaInvoiceComponent implements OnInit {
 
@@ -39,6 +39,33 @@ export class AviaInvoiceComponent implements OnInit {
       CurrencyExchange: '0',
       BookingCode: 'l',
       InvoiceId : 2
+    }
+  ]
+
+  public flights: Array<Object> = [
+    {
+      FlightNumber: '1',
+      ArrivalPlace : '2',
+      DeliveryPlace: '1',
+      ServiceKind: '0',
+      ArrivalDate: '0',
+      DeliveryDate: '0'
+    },
+    {
+      FlightNumber: '1',
+      ArrivalPlace : '2',
+      DeliveryPlace: '1',
+      ServiceKind: '0',
+      ArrivalDate: '0',
+      DeliveryDate: '0'
+    },
+    {
+      FlightNumber: '1',
+      ArrivalPlace : '2',
+      DeliveryPlace: '1',
+      ServiceKind: '0',
+      ArrivalDate: '0',
+      DeliveryDate: '0'
     }
   ]
 
