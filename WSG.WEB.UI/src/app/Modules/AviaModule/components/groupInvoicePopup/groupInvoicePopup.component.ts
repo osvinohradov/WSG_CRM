@@ -5,7 +5,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'avia-group-invoice-popup',
   templateUrl: './groupInvoicePopup.component.html',
-  styleUrls: ['./groupInvoicePopup.component.css', './../../styles/invoicePopup.css', './../../styles/invoice.css']
+  styleUrls: ['./groupInvoicePopup.component.css']
 })
 export class AviaGroupInvoicePopupComponent implements OnInit {
 

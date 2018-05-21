@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { AviaGroupInvoicePopupComponent } from './../groupInvoicePopup/groupInvoicePopup.component';
+import { AviaGroupInvoicePopupComponent } from '../groupInvoicePopup/groupInvoicePopup.component';
 
 @Component({
   selector: 'avia-group-invoice',

@@ -1,2 +1,27 @@
-﻿body {
+
+/* FIND POPUP -- Airports */
+
+#my_find_form {
+  margin-top: 0;
 }
+
+.my_radio_buttons {
+  vertical-align: middle;
+}
+
+.my_radio_class {
+  position: relative;
+  top: 5px;
+}
+
+.my_input_style .radio-inline {
+  margin-left: 25px;
+}
+
+.my_radio_label {
+  margin-bottom: 0 !important;
+  position: relative;
+  top: 1px;
+  margin-right: 15px;
+}
+/*FIND POPUP -- Airports -- end*/
