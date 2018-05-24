@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
 body, ul {
     margin: 0;
     padding: 0;
@@ -18,4 +18,45 @@ body {
 
 .inline-block {
     display: inline-block;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    position: relative;
+    top: 1px;
+    font-size: 18px;
+}
+
+.dropdown-menu .material-icons {
+    position: relative;
+    top: 1px;
+    font-size: 18px;
+}
+
+.btn {
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    height: 39px;
+}
+
+label{
+    font-weight: 400;
+}
+span.my_button_label {
+    display: inline-block;
+    position: relative;
+    bottom: 4px;
+    left: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
 }

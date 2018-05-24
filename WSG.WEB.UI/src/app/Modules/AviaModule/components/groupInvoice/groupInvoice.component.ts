@@ -14,8 +14,8 @@ export class AviaGroupInvoiceComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(AviaGroupInvoicePopupComponent, {
-      width: '90%',
-      height: '90vh'
+      width: '98%',
+      height: '98%'
     });
 
   }

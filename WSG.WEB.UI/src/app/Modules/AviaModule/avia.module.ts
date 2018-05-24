@@ -12,6 +12,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -38,7 +42,11 @@ import { AviaRoutingModule } from './avia-routing.module';
     MatButtonModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule,
+    MatTooltipModule,
+    MatMenuModule,
+    MatSelectModule
   ],
   entryComponents: [
     AviaGroupInvoicePopupComponent
