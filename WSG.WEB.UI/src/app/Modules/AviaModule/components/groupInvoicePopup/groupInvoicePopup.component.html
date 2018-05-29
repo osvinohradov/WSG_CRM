@@ -11,7 +11,6 @@
     <div class="container col-md-12">
       <div class="col-md-10">
         <div class="pull-left button_right_margin">
-          <!--  "#myGroupOrderModal" -->
           <button type="button" class="btn btn-default my_button_style bold">
             <span class="my_button_label">Провести та закрити</span>
           </button>
@@ -431,8 +430,6 @@
 
       <div id="my_table_controls" class="row">
 
-
-
         <div class="col-md-10">
           <!-- Table buttons -->
           <div class="pull-left button_right_margin">
@@ -604,15 +601,15 @@
 
             <div class="form-group">
               <div class="my_input_style input-full-screen col-md-12">
-                <mat-form-field >
+                <mat-form-field>
                   <input matInput placeholder="Номер:">
                 </mat-form-field>
               </div>
             </div>
 
             <div class="form-group">
-              <div class="my_input_style col-md-12">
-                <mat-form-field class="input-full-screen">
+              <div class="my_input_style input-full-screen col-md-12">
+                <mat-form-field>
                   <input matInput placeholder="Коментар:">
                 </mat-form-field>
               </div>
@@ -620,152 +617,73 @@
 
             <div class="form-group">
 
-                <div class="my_input_style">
-                    <mat-form-field class="example-form-field">
-                      <input matInput type="text" placeholder="Відповідальний:" />
-                      <button mat-button matSuffix mat-icon-button aria-label="Settings">
-                        <mat-icon>more_horiz</mat-icon>
-                      </button>
-                      <button mat-button matSuffix mat-icon-button aria-label="Search">
-                        <mat-icon>search</mat-icon>
-                      </button>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="my_input_style">
-                      <mat-form-field class="example-form-field">
-                        <input matInput type="text" placeholder="Агент:" />
-                        <button mat-button matSuffix mat-icon-button aria-label="Settings">
-                          <mat-icon>more_horiz</mat-icon>
-                        </button>
-                        <button mat-button matSuffix mat-icon-button aria-label="Search">
-                          <mat-icon>search</mat-icon>
-                        </button>
-                      </mat-form-field>
-                    </div>
-
-                    <div class="my_input_style">
-                        <mat-form-field class="example-form-field">
-                          <input matInput type="text" placeholder="Куратор:" />
-                          <button mat-button matSuffix mat-icon-button aria-label="Settings">
-                            <mat-icon>more_horiz</mat-icon>
-                          </button>
-                          <button mat-button matSuffix mat-icon-button aria-label="Search">
-                            <mat-icon>search</mat-icon>
-                          </button>
-                        </mat-form-field>
-                      </div>
-
-                      <div class="my_input_style ">
-                          <mat-checkbox class="" primary>Без реалізації:</mat-checkbox>
-                        </div>
-
+              <div class="my_input_style">
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" placeholder="Відповідальний:" />
+                  <button mat-button matSuffix mat-icon-button aria-label="Settings">
+                    <mat-icon>more_horiz</mat-icon>
+                  </button>
+                  <button mat-button matSuffix mat-icon-button aria-label="Search">
+                    <mat-icon>search</mat-icon>
+                  </button>
+                </mat-form-field>
               </div>
-         
+
+              <div class="my_input_style">
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" placeholder="Агент:" />
+                  <button mat-button matSuffix mat-icon-button aria-label="Settings">
+                    <mat-icon>more_horiz</mat-icon>
+                  </button>
+                  <button mat-button matSuffix mat-icon-button aria-label="Search">
+                    <mat-icon>search</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+
+              <div class="my_input_style">
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" placeholder="Куратор:" />
+                  <button mat-button matSuffix mat-icon-button aria-label="Settings">
+                    <mat-icon>more_horiz</mat-icon>
+                  </button>
+                  <button mat-button matSuffix mat-icon-button aria-label="Search">
+                    <mat-icon>search</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+
+              <div class="my_input_style ">
+                <mat-checkbox class="" primary>Без реалізації:</mat-checkbox>
+              </div>
+
+            </div>
+
           </div>
         </mat-tab>
+        <!-- TAB 1 - END -->
 
         <mat-tab label="Загальний рахунок">
+          <!-- TAB 2 - START -->
           <div id="total_amount">
-            <!-- Tab 2 -->
+
             <div class="form-group my_input_style">
-              <div class="my_input_style col-lg-3 col-md-3 col-sm-6">
-                <label class="control-label">Загальний рахунок:</label>
-                <input type="checkbox" class="form-control" />
+              <div class="my_input_style">
+                <mat-checkbox class="" primary>Загальний рахунок:</mat-checkbox>
               </div>
             </div>
             <div class="form-group my_input_style">
-              <label for="comment">Зміст для загального рахунку та акта:</label>
-              <textarea class="form-control" rows="7" id="comment"></textarea>
+              <mat-form-field class="col-md-12">
+                <textarea matInput placeholder="Зміст для загального рахунку та акта:"></textarea>
+              </mat-form-field>
             </div>
           </div>
         </mat-tab>
+        <!-- TAB 2 - END -->
 
         <mat-tab label="Сплати">
-          <div id="bills">
-            <!-- Tab 3 -->
-            <div class="row col-md-12">
-              <!-- Buttons Tab 3 -->
-              <div class="col-md-10">
-                <!-- Table buttons -->
-                <div class="pull-left button_right_margin" data-toggle="modal" data-target="#myFindBills">
-                  <button type="button" class="btn btn-default my_button_style bold">
-                    <span class="fa fa-search"></span>
-                    Знайти
-                  </button>
-                </div>
-
-                <div class="pull-left button_right_margin">
-                  <button type="button" class="btn btn-default my_button_style my_square_button" title="Відмінити пошук">
-                    <span class="fa fa-search-minus"></span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- DropDown ALL Actions -->
-
-              <div class="col-md-2">
-
-                <div class="btn-group pull-right">
-                  <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
-                    Всі дії
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu my_dropdown_styles large_list" role="menu">
-                    <li>
-                      <a href="#" class="empty_icon">Знайти: Зараз немає поточного значення для пошуку</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="fa fa-search"></span>Знайти...</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="fa fa-search-minus"></span>Відмінити пошук</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="fa fa-cog"></span>Настроїти список...</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="fa fa-upload"></span>Вивести список...</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="fa fa-refresh"></span>Оновити</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- DropDown ALL Actions end-->
-            </div>
-            <!-- Buttons Tab 3 end -->
-            <div class="row">
-              <!-- Table Tab 3 -->
-              <div class="my_table_popup table-responsive col-md-12">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th>Контрагент</th>
-                      <th>Документ сплати</th>
-                      <th class="code_column">Сума</th>
-                      <th>Валюта</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- Table Tab 3 end -->
-          </div>
+          <!-- TAB 3 - START -->
+           
           <!-- СПЛАТИ end -->
         </mat-tab>
       </mat-tab-group>
@@ -774,16 +692,18 @@
   <!-- Invoice Popup Row End -->
   <!--------------------------------------- GROUP ORDER (CREATE) POPUP - FORM - END ------------------------------------------------>
 
+  <div id="groupInvoiceModalFooter" class="clearfix-overflow">
+    <div class="pull-right button_right_margin">
+      <button type="button" class="btn btn-default my_button_style bold" (click)="closePopup()">
+        <span class="my_button_label">Закрити</span>
+
+      </button>
+    </div>
+
+  </div>
 </div>
 <!-- Modal Body End -->
-<div class="">
-  <div class="pull-right button_right_margin">
-    <button type="button" class="btn btn-default my_button_style bold outer_modal_footer_button" (click)="closePopup()">
-      Закрити
-    </button>
-  </div>
 
-</div>
 
 <!-- Modal Content End -->
 

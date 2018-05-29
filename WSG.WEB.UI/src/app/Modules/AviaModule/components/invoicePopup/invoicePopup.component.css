@@ -1,3 +1,5 @@
+/* From GroupInvoicePopup.css */
+
 div#bills{
     padding-bottom: 35px;
 }
@@ -7,7 +9,7 @@ div#document_content{
 }
 
 
-div#groupInvoicePopup {
+div#invoicePopup {
     padding: 15px !important;
 }
 
@@ -46,12 +48,12 @@ div#groupInvoicePopup {
     display: inline-block;
 }
 
-#groupInvoicePopup .my_button_label {
+#invoicePopup .my_button_label {
     bottom: 0;
     left: 0;
 }
 
-#groupInvoicePopup div.row.my_menu_buttons {
+#invoicePopup div.row.my_menu_buttons {
     margin-top: 10px;
     margin-right: -30px;
     margin-left: -30px;
@@ -147,4 +149,84 @@ div#groupInvoiceModalFooter span.my_button_label{
 #my_table_popup_tab3.my_table_style{
     margin-bottom:0px;
     padding-right: 0px;
+}  /* From GroupInvoicePopup.css End */
+
+
+div#invoicePopup h2.title_main_page_margin{
+    margin-top:0 !important;
+}
+
+span.my_menu_label_after{
+    position: relative;
+    bottom: 5px !important;
+}
+
+span.material-icons{
+    top:0 !important;
+}
+
+.my_input_style mat-checkbox{
+    margin-right: 15px;
+}
+
+.my_input_style.my_ng_checkbox{
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+mat-tab-content{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.my_popup_form {
+    margin-top: 25px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+#detail{
+    padding-top: 18px ;
+}
+
+.my_input_style h4.column-title{
+    margin-top: 35px;
+}
+
+
+div.relative-parent{
+    position: relative;
+    padding-left: 0px;
+}
+
+div#colum-title_4inputs.my_input_style_header{
+    position: relative;
+    top: 28px;
+}
+
+div.weird-columns h4{
+    margin-top: -20px !important;
+}
+
+div.my_last_margin-bottom{
+    margin-bottom: 35px !important;
+}
+
+div#colum-title_5inputs.my_input_style_header{
+    position: relative;
+    top: 33px;
+}
+
+div.weird-columns2 h4{
+    margin-top: -45px !important;
+}
+
+div#additional_information{
+    margin-top: 38px;
+    margin-bottom: 18px;
+}
+
+div#invoiceModalFooter span.my_button_label{
+    left:0;
+    bottom: 0;
 }

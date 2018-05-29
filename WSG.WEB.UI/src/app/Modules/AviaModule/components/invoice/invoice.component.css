@@ -1,43 +1,9 @@
 ﻿
 /* MODAL LAYOUT STYLES */
 
-.modal {
-    text-align: center;
-    padding: 0 !important;
-}
-
-.modal:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -4px;
-}
-
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-    width: 95%;
-    margin: auto;
-}
-
-.modal-dialog.my_modal_sm{
-    width: 60%;
-}
-
-.modal-body{
-    margin-top: 10px;
-}
-
 .modal-content {
     background-color: #f5f5f5 !important;
-}
-
-.outer_modal_footer_button{
-    margin-right: 13px !important;
 } /* MODAL LAYOUT STYLES end */
-
 
 
 /* TABLE STYLES */
@@ -132,6 +98,51 @@ tr{
 
 /* MENU BAR */
 
+#invoiceMain .material-icons {
+    top:0;
+}
+
+#invoiceMain span.my_button_label, #invoiceMain span.my_menu_label_after{
+    bottom: 5px;
+}
+
+span.my_button_label, span.my_menu_label_after{
+    margin-right:3px;
+}
+
+span.my_menu_label_after{
+    margin-left:3px;
+}
+
+
+ul.my_dropdown_styles a.empty_icon {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 42px;
+} 
+
+.empty_icon div{
+    position: relative;
+    bottom:3px;
+    float: right;
+    padding-right: 12px;
+}
+
+.empty_icon .my_menu_label{
+    bottom: 0px;
+    margin-left: 0;
+}
+
+span.my_menu_label{
+    position: relative;
+    bottom: 4px;
+}
+
+span.my_menu_label_after{
+    position: relative;
+    bottom: 4px;
+}
+
 button.btn.btn-default.my_button_style {
     background-color: #dadde5;
     cursor: pointer;
@@ -197,7 +208,11 @@ span > i {
     width: 40px;
 } /* MENU BAR end */
 
-
+.dropdown-menu div.my_menu_icon{
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+}
 
 /* DROPDOWN ALL Actions */
 
@@ -255,10 +270,6 @@ ul.my_dropdown_styles span{
     min-width: 12px;
     margin-right: 10px;
     margin-left: 12px;
-}
-
-ul.my_dropdown_styles a.empty_icon {
-    padding-left: 34px;
 } /* DROPDOWN ALL Actions end */
 
 
@@ -288,6 +299,7 @@ h2 span {
     margin-left: 2px;
     margin-right: 2px;
     margin-bottom: 0;
+    margin-top: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #dbdbdb;
 }

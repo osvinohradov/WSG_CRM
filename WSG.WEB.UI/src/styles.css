@@ -16,6 +16,10 @@ body {
     display: block;
 }
 
+.clearfix-overflow{
+    overflow: hidden;
+}
+
 .inline-block {
     display: inline-block;
 }
@@ -34,6 +38,8 @@ body {
     top: 1px;
     font-size: 18px;
 }
+
+
 
 .dropdown-menu .material-icons {
     position: relative;

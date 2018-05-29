@@ -5,7 +5,6 @@ import { AviaGroupInvoicePopupComponent } from '../groupInvoicePopup/groupInvoic
 @Component({
   selector: 'avia-group-invoice',
   templateUrl: './groupInvoice.component.html',
-  // styleUrls: ['./groupInvoice.component.css', './../../styles/invoicePopup.css', './../../styles/invoice.css']
   styleUrls: ['./groupInvoice.component.css']
 })
 export class AviaGroupInvoiceComponent implements OnInit {

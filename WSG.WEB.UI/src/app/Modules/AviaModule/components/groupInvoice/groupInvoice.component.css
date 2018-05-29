@@ -4,10 +4,7 @@
 .modal-content {
     background-color: #f5f5f5 !important;
 }
-
-.outer_modal_footer_button{
-    margin-right: 13px !important;
-} /* MODAL LAYOUT STYLES end */
+/* MODAL LAYOUT STYLES end */
 
 
 
@@ -56,11 +53,7 @@ td {
     padding-right: 0px;
 }
 
-#my_table_popup.my_table_style {
-    margin-top: 18px;
-    margin-bottom:35px;
-    padding-right: 30px;
-}
+
 
 .my_table_style th{
     text-align: center;
@@ -207,6 +200,15 @@ span > i {
     cursor: default;
 }
 
+span.my_button_label, span.my_menu_label_after{
+    margin-right:3px;
+}
+
+span.my_menu_label_after{
+    margin-left:3px;
+}
+
+
 ul.my_dropdown_styles {
     background-color: white;
     border: 1px solid #ccc;
@@ -262,6 +264,8 @@ ul.my_dropdown_styles a.empty_icon {
     bottom: 0px;
     margin-left: 0;
 }
+
+
 /* DROPDOWN ALL Actions end */
 
 
@@ -451,6 +455,11 @@ option{
 #tickets .col-md-10, #tickets .col-md-2, #tickets .col-md-12 {
     padding-left: 0;
     padding-right: 0;
+}
+
+div#bills, div#race, div#tickets{
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 
 #bills .table-responsive {
