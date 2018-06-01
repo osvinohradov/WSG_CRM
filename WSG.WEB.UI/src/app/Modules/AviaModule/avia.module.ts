@@ -12,11 +12,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 
 import { AviaInvoiceComponent } from './components/invoice/invoice.component';
 import { AviaGroupInvoiceComponent } from './components/groupInvoice/groupInvoice.component';
+import { AviaInvoicePopupComponent } from './components/invoicePopup/invoicePopup.component';
+
 import { AviaGroupInvoicePopupComponent } from './components/groupInvoicePopup/groupInvoicePopup.component';
 import { AviaRoutingModule } from './avia-routing.module';
 
@@ -24,7 +32,8 @@ import { AviaRoutingModule } from './avia-routing.module';
   declarations: [
     AviaInvoiceComponent,
     AviaGroupInvoiceComponent ,
-    AviaGroupInvoicePopupComponent   
+    AviaGroupInvoicePopupComponent,
+    AviaInvoicePopupComponent   
   ],
   imports: [
     FormsModule,
@@ -38,13 +47,21 @@ import { AviaRoutingModule } from './avia-routing.module';
     MatButtonModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule,
+    MatTooltipModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   entryComponents: [
-    AviaGroupInvoicePopupComponent
+    AviaGroupInvoicePopupComponent,
+    AviaInvoicePopupComponent
   ],
   exports: [
     AviaInvoiceComponent,
+    AviaInvoicePopupComponent,
+    AviaGroupInvoicePopupComponent,
     AviaGroupInvoiceComponent,
     AviaRoutingModule
   ],

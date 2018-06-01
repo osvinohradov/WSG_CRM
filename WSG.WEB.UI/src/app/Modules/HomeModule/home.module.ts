@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { AviaModule } from '../AviaModule/avia.module';
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [];
 
@@ -17,6 +18,7 @@ const routes: Routes = [];
   imports: [
     FormsModule,
     CommonModule,
+    MatIconModule,
     RouterModule.forRoot(routes)
   ],
   exports: [

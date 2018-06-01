@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { AviaInvoicePopupComponent } from '../invoicePopup/invoicePopup.component';
 
 @Component({
   selector: 'avia-invoice',
@@ -71,7 +73,15 @@ export class AviaInvoiceComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(AviaInvoicePopupComponent, {
+      width: '98%',
+      height: '98%'
+    });
+
+  }
 
   ngOnInit() {
   }

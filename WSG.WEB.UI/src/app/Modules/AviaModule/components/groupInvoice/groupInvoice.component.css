@@ -1,42 +1,10 @@
 
 /* MODAL LAYOUT STYLES */
 
-.modal {
-    text-align: center;
-    padding: 0 !important;
-}
-
-.modal:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -4px;
-}
-
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-    width: 95%;
-    margin: auto;
-}
-
-.modal-dialog.my_modal_sm{
-    width: 60%;
-}
-
-.modal-body{
-    margin-top: 10px;
-}
-
 .modal-content {
     background-color: #f5f5f5 !important;
 }
-
-.outer_modal_footer_button{
-    margin-right: 13px !important;
-} /* MODAL LAYOUT STYLES end */
+/* MODAL LAYOUT STYLES end */
 
 
 
@@ -80,17 +48,12 @@ td {
     margin-top: 18px;
     margin-bottom: 18px;
     margin-left: 16px;
-    margin-right: 16px;
+    margin-right: 0px;
     padding-left: 0;
-    padding-right: 0;
+    padding-right: 0px;
 }
 
-.my_table_popup {
-    margin-top: 18px;
-    margin-bottom: 0;
-    padding-left: 1px !important;
-    padding-right: 0;
-}
+
 
 .my_table_style th{
     text-align: center;
@@ -98,8 +61,7 @@ td {
 
 .table-responsive {
     max-height: 195px;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left:0;
 }
 
 tr{
@@ -114,14 +76,14 @@ tr{
 
 .my_fieldset {
     margin-bottom: 30px;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .my_fieldset_sm {
     margin-bottom: 0px;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #contracts_main_tab .my_fieldset{
@@ -140,11 +102,27 @@ button.btn.btn-default.my_button_style {
     border: none;
     margin-left: 1px;
     margin-right: 1px;
-    padding: 11px;
 }
 
 .my_square_button{
     width: 39px;
+    height: 39px;
+}
+
+span.my_button_label{
+    font-weight: normal;
+}
+
+span.my_menu_label{
+    position: relative;
+    bottom: 4px;
+}
+
+span.my_menu_label_after{
+    position: relative;
+    display: inline-block;
+    bottom: 4px;
+    margin-right: 3px;
 }
 
 .btn:focus {
@@ -173,8 +151,8 @@ h2 {
 .title_small_2{
     font-size: 1.250em !important;
     margin-top: 20px;
-    margin-bottom: 0;
-    margin-left: 2px;
+    margin-bottom: 15px;
+    margin-left: 17px;
 }
 
 .menu_icons:focus {
@@ -222,6 +200,15 @@ span > i {
     cursor: default;
 }
 
+span.my_button_label, span.my_menu_label_after{
+    margin-right:3px;
+}
+
+span.my_menu_label_after{
+    margin-left:3px;
+}
+
+
 ul.my_dropdown_styles {
     background-color: white;
     border: 1px solid #ccc;
@@ -239,7 +226,7 @@ ul.my_dropdown_styles.small_list {
 }
 
 ul.my_dropdown_styles.large_list {
-    min-width: 305px;
+    min-width: 285px;
 }
 
 ul.my_dropdown_styles.small_list a{
@@ -253,17 +240,38 @@ ul.my_dropdown_styles a{
 ul.my_dropdown_styles span{
     display: inline-block;
     min-width: 12px;
-    margin-right: 10px;
     margin-left: 12px;
 }
 
+.dropdown-menu div.my_menu_icon{
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
 ul.my_dropdown_styles a.empty_icon {
-    padding-left: 34px;
-} /* DROPDOWN ALL Actions end */
+    padding-left: 42px;
+} 
+
+.empty_icon div{
+    position: relative;
+    bottom:3px;
+    float: right;
+    padding-right: 12px;
+}
+
+.empty_icon .my_menu_label{
+    bottom: 0px;
+    margin-left: 0;
+}
+
+
+/* DROPDOWN ALL Actions end */
 
 
 
 /* FORM STYLES */
+
 h2 span {
     font-size: 0.688em;
     display: inline-block;
@@ -439,56 +447,6 @@ option{
     margin-bottom: 25px;
 }
 
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-    font-size: 0.875em !important;
-}
-
-.ui-widget-header {
-    background-color: #dadde5 !important;
-    border: none;
-    border-radius: unset;
-}
-
-.ui-helper-reset{
-    line-height: 22px !important;
-}
-
-div#tabs, div#tabs1 {
-    padding: 0;
-    background-color: #f5f5f5;
-    
-}
-
-.ui-widget.ui-widget-content {
-    margin-left: 2px;
-    margin-right: 2px;
-    border: 1px solid #ccc;
-}
-
-a#ui-id-1.ui-tabs-anchor, a#ui-id-2.ui-tabs-anchor, a#ui-id-3.ui-tabs-anchor, a#ui-id-4.ui-tabs-anchor, a#ui-id-5.ui-tabs-anchor, a#ui-id-6.ui-tabs-anchor {
-    color: #2b303b !important;
-    font-size: 0.875em;
-    outline: none !important;
-    cursor: pointer;
-}
-
-a#ui-id-7.ui-tabs-anchor, a#ui-id-8.ui-tabs-anchor, a#ui-id-9.ui-tabs-anchor {
-    color: #2b303b !important;
-    font-size: 0.875em;
-    outline: none !important;
-    cursor: pointer;
-}
-
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
-    background-color: #7db0db !important;
-    border: none !important;
-    font-weight: bold;
-}
-
-.ui-tabs .ui-tabs-panel{
-    padding: 1.4em 1.4em !important;
-}
-
 #race .col-md-10, #race .col-md-2, #race .col-md-12{
     padding-left: 0;
     padding-right: 0;
@@ -497,6 +455,11 @@ a#ui-id-7.ui-tabs-anchor, a#ui-id-8.ui-tabs-anchor, a#ui-id-9.ui-tabs-anchor {
 #tickets .col-md-10, #tickets .col-md-2, #tickets .col-md-12 {
     padding-left: 0;
     padding-right: 0;
+}
+
+div#bills, div#race, div#tickets{
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 
 #bills .table-responsive {
@@ -524,7 +487,6 @@ a#ui-id-7.ui-tabs-anchor, a#ui-id-8.ui-tabs-anchor, a#ui-id-9.ui-tabs-anchor {
 }
 
 .my_input_style h4 {
-    margin-top: 10px;
     padding-bottom: 7px;
     margin-bottom: 12px !important;
     border-bottom: 1px solid #dbdbdb;
@@ -532,10 +494,6 @@ a#ui-id-7.ui-tabs-anchor, a#ui-id-8.ui-tabs-anchor, a#ui-id-9.ui-tabs-anchor {
 
 .zero-margin-top{
     margin-top: 0px !important;
-}
-
-#my_table_controls .col-md-10, #my_table_controls .col-md-2{
-    padding:0;
 }
 
 #total_amount .form-group {
@@ -546,6 +504,6 @@ a#ui-id-7.ui-tabs-anchor, a#ui-id-8.ui-tabs-anchor, a#ui-id-9.ui-tabs-anchor {
     padding-left: 0 !important;
 }
 
-#document_content .form-group:last-child{
-    margin-bottom:0;
-} /* GROUP ORDER POPUP -- end */
+
+/* GROUP ORDER POPUP -- end */
+
