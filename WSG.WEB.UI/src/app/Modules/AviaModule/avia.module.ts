@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AviaService } from './services/avia.service';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // materials modules
@@ -52,7 +55,9 @@ import { AviaRoutingModule } from './avia-routing.module';
     MatTooltipModule,
     MatMenuModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpModule,
+    HttpClientModule
   ],
   entryComponents: [
     AviaGroupInvoicePopupComponent,
@@ -65,7 +70,7 @@ import { AviaRoutingModule } from './avia-routing.module';
     AviaGroupInvoiceComponent,
     AviaRoutingModule
   ],
-  providers: [],
+  providers: [AviaService],
   bootstrap: []
 })
 export class AviaModule { }
