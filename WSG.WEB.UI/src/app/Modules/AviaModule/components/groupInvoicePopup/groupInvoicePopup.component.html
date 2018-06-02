@@ -681,9 +681,126 @@
         </mat-tab>
         <!-- TAB 2 - END -->
 
+
+
         <mat-tab label="Сплати">
           <!-- TAB 3 - START -->
-           
+
+          <div id="bills">
+
+            <div id="my_table_controls2" class="clearfix-overflow">
+
+              <div class="buttons-float-left">
+                <!-- Table buttons -->
+                <div class="pull-left button_right_margin">
+                  <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Знайти">
+                    <span class="material-icons">location_searching</span>
+                  </button>
+                </div>
+
+                <div class="pull-left button_right_margin">
+                  <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Відмінити пошук">
+                    <span class="material-icons">location_disabled</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- DropDown ALL Actions -->
+
+              <div class="buttons-float-right">
+
+
+                <div class="btn-group pull-right">
+                  <button type="button" class="btn btn-default my_button_style dropdown-toggle" data-toggle="dropdown">
+
+                    <span class="my_menu_label_after">Всі дії</span>
+                    <span class="material-icons">keyboard_arrow_down</span>
+                  </button>
+                  <ul class="dropdown-menu my_dropdown_styles large_list" role="menu">
+                    <li>
+                      <a href="#">
+                        <div class="my_menu_icon">
+                          <span class="material-icons">filter_none</span>
+                        </div>
+                        <span class="my_menu_label">Скопіювати</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="my_menu_icon">
+                          <span class="material-icons">edit</span>
+                        </div>
+                        <span class="my_menu_label">Змінити</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="my_menu_icon">
+                          <span class="material-icons">save</span>
+                        </div>
+                        <span class="my_menu_label">Вилучити</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="my_menu_icon">
+                          <span class="material-icons">done_outline
+                          </span>
+                        </div>
+                        <span class="my_menu_label">Вивести список...</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="my_menu_icon">
+                          <span class="material-icons">save</span>
+                        </div>
+                        <span class="my_menu_label">Закінчити редагування</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="my_menu_icon">
+                          <span class="material-icons">location_searching</span>
+                        </div>
+                        <span class="my_menu_label">Знайти...</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <!-- my_table_controls2 end -->
+              <!-- DropDown ALL Actions end-->
+
+            </div>
+
+            <div class="col-md-12">
+              <div id="my_table_popup_tab3" class="my_table_style table-responsive ">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Контрагент</th>
+                      <th>Документ сплати</th>
+                      <th class="code_column">Сума</th>
+                      <th>Валюта</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Table Tab 3 end -->
+          </div>
+
           <!-- СПЛАТИ end -->
         </mat-tab>
       </mat-tab-group>

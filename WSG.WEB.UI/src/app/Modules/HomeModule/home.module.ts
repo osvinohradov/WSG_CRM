@@ -13,8 +13,7 @@ const routes: Routes = [];
 @NgModule({
   declarations: [
     HomeComponent,
-    RouterModule,
-    MatIconModule
+    RouterModule
   ],
   imports: [
     FormsModule,
