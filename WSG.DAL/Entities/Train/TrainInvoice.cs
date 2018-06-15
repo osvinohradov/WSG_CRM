@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WSG.DAL.Models.Train
+namespace WSG.DAL.Entities.Train
 {
-    class TrainInvoice
+    public class TrainInvoice
     {
     }
 }

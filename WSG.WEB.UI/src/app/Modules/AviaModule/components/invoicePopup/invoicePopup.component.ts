@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-invoice-popup',
@@ -37,10 +38,12 @@ export class AviaInvoicePopupComponent implements OnInit {
     {value: 'currency-6', viewValue: 'euro'}
   ];
 
-  
-  constructor() { }
+  public invoiceId = '';
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.currentMessage.subscribe(msg => console.log('Invoice Id from Invoice PopUp component: ', msg));
   }
 
 }

@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
 
-namespace WSG.DAL.Models.Avia
+namespace WSG.WEB.API.Models.Avia
 {
-    [Table("AviaInvoice")]
-    public class AviaInvoice
+    public class AviaInvoiceFullViewModel
     {
-        public AviaInvoice()
-        {
-            InvoiceId = Guid.NewGuid();
-        }
-        [Key]
-        public Guid InvoiceId { get; set; }
+        public Guid AviaInvoiceId { get; set; }
         public virtual int Number { get; set; }
         public virtual DateTime? LastTransactionDate { get; set; }  // DateTime
         public virtual string PaymentForm { get; set; }
@@ -72,7 +66,6 @@ namespace WSG.DAL.Models.Avia
         public virtual double TotalMPE { get; set; }
         public virtual string AdditionalInformation { get; set; }
 
-        public virtual ICollection<AviaInvoiceTicket> Tickets { get; set; }
-        public virtual ICollection<AviaInvoiceFlight> Flights { get; set; }
+        public virtual Guid AviaGroupInvoiceId { get; set; }
     }
 }

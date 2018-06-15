@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WSG.DAL.Models.Reference
+namespace WSG.DAL.Entities.Reference
 {
     [Table("References.Services")]
     public class Service

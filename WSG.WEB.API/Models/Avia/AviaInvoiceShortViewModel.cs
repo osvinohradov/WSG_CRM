@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WSG.WEB.API.Avia.Models
+namespace WSG.WEB.API.Models.Avia
 {
-    public class AviaInvoiceShort
+    public class AviaInvoiceShortViewModel
     {
         public Guid AviaInvoiceShortId { get; set; }
         public DateTime Date { get; set; }

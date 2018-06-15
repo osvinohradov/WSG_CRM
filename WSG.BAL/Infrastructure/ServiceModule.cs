@@ -1,5 +1,6 @@
 ﻿using Ninject.Modules;
-using WSG.DAL.Infrastructure;
+using WSG.DAL.Interfaces;
+using WSG.DAL.Repositories;
 using WSG.DAL.Repositories.Avia;
 
 namespace WSG.BAL.Infrastructure

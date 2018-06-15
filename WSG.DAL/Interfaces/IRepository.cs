@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WSG.DAL.Infrastructure
+namespace WSG.DAL.Interfaces
 {
     public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         T Get(Guid id);
-        IEnumerable<T> Find(Func<T, bool> predicate);
-        void Create(T item);
-        void Update(T item);
-        void Delete(Guid id);
+        IEnumerable<T> Find(Func<T, Boolean> predicate);
+        T Create(T item);
+        T Update(T item);
+        T Delete(Guid id);
     }
 }

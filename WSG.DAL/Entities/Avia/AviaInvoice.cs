@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WSG.BAL.DTO
+namespace WSG.DAL.Entities.Avia
 {
-    public class AviaInvoiceDTO
+    [Table("AviaInvoice")]
+    public class AviaInvoice
     {
-        public AviaInvoiceDTO()
+        public AviaInvoice()
         {
-            InvoiceId = Guid.NewGuid();
+            AviaInvoiceId = Guid.NewGuid();
         }
-        public Guid InvoiceId { get; set; }
+        [Key]
+        public virtual Guid AviaInvoiceId { get; set; }
         public virtual int Number { get; set; }
         public virtual DateTime? LastTransactionDate { get; set; }  // DateTime
         public virtual string PaymentForm { get; set; }
@@ -65,6 +70,14 @@ namespace WSG.BAL.DTO
         public virtual string OtheServiceCurrency { get; set; }
         public virtual double TotalSum { get; set; }
         public virtual double TotalMPE { get; set; }
-        public virtual string AdditionalInformation { get; set; }        
+        public virtual string AdditionalInformation { get; set; }
+
+        public virtual ICollection<AviaInvoiceTicket> AviaInvoiceTickets { get; set; }
+        public virtual ICollection<AviaInvoiceFlight> AviaInvoiceFlights { get; set; }
+        public virtual ICollection<AviaGroupInvoice> AviaGroupInvoices { get; set; }
+
+
+        public virtual Guid AviaGroupInvoiceId { get; set; }
+        public virtual AviaGroupInvoice AviaGroupInvoice { get; set; }
     }
 }

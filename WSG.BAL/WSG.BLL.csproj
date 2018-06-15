@@ -51,14 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\AviaInvoiceDTO.cs" />
-    <Compile Include="DTO\AviaInvoiceFlightDTO.cs" />
-    <Compile Include="DTO\AviaInvoiceTicketDTO.cs" />
+    <Compile Include="DTO\Avia\AviaGroupInvoiceDTO.cs" />
+    <Compile Include="DTO\Avia\AviaInvoiceDTO.cs" />
+    <Compile Include="DTO\Avia\AviaInvoiceFlightDTO.cs" />
+    <Compile Include="DTO\Avia\AviaInvoiceTicketDTO.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
-    <Compile Include="Infrastructure\ValidationException.cs" />
-    <Compile Include="Interfaces\IAviaInvoiceService.cs" />
+    <Compile Include="Interfaces\IAviaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AviaInvoiceService.cs" />
+    <Compile Include="Services\AviaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WSG.DAL\WSG.DAL.csproj">

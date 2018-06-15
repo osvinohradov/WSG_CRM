@@ -4,13 +4,12 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AviaService {
-
+  baseUrl: String = 'http://localhost:9975/api';
   constructor(private http: HttpClient) {
-
   }
 
-  getAviaInvoiceShort() {
-    return this.http.get('http://localhost:9975/api/AviaInvoice/GetAllShortInvoices');
+  getAviaInvoicesShort() {
+    return this.http.get(this.baseUrl + '/AviaInvoice/GetAllShortInvoices');
   }
 
   getAviaInvoice(id: any) {

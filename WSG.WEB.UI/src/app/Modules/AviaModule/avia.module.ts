@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AviaService } from './services/avia.service';
+
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,6 +30,8 @@ import { AviaInvoicePopupComponent } from './components/invoicePopup/invoicePopu
 
 import { AviaGroupInvoicePopupComponent } from './components/groupInvoicePopup/groupInvoicePopup.component';
 import { AviaRoutingModule } from './avia-routing.module';
+import { AviaService } from './services/avia.service';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,7 @@ import { AviaRoutingModule } from './avia-routing.module';
     AviaGroupInvoiceComponent,
     AviaRoutingModule
   ],
-  providers: [AviaService],
+  providers: [AviaService, DataService],
   bootstrap: []
 })
 export class AviaModule { }

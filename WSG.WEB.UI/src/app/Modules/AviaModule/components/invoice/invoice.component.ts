@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AviaInvoicePopupComponent } from '../invoicePopup/invoicePopup.component';
 import { AviaService } from '../../services/avia.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'avia-invoice',
@@ -10,14 +11,14 @@ import { AviaService } from '../../services/avia.service';
 })
 export class AviaInvoiceComponent implements OnInit {
 
-  public aviaDescription:string = 'aviaDescription';
+  public shortInvoices: Array<any> = [];
 
-  public shortInvoices: Array<any> = [];  
+  constructor(public dialog: MatDialog, private AviaService: AviaService, private dataService: DataService) {
+    
+  }
 
-  constructor(public dialog: MatDialog, private AviaService: AviaService) { }
-
-  getAviaInvoiceShort() {
-    this.AviaService.getAviaInvoiceShort().subscribe((evt: any) => {
+  getAviaInvoicesShort() {
+    this.AviaService.getAviaInvoicesShort().subscribe((evt: any) => {
       console.log("Result: ", evt);
       this.shortInvoices = evt;
     });
@@ -31,6 +32,8 @@ export class AviaInvoiceComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAviaInvoicesShort();
+    
   }
 
   public getDocument(): void {
@@ -38,6 +41,8 @@ export class AviaInvoiceComponent implements OnInit {
   }
 
   public getInvoiceModal(id): void {
+    this.dataService.transferInvoiceId(id);
+    this.openDialog();
     console.log('getInvoiceModalID = ' + id);
   }
 

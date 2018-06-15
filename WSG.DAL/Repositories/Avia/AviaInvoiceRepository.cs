@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WSG.DAL.Interfaces;
+using WSG.DAL.Entities.Avia;
 using WSG.DAL.EF;
-using WSG.DAL.Infrastructure;
-using WSG.DAL.Models.Avia;
 using System.Data.Entity;
 
 namespace WSG.DAL.Repositories.Avia
@@ -16,38 +16,41 @@ namespace WSG.DAL.Repositories.Avia
         {
             this.db = context;
         }
-        public void Create(AviaInvoice invoice)
-        {
-            db.AviaInvoices.Add(invoice);
-        }
-
-        public void Delete(Guid id)
-        {
-            AviaInvoice invoice = db.AviaInvoices.Find(id);
-            if(invoice != null)
-            {
-                db.AviaInvoices.Remove(invoice);
-            }
-        }
-
-        public IEnumerable<AviaInvoice> Find(Func<AviaInvoice, bool> predicate)
-        {
-            return db.AviaInvoices.Where(predicate).ToList();
-        }
 
         public IEnumerable<AviaInvoice> GetAll()
         {
-            return db.AviaInvoices;
+            return this.db.AviaInvoices.Include(avt => avt.AviaInvoiceTickets).Include(avf => avf.AviaInvoiceFlights);
         }
 
         public AviaInvoice Get(Guid id)
         {
-            return db.AviaInvoices.Find(id);
+            return this.db.AviaInvoices.Find(id);
         }
 
-        public void Update(AviaInvoice invoice)
+        public AviaInvoice Create(AviaInvoice item)
         {
-            db.Entry(invoice).State = EntityState.Modified;
+            return this.db.AviaInvoices.Add(item);
         }
+
+        public AviaInvoice Update(AviaInvoice item)
+        {
+            this.db.Entry(item).State = EntityState.Modified;
+            return item;
+        }
+
+        public AviaInvoice Delete(Guid id)
+        {
+            AviaInvoice aviaInvoice = db.AviaInvoices.Find(id);
+            if(aviaInvoice != null)
+            {
+                return this.db.AviaInvoices.Remove(aviaInvoice);
+            }
+            return null;
+        }
+
+        public IEnumerable<AviaInvoice> Find(Func<AviaInvoice, bool> predicate)
+        {
+            return this.db.AviaInvoices.Where(predicate).ToList();
+        }        
     }
 }
