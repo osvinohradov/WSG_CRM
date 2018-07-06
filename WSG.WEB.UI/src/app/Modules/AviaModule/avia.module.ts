@@ -20,8 +20,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
-
+import {MatListModule} from '@angular/material/list';
 
 
 import { AviaInvoiceComponent } from './components/invoice/invoice.component';
@@ -29,6 +28,9 @@ import { AviaGroupInvoiceComponent } from './components/groupInvoice/groupInvoic
 import { AviaInvoicePopupComponent } from './components/invoicePopup/invoicePopup.component';
 
 import { AviaGroupInvoicePopupComponent } from './components/groupInvoicePopup/groupInvoicePopup.component';
+import { AviaPrintInvoicePopupComponent } from './components/printInvoice/printInvoice.component';
+import { AviaPrintActPopupComponent } from './components/printAct/printAct.component';
+
 import { AviaRoutingModule } from './avia-routing.module';
 
 @NgModule({
@@ -36,7 +38,9 @@ import { AviaRoutingModule } from './avia-routing.module';
     AviaInvoiceComponent,
     AviaGroupInvoiceComponent ,
     AviaGroupInvoicePopupComponent,
-    AviaInvoicePopupComponent   
+    AviaInvoicePopupComponent,
+    AviaPrintInvoicePopupComponent,
+    AviaPrintActPopupComponent
   ],
   imports: [
     FormsModule,
@@ -57,7 +61,8 @@ import { AviaRoutingModule } from './avia-routing.module';
     MatSelectModule,
     MatFormFieldModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule
   ],
   entryComponents: [
     AviaGroupInvoicePopupComponent,
@@ -68,6 +73,8 @@ import { AviaRoutingModule } from './avia-routing.module';
     AviaInvoicePopupComponent,
     AviaGroupInvoicePopupComponent,
     AviaGroupInvoiceComponent,
+    AviaPrintInvoicePopupComponent,
+    AviaPrintActPopupComponent,
     AviaRoutingModule
   ],
   providers: [AviaService],

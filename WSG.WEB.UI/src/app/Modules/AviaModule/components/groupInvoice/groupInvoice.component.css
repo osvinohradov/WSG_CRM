@@ -1,17 +1,21 @@
 
-/* MODAL LAYOUT STYLES */
-
 .modal-content {
     background-color: #f5f5f5 !important;
 }
-/* MODAL LAYOUT STYLES end */
 
-
+#referencesButton{
+    position: relative;
+    top: 1px;
+}
 
 /* TABLE STYLES */
 
-.bold{
-    font-weight: bold;
+.mr-my-1{
+    margin-right: 2px;
+}
+
+.ml-my-1{
+    margin-right: 2px;
 }
 
 thead {
@@ -23,44 +27,44 @@ th {
 }
 
 td {
-    min-width: 80px;
-    max-width: 300px;
+    min-width: 5em;
+    max-width: 1.875em;
     -ms-word-break: keep-all;
     word-break: keep-all;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 0.750rem;
 }
 
-.table{
-    margin-bottom: 0;
+tr.main:hover{
+    background-color:rgba(136,185,226, 0.5);
 }
 
 .table > thead > tr > th {
-    padding: 12px 15px;
-} 
+    padding: 0.750rem 1rem;
+}
+
+button:active, button:focus {
+    outline: none;
+    border: none;
+}
+
+.mat-menu-item:active, .mat-menu-item:focus {
+    outline: none;
+    border: none;
+}
 
 .code_column{
     width: 10%;
 }
-
-.my_table_style {
-    margin-top: 18px;
-    margin-bottom: 18px;
-    margin-left: 16px;
-    margin-right: 0px;
-    padding-left: 0;
-    padding-right: 0px;
-}
-
-
 
 .my_table_style th{
     text-align: center;
 }
 
 .table-responsive {
-    max-height: 195px;
+    max-height: 12em;
     padding-left:0;
 }
 
@@ -75,33 +79,38 @@ tr{
 }
 
 .my_fieldset {
-    margin-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-bottom: 1.875em;
+    padding-left: 0.938em;
+    padding-right: 0.938em;
 }
 
 .my_fieldset_sm {
     margin-bottom: 0px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0.938em;
+    padding-right: 0.938em;
 }
 
 #contracts_main_tab .my_fieldset{
-    margin-bottom: 10px;
+    margin-bottom: 0.625em;
 } /* TABLE STYLES end */
-
 
 
 /* MENU BAR */
 
 button.btn.btn-default.my_button_style {
-    background-color: #dadde5;
+    background-color:rgba(192,199,214, 0.5);
     cursor: pointer;
-    border-radius: 3px;
-    font-size: 0.875em;
+    font-weight: normal;
+    border-radius: 4px;
+    font-size: 0.875rem;
     border: none;
-    margin-left: 1px;
-    margin-right: 1px;
+}
+
+.mat-button{
+    position: relative;
+    top: 1px;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
 }
 
 .my_square_button{
@@ -113,24 +122,12 @@ span.my_button_label{
     font-weight: normal;
 }
 
-span.my_menu_label{
-    position: relative;
-    bottom: 4px;
-}
-
-span.my_menu_label_after{
-    position: relative;
-    display: inline-block;
-    bottom: 4px;
-    margin-right: 3px;
-}
-
-.btn:focus {
+button:focus {
     outline: none !important;
 }
 
 button.btn.btn-default.my_button_style:hover {
-    background-color: #7db0db;
+    background-color: rgb(136,185,226); /* #88b9e2 */
     cursor: pointer;
 }
 
@@ -138,137 +135,71 @@ h2 {
     color: #2b303b;
 }
 
-.title_small{
-    font-size: 1.500em !important;
-    margin-left: 17px;
-}
-
 .title_main_page_margin{
-    margin-top: 32px;
-    margin-bottom: 30px;
-}
-
-.title_small_2{
-    font-size: 1.250em !important;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    margin-left: 17px;
-}
-
-.menu_icons:focus {
-    background-color: #7db0db;
+    margin-top: 1.5rem; /* 24px */
+    margin-bottom: 1.5rem; /* 24px */
+    font-size: 1.500rem !important;
 }
 
 span.menu_icons {
     font-weight: 300;
 }
 
-#first_menu_button {
-    font-weight: bold;
+#allActionsMenu span.material-icons{
+    font-size: 11px;
 }
 
 span > i {
     color: #2b303b;
-}
-
-.icon_button{
-    width: 40px;
 } /* MENU BAR end */
-
-
 
 /* DROPDOWN ALL Actions */
 
-.dropbtn {
+
+.mat-menu-content{
+    min-height: 70vh;
+}
+
+.mat-menu-item {
     color: black;
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
     border: none;
     cursor: pointer;
+    line-height: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #7db0db;
+.mat-menu-item:hover, .mat-menu-item:focus {
+    background-color:rgba(136,185,226, 0.5); /* #88b9e2 */
 }
 
-.dropdown {
-    position: absolute;
-    display: inline-block;
-    margin: 0;
-}
-
-.menu_icons.dropbtn{
+.menu_icons.mat-menu-item{
     cursor: default;
 }
 
-span.my_button_label, span.my_menu_label_after{
-    margin-right:3px;
+span.my_menu_label, button.my_menu_label{
+    font-size: 11px;
 }
 
-span.my_menu_label_after{
-    margin-left:3px;
-}
-
-
-ul.my_dropdown_styles {
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    font-size: 0.720em;
-    padding-left: 0;
-}
-
-ul.airports_main_dropdown {
-    min-width: 300px;
-} /* custom dropdown width for airports main page */
-
-ul.my_dropdown_styles.small_list {
-    max-width: 100px;
-}
-
-ul.my_dropdown_styles.large_list {
-    min-width: 285px;
-}
-
-ul.my_dropdown_styles.small_list a{
-    padding-left: 10px;
-}
-
-ul.my_dropdown_styles a{
-    padding: 3px 0px;
-}
-
-ul.my_dropdown_styles span{
+div.my_menu_icon span.material-icons{
     display: inline-block;
-    min-width: 12px;
-    margin-left: 12px;
-}
-
-.dropdown-menu div.my_menu_icon{
-    width: 30px;
-    display: inline-block;
-    text-align: center;
-}
-
-ul.my_dropdown_styles a.empty_icon {
-    padding-left: 42px;
-} 
-
-.empty_icon div{
     position: relative;
-    bottom:3px;
-    float: right;
-    padding-right: 12px;
+    top: 3px;
+    font-size: 0.875rem; /* 14px */
 }
 
-.empty_icon .my_menu_label{
-    bottom: 0px;
-    margin-left: 0;
+div.my_menu_icon span.material-icons:hover{
+    background-color:rgb(136,185,226);
 }
 
+span.empty-icon {
+  margin-left: 30px;  
+}
 
-/* DROPDOWN ALL Actions end */
-
-
+div.my_menu_icon{
+    width: 1.875rem; /* 30px */
+    text-align: center;
+} /* DROPDOWN ALL Actions end */
 
 /* FORM STYLES */
 
@@ -320,8 +251,6 @@ label.control-label{
     padding-left: 13px;
     padding-right: 13px;
 } /* FORM STYLES end */
-
-
 
 /* INPUT STYLES */
 

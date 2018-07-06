@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AviaGroupInvoicePopupComponent } from '../groupInvoicePopup/groupInvoicePopup.component';
+import { AviaPrintInvoicePopupComponent } from '../printInvoice/printInvoice.component';
 
 @Component({
   selector: 'avia-group-invoice',
@@ -19,6 +20,14 @@ export class AviaGroupInvoiceComponent implements OnInit {
 
   }
 
+  openPrintInvoice(): void {
+    let dialogRef = this.dialog.open(AviaPrintInvoicePopupComponent, {
+      width: '98%',
+      height: '98%'
+    });
+
+  }
+  
   ngOnInit() {
   }
 }

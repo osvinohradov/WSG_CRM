@@ -3,11 +3,11 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 
 @Component({
-  selector: 'avia-print-act-popup',
-  templateUrl: './printAct.component.html',
-  styleUrls: ['./printAct.component.css' ]
+  selector: 'avia-print-invoice-popup',
+  templateUrl: './printInvoice.component.html',
+  styleUrls: ['./printInvoice.component.css' ]
 })
-export class AviaPrintActPopupComponent implements OnInit {
+export class AviaPrintInvoicePopupComponent implements OnInit {
 
   public currency: Array<Object> = [
     {value: 'currency-1', viewValue: 'грн'},
@@ -16,7 +16,7 @@ export class AviaPrintActPopupComponent implements OnInit {
   ];
   
   constructor(
-    public dialogRef: MatDialogRef<AviaPrintActPopupComponent>
+    public dialogRef: MatDialogRef<AviaPrintInvoicePopupComponent>
   ) { }
 
   ngOnInit() {
