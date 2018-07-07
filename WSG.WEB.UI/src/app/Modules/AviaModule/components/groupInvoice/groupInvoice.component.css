@@ -76,22 +76,6 @@ tr{
     vertical-align: middle;
     font-size: 0.875em;
     cursor: pointer;
-}
-
-.my_fieldset {
-    margin-bottom: 1.875em;
-    padding-left: 0.938em;
-    padding-right: 0.938em;
-}
-
-.my_fieldset_sm {
-    margin-bottom: 0px;
-    padding-left: 0.938em;
-    padding-right: 0.938em;
-}
-
-#contracts_main_tab .my_fieldset{
-    margin-bottom: 0.625em;
 } /* TABLE STYLES end */
 
 
@@ -141,12 +125,17 @@ h2 {
     font-size: 1.500rem !important;
 }
 
-span.menu_icons {
-    font-weight: 300;
+.subtitle_main_page_margin{
+    margin-top: 1.5rem; /* 24px */
+    margin-bottom: 0.75rem; 
+    font-size: 1.2rem;
+}
+.fieldset_container{
+
 }
 
-#allActionsMenu span.material-icons{
-    font-size: 11px;
+span.menu_icons {
+    font-weight: 300;
 }
 
 span > i {
@@ -154,7 +143,6 @@ span > i {
 } /* MENU BAR end */
 
 /* DROPDOWN ALL Actions */
-
 
 .mat-menu-content{
     min-height: 70vh;
@@ -280,27 +268,6 @@ input.form-control {
     bottom: 0;
 }
 
-.my_tabinput_text_padding {
-    padding: 5px 10px 3px;
-}
-
-.my_input_style {
-    padding-right: 2px;
-    padding-left: 2px;
-}
-
-.my_input_style.zero_padding_left{
-    padding-left: 0;
-}
-
-.my_input_style label{
-    padding-left: 1px;
-}
-
-.my_input_style h4 {
-    text-align: left !important;
-}
-
 .form-control::placeholder {
     color: #788195;
     opacity: 0.6;
@@ -319,18 +286,13 @@ input[type="text"] {
     font-size: 0.875em;
 } /* INPUT STYLES end */
 
-
-
 /* Horizontal Divider */
 #invoice_form hr {
     margin-top: 10px;
     margin-bottom: 10px;
 } /* Horizontal Divider end */
 
-
-
 /* TABS STYLES */
-
 #invoice_tabs{
     margin-top: 15px;
     padding-left: 5px;
@@ -409,11 +371,6 @@ div#bills, div#race, div#tickets{
 
 
 /* GROUP ORDER POPUP STYLES */
-.my_popup_form {
-    margin-top: 25px;
-    padding-left: 13px;
-    padding-right: 13px;
-}
 
 .my_input_style h4 {
     padding-bottom: 7px;

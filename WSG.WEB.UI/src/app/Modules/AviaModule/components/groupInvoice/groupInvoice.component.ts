@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AviaGroupInvoicePopupComponent } from '../groupInvoicePopup/groupInvoicePopup.component';
 import { AviaPrintInvoicePopupComponent } from '../printInvoice/printInvoice.component';
+import { AviaPrintActPopupComponent } from '../printAct/printAct.component';
+import { AviaPrintScorePopupComponent } from '../printScore/printScore.component';
+import { AviaPrintScoreWithStampPopupComponent } from '../printScoreWithStamp/printScoreWithStamp.component';
+
 
 @Component({
   selector: 'avia-group-invoice',
@@ -19,9 +23,29 @@ export class AviaGroupInvoiceComponent implements OnInit {
     });
 
   }
-
   openPrintInvoice(): void {
     let dialogRef = this.dialog.open(AviaPrintInvoicePopupComponent, {
+      width: '98%',
+      height: '98%'
+    });
+
+  }
+  openPrintAct(): void {
+    let dialogRef = this.dialog.open(AviaPrintActPopupComponent, {
+      width: '98%',
+      height: '98%'
+    });
+
+  }
+  openPrintScore(): void {
+    let dialogRef = this.dialog.open(AviaPrintScorePopupComponent, {
+      width: '98%',
+      height: '98%'
+    });
+
+  }
+  openPrintScoreWithStamp(): void {
+    let dialogRef = this.dialog.open(AviaPrintScoreWithStampPopupComponent, {
       width: '98%',
       height: '98%'
     });

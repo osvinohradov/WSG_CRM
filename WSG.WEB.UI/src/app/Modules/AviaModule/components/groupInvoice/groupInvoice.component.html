@@ -2,10 +2,10 @@
   Групові замовлення
 </h2>
 <!-- ------------------------------------------------- GROUP ORDER MAIN - MENU BAR ----------------------------------------------------- -->
-<div class="ml-4 mr-4 pl-0 pr-0 clearfix">
-  <div class="col-md-10 pl-0 pr-0 float-left">
+<div class="ml-4 mr-4 pl-0 pr-0  clearfix">
+
+  <div class="col-md-10 pl-0 pr-0 d-lg-inline d-none float-lg-left">
     <div class="d-inline pl-0 mr-my-1">
-      <!--  "#myGroupOrderModal" -->
       <button (click)="openDialog()" type="button" class="btn btn-default my_button_style">
         <span class="material-icons">playlist_add</span>
         <span class="my_button_label">Створити</span>
@@ -54,20 +54,20 @@
       </button>
       <mat-menu #PrintMenu="matMenu">
         <button (click)="openPrintInvoice()" mat-menu-item class="my_menu_label">Друк акта</button>
-        <button mat-menu-item class="my_menu_label">Друк накладної</button>
-        <button mat-menu-item class="my_menu_label">Друк рахунка</button>
-        <button mat-menu-item class="my_menu_label">Друк рахунка з печаткою</button>
+        <button (click)="openPrintAct()" mat-menu-item class="my_menu_label">Друк накладної</button>
+        <button (click)="openPrintScore()" mat-menu-item class="my_menu_label">Друк рахунка</button>
+        <button (click)="openPrintScoreWithStamp()" mat-menu-item class="my_menu_label">Друк рахунка з печаткою</button>
       </mat-menu>
     </div>
   </div> <!-- Button Row - End -->
   <!-- DropDown ALL Actions -->
-  <div class="col-md-2 pl-0 pr-0 float-right">
-    <div id="referencesButton" class="d-inline ml-my-1 float-right">
+  <div class="col-md-2 pl-0 pr-0 float-lg-right float-left">
+    <div id="referencesButton" class="d-lg-inline d-none float-right">
       <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Довідка">
         <span class="material-icons">help_outline</span>
       </button>
     </div>
-    <div class="allActionsMenu d-inline mr-my-1 float-right">
+    <div class="allActionsMenu d-inline mr-my-1 float-left float-lg-right">
       <button class="btn btn-default my_button_style" mat-button [matMenuTriggerFor]="menu">Всі дії
         <span class="material-icons">keyboard_arrow_down</span>
       </button>
@@ -179,6 +179,7 @@
       </mat-menu>
     </div>
   </div> <!-- DropDown ALL Actions end-->
+
 </div> <!--Row MENU Buttons End-->
 <!-- -------------------------------------------------- GROUP ORDER MAIN - MENU BAR END ----------------------------------------------------- -->
 <!-- ------------------------------------------------------------ TABLE GROUP ORDER --------------------------------------------------------- -->
