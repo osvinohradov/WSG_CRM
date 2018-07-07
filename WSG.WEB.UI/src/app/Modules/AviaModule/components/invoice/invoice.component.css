@@ -657,35 +657,7 @@ option{
     margin-bottom: 25px;
 }
 
-#race .col-md-10, #race .col-md-2, #race .col-md-12{
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#tickets .col-md-10, #tickets .col-md-2, #tickets .col-md-12 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-div#bills, div#race, div#tickets{
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-#bills .table-responsive {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-
-#bills .col-md-10, #bills .col-md-2, #bills .col-md-12 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#bills .table, #tickets .table, #race .table {
-    margin-bottom: 0;
-} /* TABS STYLES end */
+/* TABS STYLES end */
 
 
 
