@@ -28,10 +28,10 @@ import { AviaInvoicePopupComponent } from './components/invoicePopup/invoicePopu
 
 import { AviaGroupInvoicePopupComponent } from './components/groupInvoicePopup/groupInvoicePopup.component';
 
-import { AviaPrintInvoicePopupComponent } from './components/printInvoice/printInvoice.component';
-import { AviaPrintActPopupComponent } from './components/printAct/printAct.component';
-import { AviaPrintScorePopupComponent } from './components/printScore/printScore.component';
-import { AviaPrintScoreWithStampPopupComponent } from './components/printScoreWithStamp/printScoreWithStamp.component';
+// import { AviaPrintInvoicePopupComponent } from './components/printInvoice/printInvoice.component';
+// import { AviaPrintActPopupComponent } from './components/printAct/printAct.component';
+// import { AviaPrintScorePopupComponent } from './components/printScore/printScore.component';
+// import { AviaPrintScoreWithStampPopupComponent } from './components/printScoreWithStamp/printScoreWithStamp.component';
 
 import { AviaRoutingModule } from './avia-routing.module';
 
@@ -41,10 +41,10 @@ import { AviaRoutingModule } from './avia-routing.module';
     AviaGroupInvoiceComponent ,
     AviaGroupInvoicePopupComponent,
     AviaInvoicePopupComponent,
-    AviaPrintInvoicePopupComponent,
-    AviaPrintActPopupComponent,
-    AviaPrintScorePopupComponent,
-    AviaPrintScoreWithStampPopupComponent
+    // AviaPrintInvoicePopupComponent,
+    // AviaPrintActPopupComponent,
+    // AviaPrintScorePopupComponent,
+    // AviaPrintScoreWithStampPopupComponent
   ],
   imports: [
     FormsModule,
@@ -72,21 +72,21 @@ import { AviaRoutingModule } from './avia-routing.module';
     // AviaInvoiceComponent,
     AviaInvoicePopupComponent,
     AviaGroupInvoicePopupComponent,
-    // AviaGroupInvoiceComponent,
-    AviaPrintInvoicePopupComponent,
-    AviaPrintActPopupComponent,
-    AviaPrintScorePopupComponent,
-    AviaPrintScoreWithStampPopupComponent
+    // // AviaGroupInvoiceComponent,
+    // AviaPrintInvoicePopupComponent,
+    // AviaPrintActPopupComponent,
+    // AviaPrintScorePopupComponent,
+    // AviaPrintScoreWithStampPopupComponent
   ],
   exports: [
     AviaInvoiceComponent,
     AviaInvoicePopupComponent,
     AviaGroupInvoicePopupComponent,
-    AviaGroupInvoiceComponent,
-    AviaPrintInvoicePopupComponent,
-    AviaPrintActPopupComponent,
-    AviaPrintScorePopupComponent,
-    AviaPrintScoreWithStampPopupComponent,
+    // AviaGroupInvoiceComponent,
+    // AviaPrintInvoicePopupComponent,
+    // AviaPrintActPopupComponent,
+    // AviaPrintScorePopupComponent,
+    // AviaPrintScoreWithStampPopupComponent,
     AviaRoutingModule
   ],
   providers: [AviaService],

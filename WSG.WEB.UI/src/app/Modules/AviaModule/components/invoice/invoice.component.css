@@ -659,18 +659,12 @@ option{
 
 /* TABS STYLES end */
 
-
-
 /* GROUP ORDER POPUP STYLES */
 
 .my_input_style h4 {
     padding-bottom: 7px;
     margin-bottom: 12px !important;
     border-bottom: 1px solid #dbdbdb;
-}
-
-.zero-margin-top{
-    margin-top: 0px !important;
 }
 
 #total_amount .form-group {
