@@ -404,13 +404,13 @@ button.btn.btn-default.my_button_style {
   font-size: 0.875rem;
   border: none;
 }
-
+/* 
 .mat-button{
   position: relative;
   top: 1px;
   padding-right: 0.625rem;
   padding-left: 0.625rem;
-}
+} */
 
 .my_square_button{
   width: 39px;

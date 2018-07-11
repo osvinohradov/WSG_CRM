@@ -20,26 +20,9 @@
                     <span class="material-icons">edit</span>
                 </button>
             </div>
-    
-            <div class="d-inline mr-my-1">
-                <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Оновити">
-                    <span class="material-icons">refresh</span>
-                </button>
-            </div>
-    
-            <div class="d-inline mr-my-1">
-                <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Записати">
-                    <span class="material-icons">save</span>
-                </button>
-            </div>
             <div class="d-inline mr-my-1">
                 <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Відмінити для вилучення/Зняти позначку">
                     <span class="material-icons">remove_from_queue</span>
-                </button>
-            </div>
-            <div class="d-inline mr-my-1">
-                <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Встановити період...">
-                    <span class="material-icons">access_time</span>
                 </button>
             </div>
             <div class="d-inline mr-my-1">
@@ -52,24 +35,6 @@
                 <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Відмінити пошук">
                     <span class="material-icons">location_disabled</span>
                 </button>
-            </div>
-            <div class="d-inline mr-my-1">
-                <button type="button" class="btn btn-default my_button_style">
-                    <span class="material-icons"> filter_tilt_shift</span>
-                    <span class="my_button_label">Підбір</span>
-                </button>
-            </div>
-            <div class="d-inline mr-my-1">
-                <button class="btn btn-default my_button_style" mat-button [matMenuTriggerFor]="PrintMenu">
-                    <span class="printDropdownButton">Друк</span>
-                    <span class="material-icons">keyboard_arrow_down</span>
-                </button>
-                <mat-menu #PrintMenu="matMenu">
-                    <button (click)="openPrintInvoice()" mat-menu-item class="my_menu_label">Друк акта</button>
-                    <button (click)="openPrintAct()" mat-menu-item class="my_menu_label">Друк накладної</button>
-                    <button (click)="openPrintScore()" mat-menu-item class="my_menu_label">Друк рахунка</button>
-                    <button (click)="openPrintScoreWithStamp()" mat-menu-item class="my_menu_label">Друк рахунка з печаткою</button>
-                </mat-menu>
             </div>
             <!-- Button Row - End -->
         </div>
@@ -87,7 +52,7 @@
                     <span class="material-icons">keyboard_arrow_down</span>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="openDialog()">
                         <div class="d-inline mr-3 my_menu_icon">
                             <span class="material-icons">playlist_add</span>
                         </div>
@@ -113,6 +78,12 @@
                     </button>
                     <button mat-menu-item>
                         <div class="d-inline mr-3 my_menu_icon">
+                            <span class="material-icons">save</span>
+                        </div>
+                        <span class="d-inline my_menu_label">Вилучити</span>
+                    </button>
+                    <button mat-menu-item>
+                        <div class="d-inline mr-3 my_menu_icon">
                             <span class="material-icons">refresh</span>
                         </div>
                         <span class="d-inline my_menu_label">Оновити</span>
@@ -130,7 +101,7 @@
                         <span class="d-inline my_menu_label">Провести</span>
                     </button>
                     <button mat-menu-item>
-                        <span class="empty-icon d-inline my_menu_label">Знайти: Дата - 14.08.2018</span>
+                        <span class="empty-icon d-inline my_menu_label">Знайти: Найменування {{nomenclatureAirports}}</span>
                         <div class="d-inline mr-3 my_menu_icon">
                             <span class="material-icons">chevron_right</span>
                         </div>
@@ -160,18 +131,6 @@
                         <span class="d-inline my_menu_label">Вивести список...</span>
                     </button>
                     <button mat-menu-item>
-                        <span class="empty-icon d-inline my_menu_label">Друк</span>
-                        <div class="d-inline mr-3 my_menu_icon">
-                            <span class="material-icons">chevron_right</span>
-                        </div>
-                    </button>
-                    <button mat-menu-item>
-                        <div class="d-inline mr-3 my_menu_icon">
-                            <span class="material-icons"> filter_tilt_shift</span>
-                        </div>
-                        <span class="d-inline my_menu_label">Підбір</span>
-                    </button>
-                    <button mat-menu-item>
                         <div class="d-inline mr-3 my_menu_icon">
                             <span class="material-icons">transform</span>
                         </div>
@@ -193,31 +152,19 @@
             <table class="table">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Дата</th>
-                        <th scope="col">Номер</th>
-                        <th scope="col">Повернення</th>
-                        <th scope="col">Void</th>
-                        <th scope="col">Опл.</th>
-                        <th scope="col">Контрагент</th>
-                        <th scope="col">Групове замовлення</th>
-                        <th scope="col">Вид сервісу</th>
-                        <th scope="col">Зміст</th>
-                        <th scope="col">Постачальник</th>
-                        <th scope="col">Сума</th>
-                        <th scope="col">В т.ч.ПДВ</th>
-                        <th scope="col">Коментар</th>
-                        <th scope="col">Агент</th>
-                        <th scope="col">Відповідальний</th>
-                        <th scope="col">Валюта пропозиції</th>
-                        <th scope="col">Підсумкова валюта</th>
-                        <th scope="col">Організація</th>
-                        <th scope="col">Код бронювання</th>
-                        <th scope="col">Документ що повертається</th>
-                        <th scope="col">Дата купівлі у постачальника</th>
-                        <th scope="col">Форма сплати</th>
-                        <th scope="col">Дата сплати</th>
-                        <th scope="col">Код РМ</th>
-                        <th scope="col">Оброблено</th>
+                        <th scope="col" class="code-column">Найменування</th>
+                        <th scope="col" class="code-column">Код</th>
+                        <th scope="col">Найменування російською</th>
+                        <th scope="col">Найменування англійською</th>
+                        <th scope="col">Найменування українською</th>
+                        <th scope="col">Місце на російській</th>
+                        <th scope="col">Місце на англійській</th>
+                        <th scope="col">Місце на українській</th>
+                        <th scope="col">Країна на російській</th>
+                        <th scope="col">Країна на англійській</th>
+                        <th scope="col">Країна на українській</th>
+                        <th scope="col">latitude</th>
+                        <th scope="col">longitude</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -235,18 +182,6 @@
                         <td class="text-center">11</td>
                         <td class="text-center">12</td>
                         <td class="text-center">13</td>
-                        <td class="text-center">14</td>
-                        <td class="text-center">15</td>
-                        <td class="text-center">16</td>
-                        <td class="text-center">17</td>
-                        <td class="text-center">18</td>
-                        <td class="text-center">19</td>
-                        <td class="text-center">20</td>
-                        <td class="text-center">21</td>
-                        <td class="text-center">22</td>
-                        <td class="text-center">23</td>
-                        <td class="text-center">24</td>
-                        <td class="text-center">25</td>
                     </tr>
                 </tbody>
             </table>

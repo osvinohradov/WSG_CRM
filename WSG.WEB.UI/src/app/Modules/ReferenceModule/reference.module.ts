@@ -7,6 +7,8 @@ import { ReferenceRoutingModule } from './reference-routing.module';
 import { AirlineReferencesComponent } from './components/airline/airline.component';
 import { AirlinePopupReferencesComponent } from './components/airlinePopup/airlinePopup.component';
 import { AirportReferencesComponent } from './components/airport/airport.component';
+import { AirportPopupReferencesComponent } from './components/airportPopup/airportPopup.component';
+
 import { CityReferencesComponent } from './components/city/city.component';
 import { CounterpartiesContractReferencesComponent } from './components/counterpartiesContract/counterpartiesContract.component';
 import { CounterpartyReferencesComponent } from './components/counterparty/counterparty.component';
@@ -44,6 +46,7 @@ import {MatListModule} from '@angular/material/list';
     AirlineReferencesComponent,
     AirlinePopupReferencesComponent,
     AirportReferencesComponent,
+    AirportPopupReferencesComponent,
     CityReferencesComponent,
     CounterpartiesContractReferencesComponent,
     CounterpartyReferencesComponent,
@@ -80,12 +83,14 @@ import {MatListModule} from '@angular/material/list';
     MatListModule
   ],
   entryComponents: [
-    AirlinePopupReferencesComponent
+    AirlinePopupReferencesComponent,
+    AirportPopupReferencesComponent
   ],
   exports: [
     AirlineReferencesComponent,
     AirlinePopupReferencesComponent,
     AirportReferencesComponent,
+    AirportPopupReferencesComponent,
     CityReferencesComponent,
     CounterpartiesContractReferencesComponent,
     CounterpartyReferencesComponent,

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { AviaPrintInvoicePopupComponent } from './../../../../Components/printInvoice/printInvoice.component';
-import { AviaPrintActPopupComponent } from './../../../../Components/printAct/printAct.component';
-import { AviaPrintScorePopupComponent } from './../../../../Components/printScore/printScore.component';
-import { AviaPrintScoreWithStampPopupComponent } from './../../../../Components/printScoreWithStamp/printScoreWithStamp.component';
+// import { AviaPrintInvoicePopupComponent } from './../../../../Components/printInvoice/printInvoice.component';
+// import { AviaPrintActPopupComponent } from './../../../../Components/printAct/printAct.component';
+// import { AviaPrintScorePopupComponent } from './../../../../Components/printScore/printScore.component';
+// import { AviaPrintScoreWithStampPopupComponent } from './../../../../Components/printScoreWithStamp/printScoreWithStamp.component';
+import { AirportPopupReferencesComponent } from './../airportPopup/airportPopup.component';
+
 
 @Component({
   selector: 'airport-ref',
@@ -12,37 +14,18 @@ import { AviaPrintScoreWithStampPopupComponent } from './../../../../Components/
 })
 export class AirportReferencesComponent implements OnInit {
 
+  public nomenclatureAirports:string = 'AAA';
+
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
-  openPrintInvoice(): void {
-    let dialogRef = this.dialog.open(AviaPrintInvoicePopupComponent, {
-      width: '98%',
+  openDialog(): void {
+    let dialogRef = this.dialog.open(AirportPopupReferencesComponent, {
+      width: '50%',
       height: '98%'
     });
-
-  }
-  openPrintAct(): void {
-    let dialogRef = this.dialog.open(AviaPrintActPopupComponent, {
-      width: '98%',
-      height: '98%'
-    });
-
-  }
-  openPrintScore(): void {
-    let dialogRef = this.dialog.open(AviaPrintScorePopupComponent, {
-      width: '98%',
-      height: '98%'
-    });
-
-  }
-  openPrintScoreWithStamp(): void {
-    let dialogRef = this.dialog.open(AviaPrintScoreWithStampPopupComponent, {
-      width: '98%',
-      height: '98%'
-    });
-
   }
 }
