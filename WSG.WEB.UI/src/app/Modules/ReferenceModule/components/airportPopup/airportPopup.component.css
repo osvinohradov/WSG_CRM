@@ -40,7 +40,12 @@ div.my_menu_icon{
     font-size: 0.875rem; /* 14px */
 }
 
-span.my_button_label{
+span.my_button_label {
+    font-weight: normal;
+    display: inline-block;
     position: relative;
-    bottom: 1px;
+    bottom: 2px;
+    left: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
 }

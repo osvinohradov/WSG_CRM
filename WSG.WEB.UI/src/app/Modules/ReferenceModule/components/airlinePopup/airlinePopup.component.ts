@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
-  selector: 'app-airline-popup',
+  selector: 'airline-popup-ref',
   templateUrl: './airlinePopup.component.html',
   styleUrls: ['./airlinePopup.component.css', './../airline/airline.component.css']
 

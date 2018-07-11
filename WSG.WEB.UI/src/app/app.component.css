@@ -123,6 +123,13 @@ span.sidebar_icons {
   line-height: 50px;
 }
 
+#mainReferences.my-overflow, #mainTourism.my-overflow, 
+#mainSecurity.my-overflow, #mainTrain.my-overflow, 
+#mainAvia.my-overflow{
+  font-size: 12px;
+  line-height: 2px;
+}
+
 li.sidebar_items:hover .sidebar_item_title {
   color: #ffffff !important;
   text-decoration: none;

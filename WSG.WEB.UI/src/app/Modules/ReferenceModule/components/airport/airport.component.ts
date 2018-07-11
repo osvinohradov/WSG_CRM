@@ -16,7 +16,6 @@ export class AirportReferencesComponent implements OnInit {
 
   public nomenclatureAirports:string = 'AAA';
 
-
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {

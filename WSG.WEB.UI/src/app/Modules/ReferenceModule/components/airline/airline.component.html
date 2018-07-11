@@ -20,7 +20,6 @@
                 <span class="material-icons">edit</span>
             </button>
         </div>
-
         <div class="d-inline mr-my-1">
             <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Відмінити для вилучення/Зняти позначку">
                 <span class="material-icons">remove_from_queue</span>
@@ -46,14 +45,13 @@
             <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Довідка">
                 <span class="material-icons">help_outline</span>
             </button>
-
         </div>
         <div class="allActionsMenu d-inline mr-my-1 float-left float-lg-right">
             <button class="btn btn-default my_button_style" mat-button [matMenuTriggerFor]="menu">Всі дії
                 <span class="material-icons">keyboard_arrow_down</span>
             </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="openDialog()" >
+                <button mat-menu-item (click)="openDialog()">
                     <div class="d-inline mr-3 my_menu_icon">
                         <span class="material-icons">playlist_add</span>
                     </div>

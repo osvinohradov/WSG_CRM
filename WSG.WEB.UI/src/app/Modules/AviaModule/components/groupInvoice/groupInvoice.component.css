@@ -102,10 +102,6 @@ button.btn.btn-default.my_button_style {
     height: 39px;
 }
 
-span.my_button_label{
-    font-weight: normal;
-}
-
 button:focus {
     outline: none !important;
 }
@@ -129,9 +125,6 @@ h2 {
     margin-top: 1.5rem; /* 24px */
     margin-bottom: 0.75rem; 
     font-size: 1.2rem;
-}
-.fieldset_container{
-
 }
 
 span.menu_icons {
@@ -172,9 +165,14 @@ span.my_menu_label, button.my_menu_label{
 div.my_menu_icon span.material-icons{
     display: inline-block;
     position: relative;
-    top: 3px;
+    top: 7px;
     font-size: 0.875rem; /* 14px */
 }
+
+/* div.label_with_chevron {
+    position: relative;
+    bottom: 1px;
+} */
 
 div.my_menu_icon span.material-icons:hover{
     background-color:rgb(136,185,226);
@@ -207,21 +205,6 @@ h2 span {
     margin-bottom: 10px;
 }
 
-.form-group.my_last_margin-bottom{
-    margin-bottom: 20px;
-}
-
-.all_flight_info.form-group {
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-bottom: 0;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #dbdbdb;
-}
-
-.all_flight_info{
-    text-align: center;
-}
 
 label {
     font-weight: 500;
@@ -233,12 +216,7 @@ label {
 label.control-label{
     padding-top: 0px !important;
 }
-
-#invoice_form{
-    margin-top: 25px;
-    padding-left: 13px;
-    padding-right: 13px;
-} /* FORM STYLES end */
+ /* FORM STYLES end */
 
 /* INPUT STYLES */
 
@@ -334,41 +312,7 @@ option{
     display: inline-block;
 }
 
-.traveller_info{
-    margin-bottom: 25px;
-}
-
-#race .col-md-10, #race .col-md-2, #race .col-md-12{
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#tickets .col-md-10, #tickets .col-md-2, #tickets .col-md-12 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-div#bills, div#race, div#tickets{
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-#bills .table-responsive {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-
-#bills .col-md-10, #bills .col-md-2, #bills .col-md-12 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#bills .table, #tickets .table, #race .table {
-    margin-bottom: 0;
-} /* TABS STYLES end */
-
-
+ /* TABS STYLES end */
 
 /* GROUP ORDER POPUP STYLES */
 

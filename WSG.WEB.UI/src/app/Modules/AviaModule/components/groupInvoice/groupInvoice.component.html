@@ -49,7 +49,8 @@
       </button>
     </div>
     <div class="d-inline mr-my-1">
-      <button class="btn btn-default my_button_style" mat-button [matMenuTriggerFor]="PrintMenu">Друк
+      <button class="btn btn-default my_button_style" mat-button [matMenuTriggerFor]="PrintMenu">
+        Друк
         <span class="material-icons">keyboard_arrow_down</span>
       </button>
       <mat-menu #PrintMenu="matMenu">
@@ -222,80 +223,3 @@
   </div>
 </div>
 <!------------------------------------------------------------- TABLE GROUP ORDER - END ---------------------------------------------------------->
-
-<!--------------------------------------------------------- BILLS (FIND) - POPUP ----------------------------------------------------------->
-
-<div id="myFindBills" class="modal fade" role="dialog">
-  <div class="modal-dialog my_modal_sm">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title title_small">Знайти</h2>
-      </div>
-      <!-- Modal Body -->
-      <div class="modal-body">
-        <!------------------------------------------- BILLS (FIND) POPUP - FORM ------------------------------------------------>
-        <div id="my_find_form" class="row my_popup_form">
-          <form class="form-horizontal" role="form">
-            <div class="form-group">
-              <div class="my_input_style col-lg-12 col-md-12 col-sm-12">
-                <label for="sel1">Де шукати</label>
-                <select class="my_input_style form-control my_select_style" id="sel1">
-                  <option>Контрагент</option>
-                  <option>Документ сплати</option>
-                  <option>Сума</option>
-                  <option>Валюта</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="my_input_style col-lg-12 col-md-12 col-sm-12">
-                <label class="control-label">Що шукати</label>
-                <input type="text" class="form-control" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="my_input_style col-lg-12 col-md-12 my_radio_buttons">
-                <label class="control-label my_radio_label">Як шукати:</label>
-                <label class="radio-inline">
-                  <input type="radio" name="optradio" class="my_radio_class">За початком рядка
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="optradio" class="my_radio_class">За частинкою рядка
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="optradio" class="my_radio_class">За точним збігом
-                </label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <!-- Airports Popup Form Row End -->
-        <!--------------------------------------- BILLS (FIND) POPUP - FORM - END ------------------------------------------------>
-      </div>
-      <!-- Modal Body End -->
-      <div class="modal-footer">
-        <div class="pull-right button_left_margin">
-          <button type="button" class="btn btn-default my_button_style my_square_button outer_modal_footer_button" title="Довідка">
-            <span class="fa fa-question"></span>
-          </button>
-        </div>
-        <div class="pull-right button_right_margin" data-dismiss="modal">
-          <button type="button" class="btn btn-default my_button_style">
-            Закрити
-          </button>
-        </div>
-        <div class="pull-right button_right_margin">
-          <button type="button" class="btn btn-default my_button_style font-weight-bold">
-            <span class="fa fa-search-minus"></span>
-            Знайти
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- Modal Content End -->
-  </div>
-  <!-- Modal Dialog End-->
-</div>
-
-<!---------------------------------------------------- BILLS (FIND) POPUP - END --------------------------------------------------------------->

@@ -17,6 +17,7 @@ import { NomenclatureReferencesComponent } from './components/nomenclature/nomen
 import { CurrencyExchangeReferencesComponent } from './components/currencyExchange/currencyExchange.component';
 import { IndividualCounterpartiesReferencesComponent } from './components/individualCounterparties/individualCounterparties.component';
 import { ServiceReferencesComponent } from './components/service/service.component';
+import { ServicePopupReferencesComponent } from './components/servicePopup/servicePopup.component';
 
 // materials modules
 import { MatTabsModule, MatNativeDateModule } from '@angular/material';
@@ -54,9 +55,9 @@ import {MatListModule} from '@angular/material/list';
     NomenclatureReferencesComponent,
     CurrencyExchangeReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
-    ServiceReferencesComponent
-    
-
+    ServiceReferencesComponent,
+    ServicePopupReferencesComponent
+  
     // AviaPrintInvoicePopupComponent,
     // AviaPrintActPopupComponent,
     // AviaPrintScorePopupComponent,
@@ -84,7 +85,8 @@ import {MatListModule} from '@angular/material/list';
   ],
   entryComponents: [
     AirlinePopupReferencesComponent,
-    AirportPopupReferencesComponent
+    AirportPopupReferencesComponent,
+    ServicePopupReferencesComponent
   ],
   exports: [
     AirlineReferencesComponent,
@@ -99,6 +101,7 @@ import {MatListModule} from '@angular/material/list';
     CurrencyExchangeReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
     ServiceReferencesComponent,
+    ServicePopupReferencesComponent,
     ReferenceRoutingModule
   ],
   providers: [],
