@@ -9,7 +9,7 @@
       <div class="col-md-10">
         <div class="pull-left button_right_margin">
           <!--  "#myGroupOrderModal" -->
-          <button (click)="openDialog()" type="button" class="btn btn-default my_button_style bold">
+          <button (click)="showFullInvoice()" type="button" class="btn btn-default my_button_style bold">
             <span class="material-icons">playlist_add</span>
             <span class="my_button_label">Створити</span>
           </button>
@@ -294,32 +294,32 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of shortInvoices" (click)="getInvoiceModal(item.AviaInvoiceShortId)" data-toggle="modal" data-target="#myInvoiceModal">
+          <tr *ngFor="let item of invoices" (click)="showFullInvoice(item.Id)" data-toggle="modal" data-target="#myInvoiceModal">
             <td>{{item.Date | date:"dd/MM/yyyy"}}</td>
             <td>{{item.Number}}</td>
-            <td>{{item.Returned}}</td>
-            <td>{{item.Void}}</td>
-            <td>{{item.Paid}}</td>
-            <td>{{item.Counterparty}}</td>
-            <td>{{item.GroupInvoiceName}}</td>
-            <td>{{item.Content}}</td>
-            <td>{{item.ProviderName}}</td>
-            <td>{{item.ServiceName}}</td>
-            <td>{{item.Sum}}</td>
-            <td>{{item.MPE}}</td>
+            <td><input type="checkbox" checked="{{item.Returned ? 'checked' : '' }}" disabled /></td>
+            <td><input type="checkbox" checked="{{item.Void ? 'checked' : '' }}" disabled /></td>
+            <td><input type="checkbox" checked="{{item.Paid ? 'checked' : '' }}" disabled  /></td>
+            <td>{{item.Cient}}</td>
+            <td>{{item.GroupInvoice.Name}}</td>
+            <td>{{item.Description}}</td>
+            <td>{{item.Provider}}</td>
+            <td>{{item.ServiceType}}</td>
+            <td>{{item.TotalAmount}}</td>
+            <td>{{item.MPE}}</td>  
             <td>{{item.Comment}}</td>
-            <td>{{item.AgentName}}</td>
-            <td>{{item.ResponsibleAgentName}}</td>
+            <td>{{item.Agent.Name}}</td>
+            <td>{{item.ResponsibleAgent.Name}}</td>
             <td>{{item.OfferCurrency}}</td>
-            <td>{{item.FinalCurrency}}</td>
-            <td>{{item.OrganizationName}}</td>
+            <td>{{item.TotalCurrency}}</td>
+            <td>{{item.Organization}}</td>
             <td>{{item.BookingCode}}</td>
-            <td>{{item.ReturnDocument}}</td>
+            <td>{{item.ReturnedDocument}}</td>
             <td>{{item.DateOfPurchaseFromSupplier}}</td>
             <td>{{item.PaymentForm}}</td>
-            <td>{{item.DateOfPayment}}</td>
+            <td>{{item.PaymentDate}}</td>
             <td>{{item.PMCode}}</td>
-            <td>{{item.Processed}}</td>
+            <td><input type="checkbox" checked="{{item.Processed ? 'checked' : '' }}" disabled /></td>
           </tr>
         </tbody>
       </table>

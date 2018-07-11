@@ -59,7 +59,13 @@
     <Compile Include="Entities\Avia\AviaInvoiceTicket.cs" />
     <Compile Include="Entities\Reference\Airport.cs" />
     <Compile Include="Entities\Reference\AviaCompany.cs" />
-    <Compile Include="Entities\Reference\Service.cs" />
+    <Compile Include="Entities\Reference\City.cs" />
+    <Compile Include="Entities\Reference\Counterparty.cs" />
+    <Compile Include="Entities\Reference\Curator.cs" />
+    <Compile Include="Entities\Reference\CurrencyExchange.cs" />
+    <Compile Include="Entities\Reference\IndividualCounterparty.cs" />
+    <Compile Include="Entities\Reference\Nomenclature.cs" />
+    <Compile Include="Entities\Reference\ServiceType.cs" />
     <Compile Include="Entities\Train\TrainInvoice.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />

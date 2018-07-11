@@ -8,16 +8,16 @@ export class AviaService {
   constructor(private http: HttpClient) {
   }
 
-  getAviaInvoicesShort() {
-    return this.http.get(this.baseUrl + '/AviaInvoice/GetAllShortInvoices');
+  getAllInvoices() {
+    return this.http.get(this.baseUrl + '/Avia/GetAllInvoices');
   }
 
   getAviaInvoice(id: any) {
-    console.log('Get avia invoice full');
+    return this.http.get(this.baseUrl + '/Avia/GetInvoice?id=' + id);
   }
 
-  updateAviaInvoice(id: any, invoice: any) {
-    console.log('Get avia invoice full');
+  updateAviaInvoice(invoice: any) {
+    return this.http.put(this.baseUrl + '/Avia/UpdateInvoice', invoice);
   }
 
   createAviaInvoice(invoice: any) {

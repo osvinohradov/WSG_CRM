@@ -9,8 +9,7 @@ namespace WSG.DAL.Entities.Reference
     {
         [Key]
         public Guid AviaCompanyId { get; set; }
-
-        [MaxLength(3)]
+        
         public string Name { get; set; }
         public int Code { get; set; }
         public string IATA { get; set; }

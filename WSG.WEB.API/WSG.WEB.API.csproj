@@ -71,6 +71,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -153,18 +154,35 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AviaGoupInvoiceController.cs" />
-    <Compile Include="Controllers\AviaInvoiceRESTController.cs" />
-    <Compile Include="Controllers\InsuranceModuleController.cs" />
-    <Compile Include="Controllers\ReferenceModuleController.cs" />
-    <Compile Include="Controllers\TourismRESTController.cs" />
-    <Compile Include="Controllers\TrainRESTController.cs" />
+    <Compile Include="Controllers\AviaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Avia\AviaGroupInvoiceShortViewModel.cs" />
-    <Compile Include="Models\Avia\AviaInvoiceFullViewModel.cs" />
-    <Compile Include="Models\Avia\AviaInvoiceShortViewModel.cs" />
+    <Compile Include="Infrastructure\IAdditionalInfo.cs" />
+    <Compile Include="Infrastructure\IAgent.cs" />
+    <Compile Include="Infrastructure\IChackingAccount.cs" />
+    <Compile Include="Infrastructure\IGroupInvoice.cs" />
+    <Compile Include="Infrastructure\IInvoice.cs" />
+    <Compile Include="Models\Agent.cs" />
+    <Compile Include="Models\Avia\AviaGroupInvoice.cs" />
+    <Compile Include="Models\Avia\AviaInvoice.cs" />
+    <Compile Include="Models\Entities\SupplierCommission.cs" />
+    <Compile Include="Models\General\AdditionalInfoBase.cs" />
+    <Compile Include="Models\Entities\AdditionalSupplierCommission.cs" />
+    <Compile Include="Models\Entities\AgencyServices.cs" />
+    <Compile Include="Models\Entities\Forfeit.cs" />
+    <Compile Include="Models\Entities\OtherServices.cs" />
+    <Compile Include="Models\Entities\SupplierCost.cs" />
+    <Compile Include="Models\Entities\TotalAmount.cs" />
+    <Compile Include="Models\Entities\UsedRates.cs" />
+    <Compile Include="Models\Entities\UsedSupplierRate.cs" />
+    <Compile Include="Models\Entities\VendorsCommission.cs" />
+    <Compile Include="Models\General\AviaDetailInfo.cs" />
+    <Compile Include="Models\General\CheckingAccount.cs" />
+    <Compile Include="Models\General\FlightInfo.cs" />
+    <Compile Include="Models\General\InvoiceBase.cs" />
+    <Compile Include="Models\General\TicketInfo.cs" />
+    <Compile Include="Models\ModelDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,7 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Infrastructure\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Insurance\" />
   </ItemGroup>

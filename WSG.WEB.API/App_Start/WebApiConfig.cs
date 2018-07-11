@@ -19,8 +19,8 @@ namespace WSG.WEB.API
 
             config.Routes.MapHttpRoute(
                 name: "AviaInvoiceApi",
-                routeTemplate: "api/AviaInvoice/{action}",
-                defaults: new { controller = "AviaInvoiceREST" }
+                routeTemplate: "api/Avia/{action}",
+                defaults: new { controller = "Avia" }
             );
 
 

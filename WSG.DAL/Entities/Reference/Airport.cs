@@ -10,7 +10,7 @@ namespace WSG.DAL.Entities.Reference
         [Key]
         public Guid AirportId { get; set; }
 
-        public string ShortName { get; set; }
+        public string Name { get; set; }
         public int Code { get; set; }
 
         public string NameRus { get; set; }

@@ -62,7 +62,7 @@
         </div>
 
         <div class="pull-left button_right_margin">
-          <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Записати">
+          <button type="button" class="btn btn-default my_button_style my_square_button" matTooltip="Записати" (click)="updateInvoice(invoice)">
             <span class="material-icons">save</span>
           </button>
         </div>
@@ -155,15 +155,12 @@
               </a>
             </li>
             <li>
-
               <a href="#" class="empty_icon">
-
                 <span class="my_menu_label">Підбір</span>
                 <div class="my_menu_icon">
                   <span class="material-icons"> chevron_right</span>
                 </div>
               </a>
-
             </li>
             <li>
               <a href="#">
@@ -239,33 +236,31 @@
         <div class="form-group">
           <div class="my_input_style">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Номер" value="">
+              <input matInput placeholder="Номер" value="{{invoice.Number}}">
             </mat-form-field>
           </div>
-
           <div class="my_input_style ">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Введіть дату">
+              <input matInput [matDatepicker]="picker" placeholder="Дата" value="{{invoice.Date}}">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
 
           <div class="my_input_style">
-
             <mat-form-field>
               <mat-select placeholder="Форма сплати:">
-                <mat-option *ngFor="let currency of currency" [value]="currency.value">
-                  {{ currency.viewValue }}
+                <mat-option *ngFor="let currency of paymentType" [value]="paymentType.value">
+                  <!-- TODO: Implement logic for selected payment form -->
+                  {{invoice.PaymentForm}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
-
           </div>
 
           <div class="my_input_style">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker1" placeholder="Дата сплати">
+              <input matInput [matDatepicker]="picker1" placeholder="Дата сплати" value="{{invoice.PaymentDate}}">
               <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
@@ -273,24 +268,21 @@
         </div>
       </div>
 
-      <div class="">
+      <div>
         <div class="form-group">
-
           <div class="my_input_style">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Квитків:" value="">
+              <input matInput placeholder="Квитків:" value="{{invoice.TicketsCount}}">
             </mat-form-field>
           </div>
-
           <div class="my_input_style">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Всього:" value="">
+              <input matInput placeholder="Всього:" value="{{invoice.TotalAmount}}">
             </mat-form-field>
           </div>
-
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Клієнт:" />
+              <input matInput type="text" placeholder="Клієнт:" value="{{invoice.Client}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -302,7 +294,7 @@
 
           <div class="my_input_style">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker2" placeholder="Дата послуг:">
+              <input matInput [matDatepicker]="picker2" placeholder="Дата послуг:" value="{{invoice.ServiceDate}}">
               <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
               <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
@@ -329,15 +321,12 @@
         </div>
       </div>
 
-      <div class="">
-
-
-
+      <div>
         <div class="form-group">
 
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Групове замовлення:" />
+              <input matInput type="text" placeholder="Групове замовлення:" value="" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -350,7 +339,7 @@
           <div class="my_input_style">
             <mat-form-field>
               <mat-select placeholder="Валюта пропозиції:">
-                <mat-option *ngFor="let currency of currencyProposal" [value]="currencyProposal.value">
+                <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                   {{ currency.viewValue }}
                 </mat-option>
               </mat-select>
@@ -360,7 +349,7 @@
           <div class="my_input_style">
             <mat-form-field>
               <mat-select placeholder="Підсумкова валюта:">
-                <mat-option *ngFor="let currency of currencyFinal" [value]="currencyFinal.value">
+                <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                   {{ currency.viewValue }}
                 </mat-option>
               </mat-select>
@@ -370,13 +359,11 @@
         </div>
       </div>
 
-      <div class="">
-
+      <div>
         <div class="form-group">
-
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Постачальник:" />
+              <input matInput type="text" placeholder="Постачальник:" value="{{invoice.Provider}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -388,7 +375,7 @@
 
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Сплата такси:" />
+              <input matInput type="text" placeholder="Сплата такси:" value="{{invoice.TaxesPayment}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -400,7 +387,7 @@
 
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Куратор:" />
+              <input matInput type="text" placeholder="Куратор:" value="{{invoice.Curator}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -412,16 +399,14 @@
 
           <div class="my_input_style">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Код бронювання:" value="">
+              <input matInput placeholder="Код бронювання:" value="{{invoice.BookingCode}}">
             </mat-form-field>
           </div>
         </div>
       </div>
 
-      <div class="">
-
+      <div>
         <div class="form-group">
-
           <div class="my_input_style">
             <mat-form-field>
               <mat-select placeholder="Обмін валют:">
@@ -434,7 +419,7 @@
 
           <div class="my_input_style">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker3" placeholder="На дату:">
+              <input matInput [matDatepicker]="picker3" placeholder="На дату:" value="{{invoice.OnDate}}">
               <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
               <mat-datepicker #picker3></mat-datepicker>
             </mat-form-field>
@@ -442,7 +427,7 @@
 
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Вид сервісу:" />
+              <input matInput type="text" placeholder="Вид сервісу:" value="{{invoice.ServiceType}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -453,7 +438,7 @@
           </div>
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Розрахунковий рахунок:" />
+              <input matInput type="text" placeholder="Розрахунковий рахунок:" value="{{invoice.CheckingAccount.Name}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -466,19 +451,17 @@
         </div>
       </div>
 
-      <div class="">
-
+      <div>
         <div class="form-group my_last_margin-bottom">
-
           <div class="my_input_style">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Коментар:" value="">
+              <input matInput placeholder="Коментар:" value="{{invoice.Comment}}">
             </mat-form-field>
           </div>
 
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Відповідальний:" />
+              <input matInput type="text" placeholder="Відповідальний:" value="{{invoice.ResponsibleAgent.Name}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -490,7 +473,7 @@
 
           <div class="my_input_style">
             <mat-form-field class="example-form-field">
-              <input matInput type="text" placeholder="Агент:" />
+              <input matInput type="text" placeholder="Агент:" value="{{invoice.Agent.Name}}" />
               <button mat-button matSuffix mat-icon-button aria-label="Settings">
                 <mat-icon>more_horiz</mat-icon>
               </button>
@@ -502,7 +485,7 @@
 
           <div class="my_input_style">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Код РМ:" value="">
+              <input matInput placeholder="Код РМ:" value="{{invoice.PMCode}}">
             </mat-form-field>
           </div>
 
@@ -513,42 +496,33 @@
 
       <mat-tab-group>
         <mat-tab activelabel label="Детальна інформація">
-
           <div id="detail">
             <!-- Tab 1 -->
             <div class="form-group avia_main_info">
-
               <div class="my_input_style col-lg-12">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Прізвище:" value="">
+                  <input matInput placeholder="Прізвище:" value="{{invoice.AviaDetail.Name}}">
                 </mat-form-field>
-                <!-- value="@invoice.FullName" -->
               </div>
 
               <div class="my_input_style col-lg-12">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Номер квитка:" value="">
+                  <input matInput placeholder="Номер квитка:" value="{{invoice.AviaDetail.TicketNumber}}">
                 </mat-form-field>
-                <!-- value="@invoice.TicketNumber" -->
               </div>
 
               <div class="my_input_style col-lg-12">
                 <mat-form-field>
-                  <input matInput [matDatepicker]="picker4" placeholder="Дата покупки:">
+                  <input matInput [matDatepicker]="picker4" placeholder="Дата покупки:" value="{{invoice.AviaDetail.PurchaseDate}}">
                   <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                   <mat-datepicker #picker4></mat-datepicker>
                 </mat-form-field>
-                <!-- value="@invoice.LastTransactionDate" -->
               </div>
-
             </div>
 
             <div class="all_flight_info form-group">
               <div class="my_flight_info col-lg-12">
-                <label class="control-label">Виліт: із KIEV/BORYSPIL(KBP. Terminal) в 27.09.2017 12:00:00</label>
-              </div>
-              <div class="my_flight_info col-lg-12">
-                <label class="control-label">Приліт: в TBILISI(TBS. Terminal) в 27.09.2017 15:45:00</label>
+                <label class="control-label">{{invoice.AviaDetail.Description}}</label>
               </div>
             </div>
 
@@ -558,20 +532,20 @@
                 <h4 class="control-label text-left column-title">Вартість постачальника</h4>
                 <div class="my_input_style">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Сума постач.:" value="">
+                    <input matInput placeholder="Сума постач.:" value="{{invoice.AviaDetail.SupplierCost.Amount}}">
                   </mat-form-field>
                 </div>
 
                 <div class="my_input_style">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="В т.ч. ПДВ:" value="">
+                    <input matInput placeholder="В т.ч. ПДВ:" value="{{invoice.AviaDetail.SupplierCost.MPE}}">
                   </mat-form-field>
                 </div>
 
                 <div class="my_input_style">
                   <mat-form-field>
                     <mat-select placeholder="Валюта:">
-                      <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                      <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                         {{ currency.viewValue }}
                       </mat-option>
                     </mat-select>
@@ -583,23 +557,22 @@
               <div class="col-lg-12">
                 <div class="my_input_style my_input_style_header">
                   <h4 class="control-label text-left column-title">Комісія постачальника</h4>
-
                   <div class="my_input_style">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Сума:" value="">
+                      <input matInput placeholder="Сума:" value="{{invoice.AviaDetail.SupplierCommission.Amount}}">
                     </mat-form-field>
                   </div>
 
                   <div class="my_input_style">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="В т.ч. ПДВ:" value="">
+                      <input matInput placeholder="В т.ч. ПДВ:" value="{{invoice.AviaDetail.SupplierCommission.MPE}}">
                     </mat-form-field>
                   </div>
 
                   <div class="my_input_style">
                     <mat-form-field>
                       <mat-select placeholder="Валюта:">
-                        <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                        <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                           {{ currency.viewValue }}
                         </mat-option>
                       </mat-select>
@@ -630,7 +603,7 @@
                   <div class="my_input_style">
                     <mat-form-field>
                       <mat-select placeholder="Валюта:">
-                        <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                        <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                           {{ currency.viewValue }}
                         </mat-option>
                       </mat-select>
@@ -660,7 +633,7 @@
                 <div class="my_input_style">
                   <mat-form-field>
                     <mat-select placeholder="Валюта:">
-                      <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                      <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                         {{ currency.viewValue }}
                       </mat-option>
                     </mat-select>
@@ -694,7 +667,7 @@
                   <div class="my_input_style">
                     <mat-form-field>
                       <mat-select placeholder="Валюта:">
-                        <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                        <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                           {{ currency.viewValue }}
                         </mat-option>
                       </mat-select>
@@ -725,7 +698,7 @@
                   <div class="my_input_style">
                     <mat-form-field>
                       <mat-select placeholder="Валюта:">
-                        <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                        <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                           {{ currency.viewValue }}
                         </mat-option>
                       </mat-select>
@@ -769,7 +742,7 @@
                   <div class="my_input_style">
                     <mat-form-field>
                       <mat-select placeholder="Валюта:">
-                        <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                        <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                           {{ currency.viewValue }}
                         </mat-option>
                       </mat-select>
@@ -798,7 +771,7 @@
                 <div class="my_input_style">
                   <mat-form-field>
                     <mat-select placeholder="Валюта:">
-                      <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                      <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                         {{ currency.viewValue }}
                       </mat-option>
                     </mat-select>
@@ -828,7 +801,7 @@
                   <div class="my_input_style">
                     <mat-form-field>
                       <mat-select placeholder="Валюта:">
-                        <mat-option *ngFor="let currency of supplierCost" [value]="supplierCost.value">
+                        <mat-option *ngFor="let currency of currencyType" [value]="currencyType.value">
                           {{ currency.viewValue }}
                         </mat-option>
                       </mat-select>
