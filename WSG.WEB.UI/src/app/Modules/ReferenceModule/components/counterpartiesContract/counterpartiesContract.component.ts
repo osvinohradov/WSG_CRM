@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { CounterpartiesContractPopupReferencesComponent } from './../counterpartiesContractPopup/counterpartiesContractPopup.component';
+
 
 @Component({
   selector: 'counterparties-contract-ref',
@@ -7,8 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterpartiesContractReferencesComponent implements OnInit {
 
-  constructor() { }
+  public contractDate:string = '2016/03/28';
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(CounterpartiesContractPopupReferencesComponent, {
+      width: '50%',
+      height: '65%'
+    });
+
   }
 }
