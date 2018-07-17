@@ -10,6 +10,8 @@ import { AirportReferencesComponent } from './components/airport/airport.compone
 import { AirportPopupReferencesComponent } from './components/airportPopup/airportPopup.component';
 
 import { CityReferencesComponent } from './components/city/city.component';
+import { CityPopupReferencesComponent } from './components/cityPopup/cityPopup.component';
+
 import { CounterpartiesContractReferencesComponent } from './components/counterpartiesContract/counterpartiesContract.component';
 import { CounterpartiesContractPopupReferencesComponent } from './components/counterpartiesContractPopup/counterpartiesContractPopup.component';
 
@@ -25,10 +27,14 @@ import { IndividualCounterpartiesReferencesComponent } from './components/indivi
 import { ServiceReferencesComponent } from './components/service/service.component';
 import { ServicePopupReferencesComponent } from './components/servicePopup/servicePopup.component';
 
+import { SearchPopupReferencesComponent } from './components/searchPopup/searchPopup.component';
+
+
 // materials modules
 import { MatTabsModule, MatNativeDateModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatRadioModule} from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -55,6 +61,7 @@ import {MatListModule} from '@angular/material/list';
     AirportReferencesComponent,
     AirportPopupReferencesComponent,
     CityReferencesComponent,
+    CityPopupReferencesComponent,
     CounterpartiesContractReferencesComponent,
     CounterpartiesContractPopupReferencesComponent,
     CounterpartyReferencesComponent,
@@ -65,7 +72,8 @@ import {MatListModule} from '@angular/material/list';
     CurrencyExchangeReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
     ServiceReferencesComponent,
-    ServicePopupReferencesComponent
+    ServicePopupReferencesComponent,
+    SearchPopupReferencesComponent
   
     // AviaPrintInvoicePopupComponent,
     // AviaPrintActPopupComponent,
@@ -81,6 +89,7 @@ import {MatListModule} from '@angular/material/list';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
+    MatRadioModule,
     MatButtonModule,
     MatCheckboxModule,
     MatSlideToggleModule,
@@ -98,7 +107,9 @@ import {MatListModule} from '@angular/material/list';
     ServicePopupReferencesComponent,
     CounterpartiesContractPopupReferencesComponent,
     CounterpartyPopupReferencesComponent,
-    CuratorPopupReferencesComponent
+    CuratorPopupReferencesComponent,
+    CityPopupReferencesComponent,
+    SearchPopupReferencesComponent
   ],
   exports: [
     AirlineReferencesComponent,
@@ -106,6 +117,7 @@ import {MatListModule} from '@angular/material/list';
     AirportReferencesComponent,
     AirportPopupReferencesComponent,
     CityReferencesComponent,
+    CityPopupReferencesComponent,
     CounterpartiesContractReferencesComponent,
     CounterpartiesContractPopupReferencesComponent,
     CounterpartyReferencesComponent,
@@ -117,6 +129,7 @@ import {MatListModule} from '@angular/material/list';
     IndividualCounterpartiesReferencesComponent,
     ServiceReferencesComponent,
     ServicePopupReferencesComponent,
+    SearchPopupReferencesComponent,
     ReferenceRoutingModule
   ],
   providers: [],
