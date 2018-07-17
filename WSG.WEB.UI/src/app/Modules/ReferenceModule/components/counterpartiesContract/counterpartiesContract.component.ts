@@ -19,8 +19,9 @@ export class CounterpartiesContractReferencesComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(CounterpartiesContractPopupReferencesComponent, {
+      panelClass: 'my-centered-dialog',
       width: '50%',
-      height: '65%'
+      height: '90vh'
     });
 
   }

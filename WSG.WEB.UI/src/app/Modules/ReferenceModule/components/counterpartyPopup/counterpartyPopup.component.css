@@ -40,6 +40,7 @@ div.my_menu_icon{
     font-size: 0.875rem; /* 14px */
 }
 
+
 span.my_button_label {
     font-weight: normal;
     display: inline-block;
@@ -49,3 +50,14 @@ span.my_button_label {
     padding-left: 2px;
     padding-right: 2px;
 }
+
+.cdk-global-overlay-wrapper {
+    pointer-events: auto !important;
+    overflow-y: scroll !important;
+    align-items: start !important; 
+    z-index: auto !important; 
+  }
+  .cdk-overlay-pane {
+    margin: 1rem;
+    z-index: 1002;
+  }

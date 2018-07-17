@@ -668,3 +668,7 @@ thead {
   
   /* GROUP ORDER POPUP -- end */
   
+
+  .my-centered-dialog{
+    height: auto;
+}

@@ -646,6 +646,10 @@ option{
     display: inline-block;
 }
 
+.my-centered-dialog{
+    height: auto;
+}
+
 .traveller_info{
     margin-bottom: 25px;
 }

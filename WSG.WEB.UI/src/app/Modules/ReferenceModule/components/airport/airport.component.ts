@@ -23,8 +23,9 @@ export class AirportReferencesComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(AirportPopupReferencesComponent, {
+      panelClass: 'my-centered-dialog',
       width: '50%',
-      height: '98%'
+      height: '90vh'
     });
   }
 }

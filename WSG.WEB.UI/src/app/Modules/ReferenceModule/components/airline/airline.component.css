@@ -371,6 +371,10 @@ button:active, button:focus {
     border: none;
 }
 
+.my-centered-dialog{
+    height: auto;
+}
+
 .code_column{
     width: 10%;
 }

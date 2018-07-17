@@ -22,8 +22,8 @@ export class ServiceReferencesComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(ServicePopupReferencesComponent, {
+      panelClass: 'my-centered-dialog',
       width: '50%',
-      height: '95%'
     });
   }
 }

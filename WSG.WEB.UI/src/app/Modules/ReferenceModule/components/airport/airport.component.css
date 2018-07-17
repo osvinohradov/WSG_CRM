@@ -459,6 +459,13 @@ span > i {
   min-height: 70vh;
 }
 
+
+.my-centered-dialog{
+  height: auto;
+  overflow: auto;
+}
+
+
 .mat-menu-item {
   color: black;
   font-size: 0.875rem; /* 14px */
