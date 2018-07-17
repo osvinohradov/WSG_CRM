@@ -17,6 +17,8 @@ import { CounterpartyReferencesComponent } from './components/counterparty/count
 import { CounterpartyPopupReferencesComponent } from './components/counterpartyPopup/counterpartyPopup.component';
 
 import { CuratorReferencesComponent } from './components/curator/curator.component';
+import { CuratorPopupReferencesComponent } from './components/curatorPopup/curatorPopup.component';
+
 import { NomenclatureReferencesComponent } from './components/nomenclature/nomenclature.component';
 import { CurrencyExchangeReferencesComponent } from './components/currencyExchange/currencyExchange.component';
 import { IndividualCounterpartiesReferencesComponent } from './components/individualCounterparties/individualCounterparties.component';
@@ -58,6 +60,7 @@ import {MatListModule} from '@angular/material/list';
     CounterpartyReferencesComponent,
     CounterpartyPopupReferencesComponent,
     CuratorReferencesComponent,
+    CuratorPopupReferencesComponent,
     NomenclatureReferencesComponent,
     CurrencyExchangeReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
@@ -94,7 +97,8 @@ import {MatListModule} from '@angular/material/list';
     AirportPopupReferencesComponent,
     ServicePopupReferencesComponent,
     CounterpartiesContractPopupReferencesComponent,
-    CounterpartyPopupReferencesComponent
+    CounterpartyPopupReferencesComponent,
+    CuratorPopupReferencesComponent
   ],
   exports: [
     AirlineReferencesComponent,
@@ -107,6 +111,7 @@ import {MatListModule} from '@angular/material/list';
     CounterpartyReferencesComponent,
     CounterpartyPopupReferencesComponent,
     CuratorReferencesComponent,
+    CuratorPopupReferencesComponent,
     NomenclatureReferencesComponent,
     CurrencyExchangeReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
