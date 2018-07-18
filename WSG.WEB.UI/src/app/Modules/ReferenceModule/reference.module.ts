@@ -25,6 +25,8 @@ import { NomenclatureReferencesComponent } from './components/nomenclature/nomen
 import { NomenclaturePopupReferencesComponent } from './components/nomenclaturePopup/nomenclaturePopup.component';
 
 import { CurrencyExchangeReferencesComponent } from './components/currencyExchange/currencyExchange.component';
+import { CurrencyExchangePopupReferencesComponent } from './components/currencyExchangePopup/currencyExchangePopup.component';
+
 import { IndividualCounterpartiesReferencesComponent } from './components/individualCounterparties/individualCounterparties.component';
 import { ServiceReferencesComponent } from './components/service/service.component';
 import { ServicePopupReferencesComponent } from './components/servicePopup/servicePopup.component';
@@ -73,6 +75,7 @@ import {MatListModule} from '@angular/material/list';
     NomenclatureReferencesComponent,
     NomenclaturePopupReferencesComponent,
     CurrencyExchangeReferencesComponent,
+    CurrencyExchangePopupReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
     ServiceReferencesComponent,
     ServicePopupReferencesComponent,
@@ -113,7 +116,8 @@ import {MatListModule} from '@angular/material/list';
     CuratorPopupReferencesComponent,
     CityPopupReferencesComponent,
     NomenclaturePopupReferencesComponent,
-    SearchPopupReferencesComponent
+    SearchPopupReferencesComponent,
+    CurrencyExchangePopupReferencesComponent
   ],
   exports: [
     AirlineReferencesComponent,
@@ -131,6 +135,7 @@ import {MatListModule} from '@angular/material/list';
     NomenclatureReferencesComponent,
     NomenclaturePopupReferencesComponent,
     CurrencyExchangeReferencesComponent,
+    CurrencyExchangePopupReferencesComponent,
     IndividualCounterpartiesReferencesComponent,
     ServiceReferencesComponent,
     ServicePopupReferencesComponent,
