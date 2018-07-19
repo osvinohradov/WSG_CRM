@@ -16,8 +16,8 @@ export class NomenclatureReferencesComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(NomenclaturePopupReferencesComponent, {
-      height: '90%',
-      width: '90%',
+      height: '98%',
+      width: '90vh',
     });
   }
 }

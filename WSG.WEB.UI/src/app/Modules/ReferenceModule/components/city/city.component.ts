@@ -26,6 +26,7 @@ export class CityReferencesComponent implements OnInit {
     let dialogRef = this.dialog.open(SearchPopupReferencesComponent, {
       panelClass: 'my-centered-dialog',
       width: '50%',
+      height: '90vh'
     });
   }
 }

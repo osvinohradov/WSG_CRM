@@ -19,35 +19,35 @@ export class AviaGroupInvoiceComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(AviaGroupInvoicePopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
   openPrintInvoice(): void {
     let dialogRef = this.dialog.open(AviaPrintInvoicePopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
   openPrintAct(): void {
     let dialogRef = this.dialog.open(AviaPrintActPopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
   openPrintScore(): void {
     let dialogRef = this.dialog.open(AviaPrintScorePopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
   openPrintScoreWithStamp(): void {
     let dialogRef = this.dialog.open(AviaPrintScoreWithStampPopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }

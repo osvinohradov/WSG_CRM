@@ -17,7 +17,8 @@ export class CuratorReferencesComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(CuratorPopupReferencesComponent, {
       panelClass: 'my-centered-dialog',
-      width: '50%'
+      width: '50%',
+      height: '90vh'
     });
 
   }

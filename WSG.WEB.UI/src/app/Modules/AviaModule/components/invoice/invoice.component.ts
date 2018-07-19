@@ -31,7 +31,7 @@ export class AviaInvoiceComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(AviaInvoicePopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
   }
 
@@ -39,21 +39,21 @@ export class AviaInvoiceComponent implements OnInit {
   openPrintInvoice(): void {
     let dialogRef = this.dialog.open(AviaPrintInvoicePopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
   openPrintAct(): void {
     let dialogRef = this.dialog.open(AviaPrintActPopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
   openPrintScore(): void {
     let dialogRef = this.dialog.open(AviaPrintScorePopupComponent, {
       width: '98%',
-      height: '98%'
+      height: '90vh'
     });
 
   }
