@@ -67,6 +67,7 @@
     <Compile Include="Entities\Reference\Nomenclature.cs" />
     <Compile Include="Entities\Reference\ServiceType.cs" />
     <Compile Include="Entities\Train\TrainInvoice.cs" />
+    <Compile Include="Interfaces\IAirportRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +80,7 @@
   <ItemGroup>
     <Folder Include="Entities\Insurance\" />
     <Folder Include="Entities\Tourism\" />
+    <Folder Include="Repositories\Reference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

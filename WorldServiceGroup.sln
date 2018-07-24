@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSG.API", "WSG.UI\WSG.API.csproj", "{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSG.DAL", "WSG.DAL\WSG.DAL.csproj", "{54705054-132F-4DCB-AFD4-1869A6FF936D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSG.BLL", "WSG.BAL\WSG.BLL.csproj", "{C3286E5D-668F-4AF0-AC94-4499F17EE6DF}"
@@ -50,10 +48,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBF1889A-CAB7-4368-A5BF-FAFB2B4E986E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54705054-132F-4DCB-AFD4-1869A6FF936D}.Release|Any CPU.ActiveCfg = Release|Any CPU
