@@ -22,10 +22,7 @@ export class AviaInvoiceComponent implements OnInit {
   constructor(public dialog: MatDialog, private AviaService: AviaService) { }
 
   getAviaInvoiceShort() {
-    this.AviaService.getAviaInvoiceShort().subscribe((evt: any) => {
-      console.log("Result: ", evt);
-      this.shortInvoices = evt;
-    });
+    
   }
 
   openDialog(): void {
